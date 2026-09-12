@@ -3,22 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M. Yasir Shah — AI Products Architect</title>
-<meta name="description" content="M. Yasir Shah — AI Products Architect building scalable content systems and automation for businesses. 7x author of System Design courses at Educative.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23111111%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 text-anchor=%22middle%22 fill=%22%23ff4d1c%22 font-family=%22monospace%22>Y</text></svg>">
+<title>M. Yasir Shah — AI Product Architect &amp; Automation Engineer</title>
+<meta name="description" content="M. Yasir Shah — AI Product Architect at Educative and freelance automation engineer. I build AI agents, n8n/RAG systems, and content-generation pipelines that ship real work, faster and cheaper.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%2318140f%22/><text x=%2250%22 y=%2268%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%23c1531f%22 font-family=%22Georgia,serif%22>Y</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#faf9f6;
-    --ink:#121212;
-    --ink-dim:#5f5d58;
-    --line:#dedad0;
-    --accent:#ff4d1c;
-    --accent-ink:#7a1f00;
+    --paper:#f6f1e6;
+    --paper-2:#ece3ce;
+    --line:#ddd0b0;
+    --ink:#18140f;
+    --ink-dim:#6b6152;
+    --cream:#f3ead9;
+    --cream-dim:#b3a68d;
+    --accent:#c1531f;
+    --accent-deep:#8a3813;
     --whatsapp:#25D366;
-    --max:1080px;
+    --max:1120px;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
@@ -34,62 +37,53 @@
   img{max-width:100%;display:block;}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
   @media (max-width:640px){ .wrap{padding:0 20px;} }
-  section{padding:100px 0;border-bottom:1px solid var(--line);}
-  @media (max-width:640px){ section{padding:60px 0;} }
+  section{padding:96px 0;border-bottom:1px solid var(--line);}
+  @media (max-width:640px){ section{padding:64px 0;} }
 
-  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.01em;color:var(--ink);}
-  .mono{font-family:'JetBrains Mono',monospace;}
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-0.01em;color:inherit;}
+  em{font-style:italic;}
 
   .kicker{
-    font-family:'JetBrains Mono',monospace;font-size:0.78rem;font-weight:500;letter-spacing:0.04em;
-    color:var(--ink-dim);text-transform:uppercase;margin-bottom:16px;
+    font-size:0.78rem;font-weight:700;letter-spacing:0.08em;
+    color:var(--ink-dim);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;
   }
-  .section-head{margin-bottom:44px;}
-  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);max-width:640px;margin-bottom:10px;}
-  .section-head p{color:var(--ink-dim);max-width:460px;font-size:0.96rem;}
+  .kicker::before{content:"";width:16px;height:1px;background:var(--accent);display:inline-block;}
+  .section-head{margin-bottom:48px;}
+  .section-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem);max-width:660px;margin-bottom:12px;}
+  .section-head p{color:var(--ink-dim);max-width:480px;font-size:0.98rem;}
 
   .btn{
     display:inline-flex;align-items:center;gap:10px;
-    padding:13px 24px;font-weight:500;font-size:0.94rem;font-family:'Space Grotesk',sans-serif;
-    border:1.5px solid var(--ink);cursor:pointer;transition:background .15s ease, color .15s ease, transform .12s ease;
-    white-space:nowrap;border-radius:2px;
+    padding:14px 26px;font-weight:600;font-size:0.92rem;font-family:'Inter',sans-serif;
+    border:1.5px solid transparent;cursor:pointer;transition:background .15s ease, color .15s ease, transform .12s ease, border-color .15s ease;
+    white-space:nowrap;border-radius:3px;
   }
-  .btn-solid{background:var(--ink);color:var(--paper);}
-  .btn-solid:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-2px);}
-  .btn-line{background:transparent;color:var(--ink);}
-  .btn-line:hover{background:var(--ink);color:var(--paper);}
-
-  /* SOCIAL ICONS */
-  .social-icons{display:flex;gap:12px;flex-wrap:wrap;}
-  .social-icons a{
-    width:44px;height:44px;border:1.5px solid var(--ink);border-radius:50%;
-    display:flex;align-items:center;justify-content:center;color:var(--ink);
-    transition:background .15s ease, color .15s ease, transform .15s ease, border-color .15s ease;
-  }
-  .social-icons a svg{width:19px;height:19px;fill:currentColor;}
-  .social-icons a span.txt{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:0.82rem;}
-  .social-icons a:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px);}
-  .social-icons a.wa:hover{background:var(--whatsapp);border-color:var(--whatsapp);}
+  .btn-solid{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .btn-solid:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px);}
+  .btn-ghost-dark{background:transparent;color:var(--cream);border-color:rgba(243,234,217,.35);}
+  .btn-ghost-dark:hover{background:rgba(243,234,217,.1);border-color:var(--cream);}
+  .btn-ghost-light{background:transparent;color:var(--ink);border-color:var(--ink);}
+  .btn-ghost-light:hover{background:var(--ink);color:var(--paper);}
 
   /* NAV */
   header.nav{
     position:sticky;top:0;z-index:50;
-    background:rgba(250,249,246,.9);backdrop-filter:blur(8px);
+    background:rgba(246,241,230,.92);backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
-  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
-  .logo{font-family:'Space Grotesk',sans-serif;font-size:1.02rem;font-weight:600;}
-  .logo .p{color:var(--accent);}
-  nav.links{display:flex;gap:26px;align-items:center;}
-  nav.links a{font-size:0.86rem;font-weight:500;color:var(--ink-dim);font-family:'Space Grotesk',sans-serif;}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;}
+  .logo{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;font-weight:500;color:var(--ink);}
+  .logo .dot{color:var(--accent);font-style:normal;}
+  nav.links{display:flex;gap:28px;align-items:center;}
+  nav.links a{font-size:0.86rem;font-weight:500;color:var(--ink-dim);}
   nav.links a:hover{color:var(--ink);}
   .nav-actions{display:flex;align-items:center;gap:16px;}
-  .nav-actions .btn{padding:9px 18px;font-size:0.85rem;}
-  .menu-toggle{display:none;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--ink);font-family:monospace;}
+  .nav-actions .btn{padding:9px 18px;font-size:0.84rem;}
+  .menu-toggle{display:none;background:none;border:none;font-size:1rem;cursor:pointer;color:var(--ink);font-family:'Inter',sans-serif;font-weight:600;}
 
   @media (max-width:900px){
     nav.links{
-      position:fixed;top:64px;left:0;right:0;bottom:0;
+      position:fixed;top:66px;left:0;right:0;bottom:0;
       background:var(--paper);
       flex-direction:column;align-items:flex-start;gap:0;
       padding:10px 20px 20px;
@@ -98,146 +92,166 @@
     nav.links.open{transform:translateY(0);opacity:1;pointer-events:auto;}
     nav.links a{width:100%;padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem;}
     .menu-toggle{display:block;}
-    .nav-actions .btn-line{display:none;}
+    .nav-actions .btn-ghost-light{display:none;}
   }
 
   /* HERO */
-  .hero{padding-top:76px;padding-bottom:0;border-bottom:none;}
-  .hero-grid{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:flex-start;}
-  @media (max-width:760px){
-    .hero-grid{grid-template-columns:1fr;}
-    .hero-photo{order:-1;margin:0 auto 8px;}
-  }
-  .hero-photo{
-    width:184px;height:184px;border-radius:50%;overflow:hidden;flex:none;
-    border:2px solid var(--ink);
-  }
-  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;}
-  .hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:var(--accent);margin-bottom:18px;}
-  .hero h1{font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.06;letter-spacing:-0.02em;margin-bottom:18px;}
-  .hero-role{
-    font-family:'Space Grotesk',sans-serif;font-size:clamp(1.02rem,2vw,1.25rem);font-weight:500;
-    color:var(--ink);max-width:680px;margin-bottom:22px;
-  }
-  .hero-role .sep{color:var(--accent);margin:0 10px;}
-  .hero p.lead{color:var(--ink-dim);font-size:1.03rem;max-width:580px;margin-bottom:30px;}
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px;}
-  .hero-facts{font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:var(--ink-dim);margin-bottom:56px;}
-  .hero-facts b{color:var(--ink);font-weight:600;}
-  .hero-facts .dot{color:var(--accent);margin:0 10px;}
+  .hero{background:var(--ink);color:var(--cream);padding:100px 0 76px;border-bottom:none;}
+  .hero-byline{display:flex;align-items:center;gap:14px;margin-bottom:36px;}
+  .hero-byline img{width:56px;height:56px;border-radius:14px;object-fit:cover;object-position:center 15%;border:1px solid rgba(243,234,217,.2);filter:grayscale(1) contrast(1.08) brightness(1.05);flex:none;}
+  .hero-byline .who{display:flex;flex-direction:column;gap:2px;}
+  .hero-byline .who .n{font-weight:600;font-size:0.95rem;color:var(--cream);}
+  .hero-byline .who .l{font-size:0.8rem;color:var(--cream-dim);}
 
-  /* TRUST BAR */
-  .trust-bar{background:var(--ink);border-bottom:1px solid var(--line);}
-  .trust-bar .wrap{padding:0;max-width:var(--max);}
-  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.12);}
-  @media (max-width:760px){ .trust-grid{grid-template-columns:1fr;} }
-  .trust-item{background:var(--ink);padding:36px 32px;}
-  .trust-item h4{color:#fff;font-size:1.02rem;margin-bottom:10px;}
-  .trust-item p{color:#a9a69d;font-size:0.87rem;}
+  .hero h1{font-size:clamp(2.3rem,5.4vw,3.9rem);line-height:1.08;max-width:17ch;margin-bottom:28px;}
+  .hero h1 em{color:var(--accent);}
+  .hero-tagline{font-size:0.86rem;color:var(--cream-dim);max-width:600px;margin-bottom:26px;line-height:1.7;letter-spacing:.005em;}
+  .hero-tagline b{color:var(--cream);font-weight:600;}
+  .hero p.lead{color:var(--cream-dim);font-size:1.05rem;max-width:560px;margin-bottom:36px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
+
+  .trust-strip{display:flex;flex-wrap:wrap;gap:12px 30px;padding-top:26px;border-top:1px solid rgba(243,234,217,.16);}
+  .trust-strip .t-item{font-size:0.83rem;color:var(--cream-dim);max-width:230px;}
+  .trust-strip .t-item strong{display:block;color:var(--cream);font-weight:600;font-size:0.88rem;margin-bottom:3px;}
 
   /* ABOUT */
-  .about-grid{display:grid;grid-template-columns:0.95fr 1.05fr;gap:64px;}
-  @media (max-width:900px){ .about-grid{grid-template-columns:1fr;gap:40px;} }
-  .about-lead{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.25rem,2.2vw,1.55rem);line-height:1.45;font-weight:500;}
-  .about-lead .accent{color:var(--accent);}
+  .about-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;}
+  @media (max-width:900px){ .about-grid{grid-template-columns:1fr;gap:36px;} }
+  .about-lead{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.5;font-weight:400;color:var(--ink);}
+  .about-lead .accent{color:var(--accent);font-style:normal;font-weight:500;}
   .about-body p{color:var(--ink-dim);margin-bottom:18px;font-size:0.98rem;}
   .about-body strong{color:var(--ink);font-weight:600;}
-  .howwork{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:10px;}
-  .howwork li{font-size:0.9rem;color:var(--ink-dim);display:flex;gap:10px;}
-  .howwork li::before{content:"✓";color:var(--accent);font-weight:700;flex:none;}
-  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:28px;}
-  @media (max-width:520px){ .pillars{grid-template-columns:1fr;} }
-  .pillar{background:var(--paper);padding:20px;}
-  .pillar h4{font-size:0.96rem;margin-bottom:6px;font-weight:600;}
-  .pillar p{font-size:0.85rem;color:var(--ink-dim);}
+  .howwork{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px;}
+  .howwork li{font-size:0.92rem;color:var(--ink-dim);display:flex;gap:10px;}
+  .howwork li::before{content:"→";color:var(--accent);font-weight:700;flex:none;}
+
+  .stat-row{display:flex;flex-wrap:wrap;gap:36px 48px;margin-top:36px;padding-top:28px;border-top:1px solid var(--line);}
+  .stat-row .stat{display:flex;flex-direction:column;}
+  .stat-row .num{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3vw,2.3rem);color:var(--accent);line-height:1;margin-bottom:6px;}
+  .stat-row .lbl{font-size:0.82rem;color:var(--ink-dim);max-width:16ch;}
 
   /* CAPABILITIES ("What I Build") */
-  .cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
-  @media (max-width:760px){ .cap-grid{grid-template-columns:1fr;} }
-  .cap-card{background:var(--paper);padding:32px;}
-  .cap-card .cap-n{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:0.78rem;display:block;margin-bottom:14px;}
-  .cap-card h3{font-size:1.15rem;margin-bottom:10px;}
-  .cap-card p{color:var(--ink-dim);font-size:0.93rem;margin-bottom:16px;}
-  .cap-card .stack span{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--ink-dim);border:1px solid var(--line);padding:4px 9px;}
-  .cap-card .stack{display:flex;flex-wrap:wrap;gap:7px;}
+  .cap-list{border-top:1px solid var(--line);}
+  .cap-row{display:grid;grid-template-columns:280px 1fr;gap:32px;padding:34px 0;border-bottom:1px solid var(--line);}
+  @media (max-width:760px){ .cap-row{grid-template-columns:1fr;gap:14px;} }
+  .cap-head{display:flex;align-items:baseline;gap:14px;}
+  .cap-head .cap-num{font-family:'Fraunces',serif;color:var(--accent);font-size:1.05rem;font-weight:500;}
+  .cap-head h3{font-size:1.2rem;}
+  .cap-body p{color:var(--ink-dim);font-size:0.95rem;max-width:560px;margin-bottom:14px;}
+  .cap-row.featured{background:linear-gradient(90deg, var(--paper-2), transparent 70%);margin:0 -20px;padding-left:20px;padding-right:20px;border-radius:4px;}
+
+  .tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .tags span{font-size:0.76rem;color:var(--ink-dim);background:var(--paper-2);padding:6px 12px;border-radius:999px;}
 
   /* EXPERIENCE */
   .xp-row{display:grid;grid-template-columns:190px 1fr;gap:32px;padding:32px 0;border-top:1px solid var(--line);}
   .xp-row:last-child{border-bottom:1px solid var(--line);}
   @media (max-width:700px){ .xp-row{grid-template-columns:1fr;gap:10px;} }
-  .xp-when{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--ink-dim);padding-top:4px;}
+  .xp-when{font-size:0.8rem;color:var(--ink-dim);padding-top:4px;font-weight:600;letter-spacing:.02em;}
   .xp-main .role-line{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px;}
-  .xp-main h3{font-size:1.15rem;}
-  .xp-main .co{color:var(--accent);font-weight:500;font-family:'Space Grotesk',sans-serif;font-size:0.92rem;}
-  .xp-main ul{padding-left:18px;color:var(--ink-dim);font-size:0.93rem;display:flex;flex-direction:column;gap:7px;margin-top:12px;max-width:660px;}
+  .xp-main h3{font-size:1.2rem;}
+  .xp-main .co{color:var(--accent);font-weight:600;font-size:0.9rem;}
+  .xp-main ul{padding-left:18px;color:var(--ink-dim);font-size:0.94rem;display:flex;flex-direction:column;gap:8px;margin-top:12px;max-width:680px;}
 
   /* PROJECTS */
-  .proj{display:grid;grid-template-columns:0.85fr 1.15fr;gap:40px;padding:48px 0;border-top:1px solid var(--line);align-items:center;}
+  .proj{display:grid;grid-template-columns:1fr 1fr;gap:44px;padding:52px 0;border-top:1px solid var(--line);align-items:center;}
   .proj:last-child{border-bottom:1px solid var(--line);}
-  @media (max-width:860px){ .proj{grid-template-columns:1fr;gap:24px;} }
+  @media (max-width:860px){ .proj{grid-template-columns:1fr;gap:26px;} }
   .proj:nth-child(even) .proj-visual{order:2;}
   @media (max-width:860px){ .proj:nth-child(even) .proj-visual{order:0;} }
 
-  .proj-visual{border:1.5px solid var(--ink);background:#0e0e10;}
-  .proj-visual .win-bar{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.1);}
-  .proj-visual .win-bar span{width:8px;height:8px;border-radius:50%;background:#3a3a3d;}
-  .proj-visual .win-bar .path{margin-left:10px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#77746c;}
-  .proj-visual svg{width:100%;height:auto;display:block;}
-  .proj-visual img{width:100%;height:auto;display:block;}
-  .proj-visual a{display:block;}
+  .shot{border-radius:8px;overflow:hidden;}
+  .shot.dark{background:#0e0e10;border:1px solid #000;}
+  .shot.light{background:#fff;border:1px solid var(--line);}
+  .shot-bar{display:flex;align-items:center;gap:6px;padding:10px 13px;}
+  .shot.dark .shot-bar{border-bottom:1px solid rgba(255,255,255,.1);}
+  .shot.light .shot-bar{border-bottom:1px solid var(--line);}
+  .shot-bar span.d{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.28;}
+  .shot.dark .shot-bar{color:#fff;}
+  .shot.light .shot-bar{color:var(--ink);}
+  .shot-bar .path{margin-left:8px;font-size:0.7rem;opacity:.55;}
+  .shot img{width:100%;height:auto;display:block;cursor:zoom-in;}
+  .shot-cap{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:12px;}
+  .shot-cap p{font-size:0.83rem;color:var(--ink-dim);margin:0;}
+  .shot-cap .zoom{font-size:0.78rem;font-weight:600;color:var(--accent);white-space:nowrap;flex:none;}
 
-  .proj-idx{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:0.82rem;margin-bottom:8px;display:block;}
-  .proj-body h3{font-size:1.4rem;margin-bottom:14px;}
-  .case{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
-  .case p{font-size:0.93rem;color:var(--ink-dim);max-width:520px;margin:0;}
-  .case p b.lbl{font-family:'JetBrains Mono',monospace;font-size:0.68rem;text-transform:uppercase;color:var(--ink);letter-spacing:.03em;margin-right:8px;}
+  .stat-block{background:var(--paper-2);border-radius:8px;padding:44px 30px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:230px;}
+  .stat-block .num{font-family:'Fraunces',serif;font-size:clamp(3rem,6vw,4.2rem);color:var(--accent);line-height:1;}
+  .stat-block .lbl{font-size:0.92rem;color:var(--ink-dim);margin-top:12px;max-width:32ch;}
+
+  .proj-idx{font-size:0.8rem;color:var(--accent);margin-bottom:10px;display:block;font-weight:600;letter-spacing:.02em;}
+  .proj-body h3{font-size:1.5rem;margin-bottom:16px;}
+  .case{display:flex;flex-direction:column;gap:9px;margin-bottom:18px;}
+  .case p{font-size:0.94rem;color:var(--ink-dim);max-width:520px;margin:0;}
+  .case p b.lbl{font-size:0.7rem;text-transform:uppercase;font-weight:700;color:var(--ink);letter-spacing:.04em;margin-right:8px;}
   .case p.result{color:var(--ink);font-weight:500;}
   .case p.result b.lbl{color:var(--accent);}
-  .stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
-  .stack span{font-family:'JetBrains Mono',monospace;font-size:0.73rem;color:var(--ink-dim);border:1px solid var(--line);padding:5px 10px;}
-  .proj-link{font-size:0.9rem;font-weight:600;font-family:'Space Grotesk',sans-serif;color:var(--ink);border-bottom:1.5px solid var(--accent);padding-bottom:2px;display:inline-flex;}
+  .proj-body > p.plain{color:var(--ink-dim);font-size:0.95rem;margin-bottom:18px;max-width:520px;}
+  .proj-body .tags{margin-bottom:18px;}
+  .proj-link{font-size:0.9rem;font-weight:600;color:var(--ink);border-bottom:1.5px solid var(--accent);padding-bottom:2px;display:inline-flex;}
   .proj-link:hover{color:var(--accent);}
 
-  /* STACK / SKILLS */
-  .skills-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
-  @media (max-width:760px){ .skills-cols{grid-template-columns:1fr 1fr;} }
-  @media (max-width:480px){ .skills-cols{grid-template-columns:1fr;} }
-  .skill-cat{background:var(--paper);padding:24px 22px;}
-  .skill-cat h4{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:0.78rem;color:var(--ink-dim);margin-bottom:14px;text-transform:uppercase;}
-  .skill-cat .tags{display:flex;flex-direction:column;gap:8px;}
-  .skill-cat .tags span{font-family:'Space Grotesk',sans-serif;font-size:0.96rem;font-weight:500;}
+  /* STACK / INDUSTRIES */
+  .stack-list{border-top:1px solid var(--line);}
+  .stack-row{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line);}
+  @media (max-width:600px){ .stack-row{grid-template-columns:1fr;gap:6px;} }
+  .stack-row .cat{font-size:0.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-dim);font-weight:700;padding-top:3px;}
+  .stack-row .items{font-size:0.98rem;color:var(--ink);line-height:1.8;}
 
   .industries{margin-top:44px;}
-  .industries h4{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:0.78rem;color:var(--ink-dim);margin-bottom:16px;text-transform:uppercase;}
+  .industries h4{font-size:0.78rem;font-weight:700;color:var(--ink-dim);margin-bottom:16px;text-transform:uppercase;letter-spacing:.07em;}
   .chip-row{display:flex;flex-wrap:wrap;gap:10px;}
   .chip-row span{
-    font-family:'Space Grotesk',sans-serif;font-size:0.88rem;font-weight:500;
+    font-size:0.87rem;font-weight:500;
     border:1px solid var(--line);padding:8px 16px;border-radius:999px;color:var(--ink);
   }
 
   /* CONTACT */
-  #contact{border-bottom:none;}
+  .contact-band{background:var(--ink);color:var(--cream);border-bottom:none;}
   .contact-big{
-    font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,4.2vw,2.5rem);line-height:1.2;
-    letter-spacing:-0.01em;margin-bottom:14px;max-width:20ch;
+    font-size:clamp(1.8rem,4.4vw,2.7rem);line-height:1.18;
+    margin-bottom:16px;max-width:18ch;
   }
-  .contact-sub{color:var(--ink-dim);max-width:540px;margin-bottom:36px;font-size:0.98rem;}
+  .contact-sub{color:var(--cream-dim);max-width:540px;margin-bottom:16px;font-size:0.98rem;}
+  .contact-marks{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:0.82rem;color:var(--cream-dim);margin-bottom:40px;}
+  .contact-marks span b{color:var(--cream);}
   .contact-details{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:28px;}
-  .contact-text{display:flex;flex-direction:column;gap:8px;font-family:'JetBrains Mono',monospace;font-size:0.92rem;color:var(--ink-dim);}
-  .contact-text a:hover{color:var(--ink);}
+  .contact-text{display:flex;flex-direction:column;gap:10px;font-size:1rem;color:var(--cream-dim);}
+  .contact-text a{font-weight:500;color:var(--cream);}
+  .contact-text a:hover{color:var(--accent);}
 
-  footer{background:var(--ink);color:#8a8880;}
-  footer .wrap{padding:26px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:0.82rem;font-family:'JetBrains Mono',monospace;}
-  footer a:hover{color:#fff;}
+  .social-icons{display:flex;gap:12px;flex-wrap:wrap;}
+  .social-icons a{
+    width:42px;height:42px;border:1.5px solid rgba(243,234,217,.35);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;color:var(--cream);
+    transition:background .15s ease, color .15s ease, transform .15s ease, border-color .15s ease;
+  }
+  .social-icons a svg{width:18px;height:18px;fill:currentColor;}
+  .social-icons a span.txt{font-weight:700;font-size:0.8rem;}
+  .social-icons a:hover{background:var(--cream);color:var(--ink);border-color:var(--cream);transform:translateY(-2px);}
+  .social-icons a.wa:hover{background:var(--whatsapp);border-color:var(--whatsapp);color:#fff;}
+
+  footer.site-foot{background:var(--ink);color:var(--cream-dim);}
+  footer.site-foot .wrap{padding:26px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:0.82rem;border-top:1px solid rgba(243,234,217,.14);}
+  footer.site-foot a:hover{color:var(--cream);}
 
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
   .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* LIGHTBOX */
+  .lightbox{position:fixed;inset:0;background:rgba(12,9,6,.95);z-index:300;display:none;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;}
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:92vw;max-height:72vh;object-fit:contain;border-radius:4px;}
+  .lightbox-cap{color:var(--cream-dim);font-size:0.85rem;margin-top:18px;max-width:640px;text-align:center;}
+  .lightbox-cap a{color:var(--accent);font-weight:600;}
+  .lightbox-close{position:absolute;top:22px;right:26px;background:none;border:none;color:var(--cream);font-size:1.8rem;cursor:pointer;line-height:1;padding:6px 10px;}
+  .lightbox-close:hover{color:var(--accent);}
 
   /* FLOATING WHATSAPP (mobile) */
   .wa-float{
     display:none;position:fixed;right:18px;bottom:18px;z-index:60;
     width:56px;height:56px;border-radius:50%;background:var(--whatsapp);
-    align-items:center;justify-content:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.35);
+    align-items:center;justify-content:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.4);
   }
   .wa-float svg{width:26px;height:26px;fill:#fff;}
   @media (max-width:760px){ .wa-float{display:flex;} }
@@ -247,99 +261,73 @@
 
 <header class="nav">
   <div class="wrap">
-    <a href="#top" class="logo">M. Yasir<span class="p">.</span></a>
+    <a href="#top" class="logo">Yasir<span class="dot">.</span></a>
     <nav class="links" id="navLinks">
       <a href="#about">About</a>
       <a href="#build">What I Build</a>
       <a href="#projects">Work</a>
       <a href="#experience">Experience</a>
-      <a href="#skills">Stack</a>
+      <a href="#stack">Stack</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions">
-      <a href="#contact" class="btn btn-line">Free Audit</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">[ menu ]</button>
+      <a href="#contact" class="btn btn-ghost-light">Free Audit</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">Menu</button>
     </div>
   </div>
 </header>
 
 <section class="hero" id="top">
   <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <div class="hero-eyebrow">Hello, I'm</div>
-        <h1>M. Yasir Shah</h1>
-        <div class="hero-role">AI Products Architect<span class="sep">•</span>Building Scalable Content Systems<span class="sep">•</span>7× Author of System Design Courses @ Educative</div>
-        <p class="lead">I design AI agents and automations that take manual, repetitive work off your plate — the same caliber of systems I use at Educative to run content generation at a scale of thousands of lessons and guides.</p>
-
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-solid">Get a Free Automation Audit</a>
-          <a href="#projects" class="btn btn-line">View My Work</a>
-        </div>
-
-        <div class="social-icons" style="margin-bottom:36px;">
-          <a href="https://www.linkedin.com/in/muhammad-yasir-latif/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.24h4.56V23H.22V8.24zM8.34 8.24h4.37v2.02h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v8.12h-4.56v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H8.34V8.24z"/></svg>
-          </a>
-          <a href="https://www.upwork.com/freelancers/muhammadyasirlatif" target="_blank" rel="noopener" aria-label="Upwork">
-            <span class="txt">Up</span>
-          </a>
-          <a href="https://wa.me/923440066123" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa">
-            <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.03 4C7.6 4 4 7.6 4 12.03c0 1.44.38 2.83 1.09 4.06L4 20l4.02-1.05a8.9 8.9 0 0 0 4 1.02h.01c4.43 0 8.03-3.6 8.03-8.03 0-2.15-.84-4.16-2.46-5.62zM12.03 18.4h-.01a7.4 7.4 0 0 1-3.77-1.03l-.27-.16-2.8.73.75-2.73-.18-.28a7.36 7.36 0 0 1-1.13-3.9c0-4.07 3.31-7.38 7.4-7.38 1.98 0 3.84.77 5.24 2.17a7.35 7.35 0 0 1 2.17 5.23c0 4.07-3.32 7.35-7.4 7.35zm4.05-5.5c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.1-.66-.59-1.11-1.31-1.24-1.53-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.78.76-.78 1.85 0 1.09.8 2.14.91 2.29.11.15 1.57 2.4 3.8 3.36.53.23.95.37 1.27.47.53.17 1.02.15 1.4.09.43-.06 1.3-.53 1.48-1.04.18-.51.18-.94.13-1.03-.05-.09-.2-.15-.42-.26z"/></svg>
-          </a>
-          <a href="mailto:yasirshahji1116@outlook.com" aria-label="Email">
-            <svg viewBox="0 0 24 24"><path d="M2 5h20a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm18.4 2H3.6l8.4 6.3L20.4 7zM2 8.2V18h20V8.2l-9.4 7.05a1 1 0 0 1-1.2 0L2 8.2z"/></svg>
-          </a>
-        </div>
-
-        <div class="hero-facts">
-          <b>7</b> courses authored<span class="dot">·</span><b>~90%</b> faster content production<span class="dot">·</span><b>280+</b> lessons shipped
-        </div>
+    <div class="hero-byline">
+      <img src="assets/profile-crop.jpg" alt="M. Yasir Shah">
+      <div class="who">
+        <span class="n">M. Yasir Shah</span>
+        <span class="l">Islamabad, Pakistan</span>
       </div>
-      <div class="hero-photo">
-        <img src="assets/profile.jpg" alt="M. Yasir Shah">
-      </div>
+    </div>
+
+    <h1>AI systems that turn <em>busywork</em> into shipped work.</h1>
+
+    <p class="hero-tagline"><b>AI Products Architect</b> | Building Scalable Content Systems | 7x Author of System Design Courses @ Educative</p>
+
+    <p class="lead">I design AI agents and automations that take manual, repetitive work off your plate — the same caliber of systems I run at Educative to generate technical content at the scale of thousands of lessons and guides.</p>
+
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-solid">Get a Free Automation Audit</a>
+      <a href="#projects" class="btn btn-ghost-dark">See the Work</a>
+    </div>
+
+    <div class="trust-strip">
+      <div class="t-item"><strong>Free process walkthrough</strong>I'll show you how I'd automate it before you commit to anything.</div>
+      <div class="t-item"><strong>Fix guarantee</strong>If it doesn't perform as agreed, I fix it — no charge.</div>
+      <div class="t-item"><strong>Rising Talent, Upwork</strong>Vetted across SaaS, finance, healthcare, and EdTech.</div>
     </div>
   </div>
 </section>
 
-<div class="trust-bar">
-  <div class="wrap">
-    <div class="trust-grid">
-      <div class="trust-item">
-        <h4>Free process walkthrough</h4>
-        <p>Send me your process and I'll send back a free walkthrough of how I'd automate it — before you commit to anything. If automation is the wrong call, I'll tell you that instead.</p>
-      </div>
-      <div class="trust-item">
-        <h4>Fix guarantee</h4>
-        <p>If a system doesn't perform as agreed, I fix it at no charge. Clean, documented workflows you actually own — not a black box.</p>
-      </div>
-      <div class="trust-item">
-        <h4>Rising Talent · Upwork</h4>
-        <p>Vetted automation specialist working across SaaS, e-commerce, finance, healthcare, and EdTech.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
 <section id="about">
   <div class="wrap">
-    <div class="kicker">— About</div>
+    <div class="kicker">About</div>
     <div class="about-grid">
       <div class="about-lead reveal">
         I build <span class="accent">scalable content systems</span> on one side, and architect <span class="accent">flagship courses</span> on the other — then wire the two together.
       </div>
       <div class="about-body reveal">
-        <p>I'm an AI Product Architect and Technical Content Lead at Educative. I build AI-driven pipelines and agents that generate, personalize, and ship technical learning at scale — and I architect flagship System Design courses end-to-end, grounded in technical rigor and instructional design.</p>
-        <p>I built an AI content-generation system in n8n (since evolved into a proper product) that produces single lessons, multi-lesson sets, and full multi-chapter paths, publishing straight to the platform. It's in active use today, and became the working reference our engineering team used to build the productized version.</p>
-        <p>Around it: two <strong>Agentic Course Designers</strong>, 11 interactive learning widgets, and a personalization workflow. Collectively this work has generated and updated thousands of blogs and guides, recreated courses of 280+ lessons, and cut a core generation prompt from ~11K to ~1K tokens — about 90% cheaper and more reliable.</p>
-        <p>Outside of Educative, I take on select automation projects — the same systems thinking, applied to whatever process is eating your team's time.</p>
+        <p>I'm an AI Product Architect and Technical Content Lead at Educative. I build AI-driven pipelines and agents that generate, personalize, and ship technical learning at scale, and I architect flagship System Design courses end-to-end — grounded in technical rigor and instructional design.</p>
+        <p>The core of that work is an AI content-generation system I built in n8n, since evolved into a proper internal product. It produces single lessons, multi-lesson sets, and full multi-chapter learning paths, publishing straight to the platform — in active use today, and it became the reference implementation engineering used to build the productized version. Around it: two Agentic Course Designers, 11 interactive learning widgets, and a personalization workflow. Collectively this has generated and updated thousands of blogs and guides, recreated courses of 280+ lessons, and cut a core generation prompt from ~11K to ~1K tokens.</p>
+        <p>Outside of Educative, I take on select freelance automation projects — the same systems thinking, applied to whatever process is eating your team's time. I map the process first, then automate, so nothing gets built that doesn't need to exist.</p>
         <ul class="howwork">
           <li>Map the process first, then automate — no wasted effort</li>
           <li>Clear communication, no surprises</li>
           <li>Clean, well-documented workflows you actually own</li>
           <li>Regular progress updates, fast turnaround on revisions</li>
         </ul>
+        <div class="stat-row">
+          <div class="stat"><span class="num">7</span><span class="lbl">System Design courses authored</span></div>
+          <div class="stat"><span class="num">~90%</span><span class="lbl">cheaper, more reliable content generation</span></div>
+          <div class="stat"><span class="num">280+</span><span class="lbl">lesson course rebuilt end-to-end</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -348,33 +336,45 @@
 <section id="build">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">— What I Build</div>
-      <h2>Four kinds of systems, one goal: get manual work off your plate.</h2>
+      <div class="kicker">What I Build</div>
+      <h2>Five ways I get manual work off your plate.</h2>
+      <p>From routing a lead to running a full AI agent — and making sure it's fast, cheap, and usable once it's live.</p>
     </div>
-    <div class="cap-grid">
-      <div class="cap-card">
-        <span class="cap-n">01</span>
-        <h3>Workflow Automation</h3>
-        <p>Lead qualification &amp; routing, CRM updates, invoice and document processing, approvals, scheduled syncs, and reporting that sends itself.</p>
-        <div class="stack"><span>n8n</span><span>Make</span><span>Zapier</span><span>GoHighLevel</span></div>
+    <div class="cap-list">
+      <div class="cap-row">
+        <div class="cap-head"><span class="cap-num">01</span><h3>Workflow Automation</h3></div>
+        <div class="cap-body">
+          <p>Lead qualification &amp; routing, CRM updates, invoice and document processing, approvals, scheduled syncs, and reporting that sends itself.</p>
+          <div class="tags"><span>n8n</span><span>Make</span><span>Zapier</span><span>GoHighLevel</span><span>Flowise</span><span>Dify</span></div>
+        </div>
       </div>
-      <div class="cap-card">
-        <span class="cap-n">02</span>
-        <h3>AI Agents &amp; MCP</h3>
-        <p>Agents that research, triage, draft, and follow up — wired into your CRM and internal tools. Custom MCP servers connecting Claude directly to the systems you already run on.</p>
-        <div class="stack"><span>LangChain</span><span>LangGraph</span><span>MCP</span><span>Claude / OpenAI</span></div>
+      <div class="cap-row">
+        <div class="cap-head"><span class="cap-num">02</span><h3>AI Agents &amp; MCP</h3></div>
+        <div class="cap-body">
+          <p>Agents that research, triage, draft, and follow up — wired into your CRM and internal tools. Custom MCP servers connecting Claude directly to the systems you already run on.</p>
+          <div class="tags"><span>LangChain</span><span>LangGraph</span><span>MCP</span><span>Claude / OpenAI</span></div>
+        </div>
       </div>
-      <div class="cap-card">
-        <span class="cap-n">03</span>
-        <h3>RAG &amp; Knowledge Systems</h3>
-        <p>Internal assistants that answer from your own documents, with sources attached and retrieval you can actually trust.</p>
-        <div class="stack"><span>RAG</span><span>Vector Search</span><span>Python</span><span>FastAPI</span></div>
+      <div class="cap-row">
+        <div class="cap-head"><span class="cap-num">03</span><h3>RAG &amp; Knowledge Systems</h3></div>
+        <div class="cap-body">
+          <p>Internal assistants that answer from your own documents, with sources attached and retrieval you can actually trust.</p>
+          <div class="tags"><span>RAG</span><span>Vector Search</span><span>Python</span><span>FastAPI</span></div>
+        </div>
       </div>
-      <div class="cap-card">
-        <span class="cap-n">04</span>
-        <h3>Fixing AI Builds That Broke</h3>
-        <p>Half-finished agents, and Lovable or Replit prototypes that demo well and have no error handling. I make them production-safe.</p>
-        <div class="stack"><span>Error Handling</span><span>Testing</span><span>Observability</span></div>
+      <div class="cap-row">
+        <div class="cap-head"><span class="cap-num">04</span><h3>Fixing Broken AI Builds</h3></div>
+        <div class="cap-body">
+          <p>Half-finished agents, and Lovable or Replit prototypes that demo well and have no error handling underneath. I make them production-safe.</p>
+          <div class="tags"><span>Error Handling</span><span>Testing</span><span>Observability</span></div>
+        </div>
+      </div>
+      <div class="cap-row featured">
+        <div class="cap-head"><span class="cap-num">05</span><h3>Optimization &amp; Productization</h3></div>
+        <div class="cap-body">
+          <p>Automating the process is half the job. I take it further — trimming token usage and routing to the right model so agents run faster and cheaper, then, when it's worth it, wrapping the whole thing in a real application with a UI instead of leaving it as a backend trigger only you can run. I cut one production prompt at Educative from ~11K to ~1K tokens (~90% cheaper, more reliable), and turned an internal automation into a full Next.js app my team uses daily.</p>
+          <div class="tags"><span>Prompt Optimization</span><span>Model Routing</span><span>Caching</span><span>Next.js</span><span>TypeScript</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -383,17 +383,20 @@
 <section id="projects">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">— Selected Work</div>
+      <div class="kicker">Selected Work</div>
       <h2>A few systems I've designed and shipped.</h2>
-      <p>Real workflow canvases and product screenshots — click any image to view it full size.</p>
+      <p>Real workflow canvases and product screenshots. Click any image to see it larger.</p>
     </div>
 
     <div class="proj-list" id="projList">
 
       <div class="proj reveal">
         <div class="proj-visual">
-          <div class="win-bar"><span></span><span></span><span></span><span class="path">core-engine.n8n</span></div>
-          <a href="assets/core-engine.png" target="_blank" rel="noopener"><img src="assets/core-engine.png" alt="AI content-generation system workflow in n8n" loading="lazy"></a>
+          <div class="shot dark">
+            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">core-engine.n8n</span></div>
+            <img class="zoomable" src="assets/core-engine-crop.png" data-full="assets/core-engine.png" data-cap="AI Content-Generation System — one of four labeled workflow groups (course data intake, mobile card generation, auto-upload, outline-only variant) in the full n8n canvas." alt="Cropped view of the AI content-generation system workflow in n8n, showing the mobile card generator node group" loading="lazy">
+          </div>
+          <div class="shot-cap"><p>One of four workflow groups in the full canvas — course intake, card generation, auto-publish, and an outline-only variant.</p><span class="zoom">Full canvas ↗</span></div>
         </div>
         <div class="proj-body">
           <span class="proj-idx">Flagship project</span>
@@ -403,28 +406,34 @@
             <p><b class="lbl">Approach</b>Architected an end-to-end n8n pipeline connecting the CMS, prompt chains, and multiple LLMs to generate and publish content directly.</p>
             <p class="result"><b class="lbl">Result</b>In active use generating real content today — became the reference our engineering team used to build the productized version.</p>
           </div>
-          <div class="stack"><span>n8n</span><span>LangChain</span><span>Claude / Bedrock</span><span>REST APIs</span></div>
+          <div class="tags"><span>n8n</span><span>LangChain</span><span>Claude / Bedrock</span><span>REST APIs</span></div>
         </div>
       </div>
 
-      <div class="proj reveal" data-flow="Course,Content Agent,Format Agent,Widgets,CMS">
-        <div class="proj-visual"><div class="win-bar"><span></span><span></span><span></span><span class="path">microlearning</span></div></div>
+      <div class="proj reveal">
+        <div class="proj-visual stat-block">
+          <span class="num">70%</span>
+          <span class="lbl">less production time — dense technical courses reformatted into mobile-first microlearning, automatically.</span>
+        </div>
         <div class="proj-body">
           <span class="proj-idx">−70% production time</span>
           <h3>Agentic Content Pipeline</h3>
           <div class="case">
-            <p><b class="lbl">Problem</b>Dense, desktop-first technical courses don't translate to bite-sized mobile learning.</p>
+            <p><b class="lbl">Problem</b>Dense, desktop-first technical courses don't translate to bite-sized mobile learning on their own.</p>
             <p><b class="lbl">Approach</b>A multi-agent workflow that reformats content, generates interactive elements, and republishes it, mobile-first.</p>
             <p class="result"><b class="lbl">Result</b>Cut production time by over 70%.</p>
           </div>
-          <div class="stack"><span>n8n</span><span>LangChain</span><span>Claude</span><span>Multi-LLM</span></div>
+          <div class="tags"><span>n8n</span><span>LangChain</span><span>Claude</span><span>Multi-LLM</span></div>
         </div>
       </div>
 
       <div class="proj reveal">
         <div class="proj-visual">
-          <div class="win-bar"><span></span><span></span><span></span><span class="path">persona-blogs.n8n</span></div>
-          <a href="assets/persona-blogs-pipeline.png" target="_blank" rel="noopener"><img src="assets/persona-blogs-pipeline.png" alt="Autonomous multi-agent persona blog pipeline in n8n" loading="lazy"></a>
+          <div class="shot dark">
+            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">persona-blogs.n8n</span></div>
+            <img class="zoomable" src="assets/persona-blogs-pipeline-crop.png" data-full="assets/persona-blogs-pipeline.png" data-cap="Multi-Agent Content Engine — a cropped region showing several of the pipeline's coordinated agent groups: outlining, drafting, diagrams, code, tables, SEO review, and proofreading." alt="Cropped view of the multi-agent persona blog pipeline in n8n, showing labeled agent groups for outlining, drafting, and SEO review" loading="lazy">
+          </div>
+          <div class="shot-cap"><p>A slice of the pipeline — research, drafting, diagram generation, SEO review, and proofreading agents, chained together.</p><span class="zoom">Full canvas ↗</span></div>
         </div>
         <div class="proj-body">
           <span class="proj-idx">Autonomous pipeline</span>
@@ -434,14 +443,17 @@
             <p><b class="lbl">Approach</b>Triggered by a form: live web research, persona-voiced writing, auto-generated D2 diagrams &amp; Chart.js visuals, then an AI editorial/SEO reviewer before publishing via API.</p>
             <p class="result"><b class="lbl">Result</b>Zero manual handoffs from brief to published article.</p>
           </div>
-          <div class="stack"><span>n8n</span><span>Claude Opus/Sonnet</span><span>OpenAI</span></div>
+          <div class="tags"><span>n8n</span><span>Claude Opus/Sonnet</span><span>OpenAI</span></div>
         </div>
       </div>
 
       <div class="proj reveal">
         <div class="proj-visual">
-          <div class="win-bar"><span></span><span></span><span></span><span class="path">course-designer.n8n</span></div>
-          <a href="assets/course-designer.png" target="_blank" rel="noopener"><img src="assets/course-designer.png" alt="Agentic Course Designer multi-agent workflow in n8n" loading="lazy"></a>
+          <div class="shot dark">
+            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">course-designer.n8n</span></div>
+            <img class="zoomable" src="assets/course-designer-crop.png" data-full="assets/course-designer.png" data-cap="Agentic Course Designer — the planning-to-publishing chain: gate agent, research merge, study planner, outline generator, text generator, and formatting agents." alt="Cropped view of the agentic course designer workflow in n8n, showing the planner-to-publisher agent chain" loading="lazy">
+          </div>
+          <div class="shot-cap"><p>The planner-to-publisher chain: research merge, study planner, outline and text generator agents, then formatting.</p><span class="zoom">Full canvas ↗</span></div>
         </div>
         <div class="proj-body">
           <span class="proj-idx">−90% production time</span>
@@ -451,14 +463,17 @@
             <p><b class="lbl">Approach</b>A modular multi-agent system (planner, writer agents, assembler) integrated into the internal CMS via custom Python/JS.</p>
             <p class="result"><b class="lbl">Result</b>Cut content production time by over 90%.</p>
           </div>
-          <div class="stack"><span>n8n</span><span>LangChain</span><span>Python</span><span>JavaScript</span></div>
+          <div class="tags"><span>n8n</span><span>LangChain</span><span>Python</span><span>JavaScript</span></div>
         </div>
       </div>
 
       <div class="proj reveal">
         <div class="proj-visual">
-          <div class="win-bar"><span></span><span></span><span></span><span class="path">persona-blogs.app</span></div>
-          <a href="assets/persona-blogs-app.png" target="_blank" rel="noopener"><img src="assets/persona-blogs-app.png" alt="Persona Blogs Next.js content platform interface" loading="lazy"></a>
+          <div class="shot light">
+            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">persona-blogs.app</span></div>
+            <img class="zoomable" src="assets/persona-blogs-app.png" data-full="assets/persona-blogs-app.png" data-cap="Persona Blogs — the productized version of the persona blog automation, built as a full Next.js application." alt="Persona Blogs Next.js content platform interface" loading="lazy">
+          </div>
+          <div class="shot-cap"><p>Internally called Persona Blogs — the automation, productized into a real app.</p><span class="zoom">Enlarge ↗</span></div>
         </div>
         <div class="proj-body">
           <span class="proj-idx">Full-stack platform</span>
@@ -468,34 +483,40 @@
             <p><b class="lbl">Approach</b>Full-stack build on Next.js 14 + LangChain across Claude (Bedrock) and GPT-4o, with direct CMS publishing via API.</p>
             <p class="result"><b class="lbl">Result</b>A production tool the team uses today.</p>
           </div>
-          <div class="stack"><span>Next.js 14</span><span>TypeScript</span><span>Tailwind</span><span>Chart.js</span></div>
+          <div class="tags"><span>Next.js 14</span><span>TypeScript</span><span>Tailwind</span><span>Chart.js</span></div>
         </div>
       </div>
 
       <div class="proj reveal">
         <div class="proj-visual">
-          <div class="win-bar"><span></span><span></span><span></span><span class="path">fenzo.ai</span></div>
-          <a href="assets/fenzo.png" target="_blank" rel="noopener"><img src="assets/fenzo.png" alt="Fenzo homepage" loading="lazy"></a>
+          <div class="shot light">
+            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">fenzo.ai</span></div>
+            <img class="zoomable" src="assets/fenzo.png" data-full="assets/fenzo.png" data-cap="Fenzo — an AI-native learning platform." alt="Fenzo homepage" loading="lazy">
+          </div>
+          <div class="shot-cap"><p>An AI-native learning platform, architected from the ground up.</p><span class="zoom">Enlarge ↗</span></div>
         </div>
         <div class="proj-body">
           <span class="proj-idx">Core team member</span>
           <h3>Fenzo</h3>
-          <p style="color:var(--ink-dim);font-size:0.93rem;margin-bottom:16px;max-width:520px;">Core team member who helped architect Fenzo, an AI-native learning platform, from the ground up.</p>
-          <div class="stack"><span>Product Architecture</span><span>AI Systems</span></div>
+          <p class="plain">Core team member who helped architect Fenzo, an AI-native learning platform, from the ground up.</p>
+          <div class="tags"><span>Product Architecture</span><span>AI Systems</span></div>
           <a class="proj-link" href="https://fenzo.ai/about" target="_blank" rel="noopener">Visit fenzo.ai →</a>
         </div>
       </div>
 
       <div class="proj reveal">
         <div class="proj-visual">
-          <div class="win-bar"><span></span><span></span><span></span><span class="path">educative.io/courses</span></div>
-          <a href="assets/educative-course.jpg" target="_blank" rel="noopener"><img src="assets/educative-course.jpg" alt="Grokking Modern System Design Interview course page on Educative" loading="lazy"></a>
+          <div class="shot light">
+            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">educative.io/courses</span></div>
+            <img class="zoomable" src="assets/educative-course.jpg" data-full="assets/educative-course.jpg" data-cap="Grokking Modern System Design Interview — one of seven courses authored or co-authored." alt="Grokking Modern System Design Interview course page on Educative" loading="lazy">
+          </div>
+          <div class="shot-cap"><p>Grokking Modern System Design Interview — one of seven courses authored.</p><span class="zoom">Enlarge ↗</span></div>
         </div>
         <div class="proj-body">
           <span class="proj-idx">7× author</span>
           <h3>System Design Courses @ Educative</h3>
-          <p style="color:var(--ink-dim);font-size:0.93rem;margin-bottom:16px;max-width:520px;">Co-authored and independently architected flagship System Design courses used by engineers worldwide — including Grokking the System Design Interview.</p>
-          <div class="stack"><span>Instructional Design</span><span>System Design</span></div>
+          <p class="plain">Co-authored and independently architected flagship System Design courses used by engineers worldwide — including Grokking the System Design Interview.</p>
+          <div class="tags"><span>Instructional Design</span><span>System Design</span></div>
           <a class="proj-link" href="https://www.educative.io/courses/grokking-the-system-design-interview" target="_blank" rel="noopener">View course →</a>
         </div>
       </div>
@@ -507,7 +528,7 @@
 <section id="experience">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">— Experience</div>
+      <div class="kicker">Experience</div>
       <h2>Three years at Educative, from technical writing to AI systems.</h2>
     </div>
 
@@ -548,36 +569,36 @@
   </div>
 </section>
 
-<section id="skills">
+<section id="stack">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">— Stack</div>
-      <h2>Tools &amp; industries.</h2>
+      <div class="kicker">Tools &amp; Industries</div>
+      <h2>What I build with, and who I build it for.</h2>
     </div>
-    <div class="skills-cols">
-      <div class="skill-cat">
-        <h4>Automation</h4>
-        <div class="tags"><span>n8n</span><span>Make</span><span>Zapier</span><span>GoHighLevel</span></div>
+    <div class="stack-list">
+      <div class="stack-row">
+        <div class="cat">Automation</div>
+        <div class="items">n8n, Make, Zapier, GoHighLevel, Flowise, Dify</div>
       </div>
-      <div class="skill-cat">
-        <h4>AI &amp; Agents</h4>
-        <div class="tags"><span>LangChain / LangGraph</span><span>Claude / AWS Bedrock</span><span>OpenAI API</span><span>RAG</span><span>MCP</span></div>
+      <div class="stack-row">
+        <div class="cat">AI &amp; Agents</div>
+        <div class="items">LangChain, LangGraph, Claude / AWS Bedrock, OpenAI API, RAG, MCP</div>
       </div>
-      <div class="skill-cat">
-        <h4>Code</h4>
-        <div class="tags"><span>Python</span><span>TypeScript / JS</span><span>FastAPI</span><span>Next.js</span></div>
+      <div class="stack-row">
+        <div class="cat">Code</div>
+        <div class="items">Python, TypeScript / JavaScript, FastAPI, Next.js</div>
       </div>
-      <div class="skill-cat">
-        <h4>Data</h4>
-        <div class="tags"><span>PostgreSQL</span><span>MySQL</span><span>Airtable</span><span>Google Sheets</span></div>
+      <div class="stack-row">
+        <div class="cat">Data</div>
+        <div class="items">PostgreSQL, MySQL, Airtable, Google Sheets</div>
       </div>
-      <div class="skill-cat">
-        <h4>Cloud &amp; Infra</h4>
-        <div class="tags"><span>AWS</span><span>Docker</span></div>
+      <div class="stack-row">
+        <div class="cat">Cloud &amp; Infra</div>
+        <div class="items">AWS, Docker</div>
       </div>
-      <div class="skill-cat">
-        <h4>Other</h4>
-        <div class="tags"><span>Selenium</span><span>Twilio / Vapi</span><span>Webhooks</span></div>
+      <div class="stack-row">
+        <div class="cat">Other</div>
+        <div class="items">Selenium, BeautifulSoup, Twilio, Vapi, Chrome extension dev</div>
       </div>
     </div>
     <div class="industries">
@@ -595,11 +616,16 @@
   </div>
 </section>
 
-<section id="contact">
+<section class="contact-band" id="contact">
   <div class="wrap">
-    <div class="kicker">— Contact</div>
+    <div class="kicker" style="color:var(--cream-dim);">Contact</div>
     <h2 class="contact-big">Get a free automation audit.</h2>
     <p class="contact-sub">Tell me about the process eating your team's time and I'll send back a free walkthrough of how I'd automate it — no strings attached. If automation isn't the right answer, I'll say so instead.</p>
+    <div class="contact-marks">
+      <span><b>Free walkthrough</b> before you commit</span>
+      <span><b>Fix guarantee</b> on delivered work</span>
+      <span><b>Rising Talent</b> on Upwork</span>
+    </div>
     <div class="contact-details">
       <div class="contact-text">
         <a href="mailto:yasirshahji1116@outlook.com">yasirshahji1116@outlook.com</a>
@@ -620,7 +646,7 @@
   </div>
 </section>
 
-<footer>
+<footer class="site-foot">
   <div class="wrap">
     <span>© <span id="year"></span> M. Yasir Shah</span>
     <span>Islamabad, Pakistan</span>
@@ -630,6 +656,12 @@
 <a href="https://wa.me/923440066123" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.03 4C7.6 4 4 7.6 4 12.03c0 1.44.38 2.83 1.09 4.06L4 20l4.02-1.05a8.9 8.9 0 0 0 4 1.02h.01c4.43 0 8.03-3.6 8.03-8.03 0-2.15-.84-4.16-2.46-5.62zM12.03 18.4h-.01a7.4 7.4 0 0 1-3.77-1.03l-.27-.16-2.8.73.75-2.73-.18-.28a7.36 7.36 0 0 1-1.13-3.9c0-4.07 3.31-7.38 7.4-7.38 1.98 0 3.84.77 5.24 2.17a7.35 7.35 0 0 1 2.17 5.23c0 4.07-3.32 7.35-7.4 7.35zm4.05-5.5c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.1-.66-.59-1.11-1.31-1.24-1.53-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.78.76-.78 1.85 0 1.09.8 2.14.91 2.29.11.15 1.57 2.4 3.8 3.36.53.23.95.37 1.27.47.53.17 1.02.15 1.4.09.43-.06 1.3-.53 1.48-1.04.18-.51.18-.94.13-1.03-.05-.09-.2-.15-.42-.26z"/></svg>
 </a>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <p class="lightbox-cap" id="lightboxCap"></p>
+</div>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -644,51 +676,32 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  function drawFlow(container, labels, opts) {
-    const w = 640, h = opts.h || 220;
-    const pad = 60;
-    const n = labels.length;
-    const step = (w - pad * 2) / (n - 1);
-    const midY = h / 2;
-    const amp = opts.amp || 34;
-    const pts = labels.map((label, i) => {
-      const x = pad + step * i;
-      const y = midY + (i % 2 === 0 ? -amp : amp) * (n > 2 ? 1 : 0);
-      return { x, y, label };
-    });
-    let svg = `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">`;
-    svg += `<rect width="${w}" height="${h}" fill="#0e0e10"/>`;
-    for (let gx = 20; gx < w; gx += 24) {
-      for (let gy = 20; gy < h; gy += 24) {
-        svg += `<circle cx="${gx}" cy="${gy}" r="0.6" fill="#232326"/>`;
-      }
-    }
-    for (let i = 0; i < pts.length - 1; i++) {
-      const a = pts[i], b = pts[i + 1];
-      const mx = (a.x + b.x) / 2;
-      svg += `<path d="M${a.x},${a.y} C${mx},${a.y} ${mx},${b.y} ${b.x},${b.y}" stroke="#ff4d1c" stroke-width="1.4" fill="none" opacity="0.8"/>`;
-    }
-    pts.forEach((p, i) => {
-      const isEdge = i === 0 || i === pts.length - 1;
-      svg += `<circle cx="${p.x}" cy="${p.y}" r="5" fill="${isEdge ? '#ff4d1c' : '#0e0e10'}" stroke="#ff4d1c" stroke-width="1.6"/>`;
-      const textW = p.label.length * 6.4 + 16;
-      const ty = p.y > midY ? p.y + 22 : p.y - 30;
-      svg += `<rect x="${p.x - textW/2}" y="${ty}" width="${textW}" height="20" fill="#17171a" stroke="#2a2a2d"/>`;
-      svg += `<text x="${p.x}" y="${ty + 14}" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#d8d6cf">${p.label}</text>`;
-    });
-    svg += `</svg>`;
-    container.innerHTML = svg;
-  }
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCap = document.getElementById('lightboxCap');
+  const lightboxClose = document.getElementById('lightboxClose');
 
-  document.querySelectorAll('.proj').forEach(proj => {
-    const flow = proj.dataset.flow;
-    if (!flow) return;
-    const labels = flow.split(',');
-    const visual = proj.querySelector('.proj-visual');
-    const canvas = document.createElement('div');
-    visual.appendChild(canvas);
-    drawFlow(canvas, labels, { h: 220, amp: 32 });
+  function openLightbox(img){
+    const full = img.dataset.full || img.src;
+    lightboxImg.src = full;
+    lightboxImg.alt = img.alt || '';
+    const cap = img.dataset.cap || '';
+    lightboxCap.innerHTML = cap ? (cap + ' <a href="' + full + '" target="_blank" rel="noopener">Open full-resolution ↗</a>') : '<a href="' + full + '" target="_blank" rel="noopener">Open full-resolution ↗</a>';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImg.src = '';
+  }
+  document.querySelectorAll('.zoomable').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img));
   });
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
