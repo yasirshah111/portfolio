@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>M. Yasir Shah — AI Products Architect</title>
-<meta name="description" content="Portfolio of M. Yasir Shah — AI Products Architect building scalable content systems. 7x author of System Design courses at Educative.">
+<meta name="description" content="M. Yasir Shah — AI Products Architect building scalable content systems and automation for businesses. 7x author of System Design courses at Educative.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23111111%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 text-anchor=%22middle%22 fill=%22%23ff4d1c%22 font-family=%22monospace%22>Y</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,8 +34,8 @@
   img{max-width:100%;display:block;}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
   @media (max-width:640px){ .wrap{padding:0 20px;} }
-  section{padding:104px 0;border-bottom:1px solid var(--line);}
-  @media (max-width:640px){ section{padding:64px 0;} }
+  section{padding:100px 0;border-bottom:1px solid var(--line);}
+  @media (max-width:640px){ section{padding:60px 0;} }
 
   h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.01em;color:var(--ink);}
   .mono{font-family:'JetBrains Mono',monospace;}
@@ -44,9 +44,9 @@
     font-family:'JetBrains Mono',monospace;font-size:0.78rem;font-weight:500;letter-spacing:0.04em;
     color:var(--ink-dim);text-transform:uppercase;margin-bottom:16px;
   }
-  .section-head{margin-bottom:48px;}
+  .section-head{margin-bottom:44px;}
   .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);max-width:640px;margin-bottom:10px;}
-  .section-head p{color:var(--ink-dim);max-width:440px;font-size:0.96rem;}
+  .section-head p{color:var(--ink-dim);max-width:460px;font-size:0.96rem;}
 
   .btn{
     display:inline-flex;align-items:center;gap:10px;
@@ -80,14 +80,14 @@
   header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
   .logo{font-family:'Space Grotesk',sans-serif;font-size:1.02rem;font-weight:600;}
   .logo .p{color:var(--accent);}
-  nav.links{display:flex;gap:30px;align-items:center;}
-  nav.links a{font-size:0.88rem;font-weight:500;color:var(--ink-dim);font-family:'Space Grotesk',sans-serif;}
+  nav.links{display:flex;gap:26px;align-items:center;}
+  nav.links a{font-size:0.86rem;font-weight:500;color:var(--ink-dim);font-family:'Space Grotesk',sans-serif;}
   nav.links a:hover{color:var(--ink);}
   .nav-actions{display:flex;align-items:center;gap:16px;}
   .nav-actions .btn{padding:9px 18px;font-size:0.85rem;}
   .menu-toggle{display:none;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--ink);font-family:monospace;}
 
-  @media (max-width:840px){
+  @media (max-width:900px){
     nav.links{
       position:fixed;top:64px;left:0;right:0;bottom:0;
       background:var(--paper);
@@ -102,19 +102,28 @@
   }
 
   /* HERO */
-  .hero{padding-top:80px;padding-bottom:88px;}
+  .hero{padding-top:76px;padding-bottom:0;border-bottom:none;}
   .hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:var(--accent);margin-bottom:18px;}
   .hero h1{font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.06;letter-spacing:-0.02em;margin-bottom:18px;}
   .hero-role{
     font-family:'Space Grotesk',sans-serif;font-size:clamp(1.02rem,2vw,1.25rem);font-weight:500;
-    color:var(--ink);max-width:660px;margin-bottom:22px;
+    color:var(--ink);max-width:680px;margin-bottom:22px;
   }
   .hero-role .sep{color:var(--accent);margin:0 10px;}
-  .hero p.lead{color:var(--ink-dim);font-size:1.03rem;max-width:560px;margin-bottom:34px;}
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
-  .hero-facts{font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:var(--ink-dim);}
+  .hero p.lead{color:var(--ink-dim);font-size:1.03rem;max-width:580px;margin-bottom:30px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px;}
+  .hero-facts{font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:var(--ink-dim);margin-bottom:56px;}
   .hero-facts b{color:var(--ink);font-weight:600;}
   .hero-facts .dot{color:var(--accent);margin:0 10px;}
+
+  /* TRUST BAR */
+  .trust-bar{background:var(--ink);border-bottom:1px solid var(--line);}
+  .trust-bar .wrap{padding:0;max-width:var(--max);}
+  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.12);}
+  @media (max-width:760px){ .trust-grid{grid-template-columns:1fr;} }
+  .trust-item{background:var(--ink);padding:36px 32px;}
+  .trust-item h4{color:#fff;font-size:1.02rem;margin-bottom:10px;}
+  .trust-item p{color:#a9a69d;font-size:0.87rem;}
 
   /* ABOUT */
   .about-grid{display:grid;grid-template-columns:0.95fr 1.05fr;gap:64px;}
@@ -123,11 +132,24 @@
   .about-lead .accent{color:var(--accent);}
   .about-body p{color:var(--ink-dim);margin-bottom:18px;font-size:0.98rem;}
   .about-body strong{color:var(--ink);font-weight:600;}
+  .howwork{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:10px;}
+  .howwork li{font-size:0.9rem;color:var(--ink-dim);display:flex;gap:10px;}
+  .howwork li::before{content:"✓";color:var(--accent);font-weight:700;flex:none;}
   .pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:28px;}
   @media (max-width:520px){ .pillars{grid-template-columns:1fr;} }
   .pillar{background:var(--paper);padding:20px;}
   .pillar h4{font-size:0.96rem;margin-bottom:6px;font-weight:600;}
   .pillar p{font-size:0.85rem;color:var(--ink-dim);}
+
+  /* CAPABILITIES ("What I Build") */
+  .cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media (max-width:760px){ .cap-grid{grid-template-columns:1fr;} }
+  .cap-card{background:var(--paper);padding:32px;}
+  .cap-card .cap-n{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:0.78rem;display:block;margin-bottom:14px;}
+  .cap-card h3{font-size:1.15rem;margin-bottom:10px;}
+  .cap-card p{color:var(--ink-dim);font-size:0.93rem;margin-bottom:16px;}
+  .cap-card .stack span{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--ink-dim);border:1px solid var(--line);padding:4px 9px;}
+  .cap-card .stack{display:flex;flex-wrap:wrap;gap:7px;}
 
   /* EXPERIENCE */
   .xp-row{display:grid;grid-template-columns:190px 1fr;gap:32px;padding:32px 0;border-top:1px solid var(--line);}
@@ -155,14 +177,18 @@
   .proj-visual a{display:block;}
 
   .proj-idx{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:0.82rem;margin-bottom:8px;display:block;}
-  .proj-body h3{font-size:1.4rem;margin-bottom:12px;}
-  .proj-body p{color:var(--ink-dim);font-size:0.96rem;margin-bottom:16px;max-width:520px;}
+  .proj-body h3{font-size:1.4rem;margin-bottom:14px;}
+  .case{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+  .case p{font-size:0.93rem;color:var(--ink-dim);max-width:520px;margin:0;}
+  .case p b.lbl{font-family:'JetBrains Mono',monospace;font-size:0.68rem;text-transform:uppercase;color:var(--ink);letter-spacing:.03em;margin-right:8px;}
+  .case p.result{color:var(--ink);font-weight:500;}
+  .case p.result b.lbl{color:var(--accent);}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
   .stack span{font-family:'JetBrains Mono',monospace;font-size:0.73rem;color:var(--ink-dim);border:1px solid var(--line);padding:5px 10px;}
   .proj-link{font-size:0.9rem;font-weight:600;font-family:'Space Grotesk',sans-serif;color:var(--ink);border-bottom:1.5px solid var(--accent);padding-bottom:2px;display:inline-flex;}
   .proj-link:hover{color:var(--accent);}
 
-  /* SKILLS */
+  /* STACK / SKILLS */
   .skills-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
   @media (max-width:760px){ .skills-cols{grid-template-columns:1fr 1fr;} }
   @media (max-width:480px){ .skills-cols{grid-template-columns:1fr;} }
@@ -171,12 +197,21 @@
   .skill-cat .tags{display:flex;flex-direction:column;gap:8px;}
   .skill-cat .tags span{font-family:'Space Grotesk',sans-serif;font-size:0.96rem;font-weight:500;}
 
+  .industries{margin-top:44px;}
+  .industries h4{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:0.78rem;color:var(--ink-dim);margin-bottom:16px;text-transform:uppercase;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip-row span{
+    font-family:'Space Grotesk',sans-serif;font-size:0.88rem;font-weight:500;
+    border:1px solid var(--line);padding:8px 16px;border-radius:999px;color:var(--ink);
+  }
+
   /* CONTACT */
   #contact{border-bottom:none;}
   .contact-big{
-    font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,4.4vw,2.6rem);line-height:1.2;
-    letter-spacing:-0.01em;margin-bottom:36px;max-width:20ch;
+    font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,4.2vw,2.5rem);line-height:1.2;
+    letter-spacing:-0.01em;margin-bottom:14px;max-width:20ch;
   }
+  .contact-sub{color:var(--ink-dim);max-width:540px;margin-bottom:36px;font-size:0.98rem;}
   .contact-details{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:28px;}
   .contact-text{display:flex;flex-direction:column;gap:8px;font-family:'JetBrains Mono',monospace;font-size:0.92rem;color:var(--ink-dim);}
   .contact-text a:hover{color:var(--ink);}
@@ -205,13 +240,14 @@
     <a href="#top" class="logo">M. Yasir<span class="p">.</span></a>
     <nav class="links" id="navLinks">
       <a href="#about">About</a>
-      <a href="#experience">Experience</a>
+      <a href="#build">What I Build</a>
       <a href="#projects">Work</a>
-      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Stack</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions">
-      <a href="#contact" class="btn btn-line">Get in touch</a>
+      <a href="#contact" class="btn btn-line">Free Audit</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">[ menu ]</button>
     </div>
   </div>
@@ -222,11 +258,11 @@
     <div class="hero-eyebrow">Hello, I'm</div>
     <h1>M. Yasir Shah</h1>
     <div class="hero-role">AI Products Architect<span class="sep">•</span>Building Scalable Content Systems<span class="sep">•</span>7× Author of System Design Courses @ Educative</div>
-    <p class="lead">I turn content production into engineered systems — AI agents and pipelines that generate, personalize, and publish technical learning at scale — while authoring flagship courses used by engineers worldwide.</p>
+    <p class="lead">I design AI agents and automations that take manual, repetitive work off your plate — the same caliber of systems I use at Educative to run content generation at a scale of thousands of lessons and guides.</p>
 
     <div class="hero-actions">
-      <a href="#projects" class="btn btn-solid">View My Work</a>
-      <a href="#contact" class="btn btn-line">Say Hello</a>
+      <a href="#contact" class="btn btn-solid">Get a Free Automation Audit</a>
+      <a href="#projects" class="btn btn-line">View My Work</a>
     </div>
 
     <div class="social-icons" style="margin-bottom:36px;">
@@ -250,6 +286,25 @@
   </div>
 </section>
 
+<div class="trust-bar">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <h4>Free process walkthrough</h4>
+        <p>Send me your process and I'll send back a free walkthrough of how I'd automate it — before you commit to anything. If automation is the wrong call, I'll tell you that instead.</p>
+      </div>
+      <div class="trust-item">
+        <h4>Fix guarantee</h4>
+        <p>If a system doesn't perform as agreed, I fix it at no charge. Clean, documented workflows you actually own — not a black box.</p>
+      </div>
+      <div class="trust-item">
+        <h4>Rising Talent · Upwork</h4>
+        <p>Vetted automation specialist working across SaaS, e-commerce, finance, healthcare, and EdTech.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section id="about">
   <div class="wrap">
     <div class="kicker">— About</div>
@@ -261,13 +316,170 @@
         <p>I'm an AI Product Architect and Technical Content Lead at Educative. I build AI-driven pipelines and agents that generate, personalize, and ship technical learning at scale — and I architect flagship System Design courses end-to-end, grounded in technical rigor and instructional design.</p>
         <p>I built an AI content-generation system in n8n (since evolved into a proper product) that produces single lessons, multi-lesson sets, and full multi-chapter paths, publishing straight to the platform. It's in active use today, and became the working reference our engineering team used to build the productized version.</p>
         <p>Around it: two <strong>Agentic Course Designers</strong>, 11 interactive learning widgets, and a personalization workflow. Collectively this work has generated and updated thousands of blogs and guides, recreated courses of 280+ lessons, and cut a core generation prompt from ~11K to ~1K tokens — about 90% cheaper and more reliable.</p>
-        <div class="pillars">
-          <div class="pillar"><h4>AI Agent Workflows</h4><p>Course generation, blog/newsletter pipelines, persona-based content agents, microsite automation.</p></div>
-          <div class="pillar"><h4>Course Architecture</h4><p>Co-author of 7 System Design courses; 4 architected end-to-end, outline to launch.</p></div>
-          <div class="pillar"><h4>Automation for Business</h4><p>CRM automation, RAG assistants, MCP-connected agents — for SaaS, e-commerce, and EdTech teams.</p></div>
-          <div class="pillar"><h4>Leadership</h4><p>Sprint planning, task tracking, cross-team collaboration, mentoring on structure and pedagogy.</p></div>
+        <p>Outside of Educative, I take on select automation projects — the same systems thinking, applied to whatever process is eating your team's time.</p>
+        <ul class="howwork">
+          <li>Map the process first, then automate — no wasted effort</li>
+          <li>Clear communication, no surprises</li>
+          <li>Clean, well-documented workflows you actually own</li>
+          <li>Regular progress updates, fast turnaround on revisions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="build">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">— What I Build</div>
+      <h2>Four kinds of systems, one goal: get manual work off your plate.</h2>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-card">
+        <span class="cap-n">01</span>
+        <h3>Workflow Automation</h3>
+        <p>Lead qualification &amp; routing, CRM updates, invoice and document processing, approvals, scheduled syncs, and reporting that sends itself.</p>
+        <div class="stack"><span>n8n</span><span>Make</span><span>Zapier</span><span>GoHighLevel</span></div>
+      </div>
+      <div class="cap-card">
+        <span class="cap-n">02</span>
+        <h3>AI Agents &amp; MCP</h3>
+        <p>Agents that research, triage, draft, and follow up — wired into your CRM and internal tools. Custom MCP servers connecting Claude directly to the systems you already run on.</p>
+        <div class="stack"><span>LangChain</span><span>LangGraph</span><span>MCP</span><span>Claude / OpenAI</span></div>
+      </div>
+      <div class="cap-card">
+        <span class="cap-n">03</span>
+        <h3>RAG &amp; Knowledge Systems</h3>
+        <p>Internal assistants that answer from your own documents, with sources attached and retrieval you can actually trust.</p>
+        <div class="stack"><span>RAG</span><span>Vector Search</span><span>Python</span><span>FastAPI</span></div>
+      </div>
+      <div class="cap-card">
+        <span class="cap-n">04</span>
+        <h3>Fixing AI Builds That Broke</h3>
+        <p>Half-finished agents, and Lovable or Replit prototypes that demo well and have no error handling. I make them production-safe.</p>
+        <div class="stack"><span>Error Handling</span><span>Testing</span><span>Observability</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">— Selected Work</div>
+      <h2>A few systems I've designed and shipped.</h2>
+      <p>Real workflow canvases and product screenshots — click any image to view it full size.</p>
+    </div>
+
+    <div class="proj-list" id="projList">
+
+      <div class="proj reveal">
+        <div class="proj-visual">
+          <div class="win-bar"><span></span><span></span><span></span><span class="path">core-engine.n8n</span></div>
+          <a href="assets/core-engine.png" target="_blank" rel="noopener"><img src="assets/core-engine.png" alt="AI content-generation system workflow in n8n" loading="lazy"></a>
+        </div>
+        <div class="proj-body">
+          <span class="proj-idx">Flagship project</span>
+          <h3>AI Content-Generation System (n8n)</h3>
+          <div class="case">
+            <p><b class="lbl">Problem</b>Publishing single lessons, multi-lesson sets, and full multi-chapter paths meant building every page by hand.</p>
+            <p><b class="lbl">Approach</b>Architected an end-to-end n8n pipeline connecting the CMS, prompt chains, and multiple LLMs to generate and publish content directly.</p>
+            <p class="result"><b class="lbl">Result</b>In active use generating real content today — became the reference our engineering team used to build the productized version.</p>
+          </div>
+          <div class="stack"><span>n8n</span><span>LangChain</span><span>Claude / Bedrock</span><span>REST APIs</span></div>
         </div>
       </div>
+
+      <div class="proj reveal" data-flow="Course,Content Agent,Format Agent,Widgets,CMS">
+        <div class="proj-visual"><div class="win-bar"><span></span><span></span><span></span><span class="path">microlearning</span></div></div>
+        <div class="proj-body">
+          <span class="proj-idx">−70% production time</span>
+          <h3>Agentic Content Pipeline</h3>
+          <div class="case">
+            <p><b class="lbl">Problem</b>Dense, desktop-first technical courses don't translate to bite-sized mobile learning.</p>
+            <p><b class="lbl">Approach</b>A multi-agent workflow that reformats content, generates interactive elements, and republishes it, mobile-first.</p>
+            <p class="result"><b class="lbl">Result</b>Cut production time by over 70%.</p>
+          </div>
+          <div class="stack"><span>n8n</span><span>LangChain</span><span>Claude</span><span>Multi-LLM</span></div>
+        </div>
+      </div>
+
+      <div class="proj reveal">
+        <div class="proj-visual">
+          <div class="win-bar"><span></span><span></span><span></span><span class="path">persona-blogs.n8n</span></div>
+          <a href="assets/persona-blogs-pipeline.png" target="_blank" rel="noopener"><img src="assets/persona-blogs-pipeline.png" alt="Autonomous multi-agent persona blog pipeline in n8n" loading="lazy"></a>
+        </div>
+        <div class="proj-body">
+          <span class="proj-idx">Autonomous pipeline</span>
+          <h3>Multi-Agent Content Engine &amp; CMS Pipeline</h3>
+          <div class="case">
+            <p><b class="lbl">Problem</b>Persona-driven, expert-voice articles took days of research, writing, and SEO review per piece.</p>
+            <p><b class="lbl">Approach</b>Triggered by a form: live web research, persona-voiced writing, auto-generated D2 diagrams &amp; Chart.js visuals, then an AI editorial/SEO reviewer before publishing via API.</p>
+            <p class="result"><b class="lbl">Result</b>Zero manual handoffs from brief to published article.</p>
+          </div>
+          <div class="stack"><span>n8n</span><span>Claude Opus/Sonnet</span><span>OpenAI</span></div>
+        </div>
+      </div>
+
+      <div class="proj reveal">
+        <div class="proj-visual">
+          <div class="win-bar"><span></span><span></span><span></span><span class="path">course-designer.n8n</span></div>
+          <a href="assets/course-designer.png" target="_blank" rel="noopener"><img src="assets/course-designer.png" alt="Agentic Course Designer multi-agent workflow in n8n" loading="lazy"></a>
+        </div>
+        <div class="proj-body">
+          <span class="proj-idx">−90% production time</span>
+          <h3>Agentic Course Designer</h3>
+          <div class="case">
+            <p><b class="lbl">Problem</b>Designing a full course from scratch — technical or not — took weeks of planning and writing.</p>
+            <p><b class="lbl">Approach</b>A modular multi-agent system (planner, writer agents, assembler) integrated into the internal CMS via custom Python/JS.</p>
+            <p class="result"><b class="lbl">Result</b>Cut content production time by over 90%.</p>
+          </div>
+          <div class="stack"><span>n8n</span><span>LangChain</span><span>Python</span><span>JavaScript</span></div>
+        </div>
+      </div>
+
+      <div class="proj reveal">
+        <div class="proj-visual">
+          <div class="win-bar"><span></span><span></span><span></span><span class="path">persona-blogs.app</span></div>
+          <a href="assets/persona-blogs-app.png" target="_blank" rel="noopener"><img src="assets/persona-blogs-app.png" alt="Persona Blogs Next.js content platform interface" loading="lazy"></a>
+        </div>
+        <div class="proj-body">
+          <span class="proj-idx">Full-stack platform</span>
+          <h3>AI-Powered Technical Content Platform</h3>
+          <div class="case">
+            <p><b class="lbl">Problem</b>Needed a standalone tool to generate and preview rich technical content — code, images, charts — before publishing.</p>
+            <p><b class="lbl">Approach</b>Full-stack build on Next.js 14 + LangChain across Claude (Bedrock) and GPT-4o, with direct CMS publishing via API.</p>
+            <p class="result"><b class="lbl">Result</b>A production tool the team uses today.</p>
+          </div>
+          <div class="stack"><span>Next.js 14</span><span>TypeScript</span><span>Tailwind</span><span>Chart.js</span></div>
+        </div>
+      </div>
+
+      <div class="proj reveal">
+        <div class="proj-visual">
+          <div class="win-bar"><span></span><span></span><span></span><span class="path">fenzo.ai</span></div>
+          <a href="assets/fenzo.png" target="_blank" rel="noopener"><img src="assets/fenzo.png" alt="Fenzo homepage" loading="lazy"></a>
+        </div>
+        <div class="proj-body">
+          <span class="proj-idx">Core team member</span>
+          <h3>Fenzo</h3>
+          <p style="color:var(--ink-dim);font-size:0.93rem;margin-bottom:16px;max-width:520px;">Core team member who helped architect Fenzo, an AI-native learning platform, from the ground up.</p>
+          <div class="stack"><span>Product Architecture</span><span>AI Systems</span></div>
+          <a class="proj-link" href="https://fenzo.ai/about" target="_blank" rel="noopener">Visit fenzo.ai →</a>
+        </div>
+      </div>
+
+      <div class="proj reveal" data-flow="Outline,Draft,Review,Launch">
+        <div class="proj-visual"><div class="win-bar"><span></span><span></span><span></span><span class="path">educative.io/courses</span></div></div>
+        <div class="proj-body">
+          <span class="proj-idx">7× author</span>
+          <h3>System Design Courses @ Educative</h3>
+          <p style="color:var(--ink-dim);font-size:0.93rem;margin-bottom:16px;max-width:520px;">Co-authored and independently architected flagship System Design courses used by engineers worldwide — including Grokking the System Design Interview.</p>
+          <div class="stack"><span>Instructional Design</span><span>System Design</span></div>
+          <a class="proj-link" href="https://www.educative.io/courses/grokking-the-system-design-interview" target="_blank" rel="noopener">View course →</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -316,110 +528,12 @@
   </div>
 </section>
 
-<section id="projects">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">— Selected Work</div>
-      <h2>A few systems I've designed and shipped.</h2>
-      <p>Real workflow canvases and product screenshots — click any image to view it full size.</p>
-    </div>
-
-    <div class="proj-list" id="projList">
-
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="win-bar"><span></span><span></span><span></span><span class="path">core-engine.n8n</span></div>
-          <a href="assets/core-engine.png" target="_blank" rel="noopener"><img src="assets/core-engine.png" alt="AI content-generation system workflow in n8n" loading="lazy"></a>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">Flagship project</span>
-          <h3>AI Content-Generation System (n8n)</h3>
-          <p>The core engine: produces single lessons, multi-lesson sets, and full multi-chapter learning paths, then publishes them straight to the platform. In active use generating real content today — and it became the working reference our engineering team used to build the productized version.</p>
-          <div class="stack"><span>n8n</span><span>LangChain</span><span>Claude / Bedrock</span><span>REST APIs</span></div>
-        </div>
-      </div>
-
-      <div class="proj reveal" data-flow="Course,Content Agent,Format Agent,Widgets,CMS">
-        <div class="proj-visual"><div class="win-bar"><span></span><span></span><span></span><span class="path">microlearning</span></div></div>
-        <div class="proj-body">
-          <span class="proj-idx">70% faster production</span>
-          <h3>Agentic Content Pipeline</h3>
-          <p>A multi-agent workflow that transforms dense technical courses into engaging, mobile-first microlearning — handling generation, formatting, interactive elements, and CMS publishing.</p>
-          <div class="stack"><span>n8n</span><span>LangChain</span><span>Claude</span><span>Multi-LLM</span></div>
-        </div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="win-bar"><span></span><span></span><span></span><span class="path">persona-blogs.n8n</span></div>
-          <a href="assets/persona-blogs-pipeline.png" target="_blank" rel="noopener"><img src="assets/persona-blogs-pipeline.png" alt="Autonomous multi-agent persona blog pipeline in n8n" loading="lazy"></a>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">Autonomous pipeline</span>
-          <h3>Multi-Agent Content Engine &amp; CMS Pipeline</h3>
-          <p>Triggered by a simple form, this system runs live web research, writes deep technical articles in a persona's voice, generates D2 diagrams &amp; Chart.js visuals, then passes drafts through an AI editorial/SEO reviewer before publishing via API.</p>
-          <div class="stack"><span>n8n</span><span>Claude Opus/Sonnet</span><span>OpenAI</span></div>
-        </div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="win-bar"><span></span><span></span><span></span><span class="path">course-designer.n8n</span></div>
-          <a href="assets/course-designer.png" target="_blank" rel="noopener"><img src="assets/course-designer.png" alt="Agentic Course Designer multi-agent workflow in n8n" loading="lazy"></a>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">90% faster production</span>
-          <h3>Agentic Course Designer</h3>
-          <p>A modular multi-agent system where distinct AI agents collaborate to design and write complete learning paths for technical and non-technical topics — integrated into the internal CMS via custom Python/JS scripts.</p>
-          <div class="stack"><span>n8n</span><span>LangChain</span><span>Python</span><span>JavaScript</span></div>
-        </div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="win-bar"><span></span><span></span><span></span><span class="path">persona-blogs.app</span></div>
-          <a href="assets/persona-blogs-app.png" target="_blank" rel="noopener"><img src="assets/persona-blogs-app.png" alt="Persona Blogs Next.js content platform interface" loading="lazy"></a>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">Full-stack platform</span>
-          <h3>AI-Powered Technical Content Platform</h3>
-          <p>A full-stack content platform using Next.js 14 + LangChain across Claude (Bedrock) and GPT-4o — generating consumable technical content with executable code snippets, AI-generated images, and direct publishing to the CMS via API.</p>
-          <div class="stack"><span>Next.js 14</span><span>TypeScript</span><span>Tailwind</span><span>Chart.js</span></div>
-        </div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="win-bar"><span></span><span></span><span></span><span class="path">fenzo.ai</span></div>
-          <a href="assets/fenzo.png" target="_blank" rel="noopener"><img src="assets/fenzo.png" alt="Fenzo homepage" loading="lazy"></a>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">Core team member</span>
-          <h3>Fenzo</h3>
-          <p>Core team member who helped architect Fenzo from the ground up.</p>
-          <div class="stack"><span>Product Architecture</span><span>AI Systems</span></div>
-          <a class="proj-link" href="https://fenzo.ai/about" target="_blank" rel="noopener">Visit fenzo.ai →</a>
-        </div>
-      </div>
-
-      <div class="proj reveal" data-flow="Outline,Draft,Review,Launch">
-        <div class="proj-visual"><div class="win-bar"><span></span><span></span><span></span><span class="path">educative.io/courses</span></div></div>
-        <div class="proj-body">
-          <span class="proj-idx">7× author</span>
-          <h3>System Design Courses @ Educative</h3>
-          <p>Co-authored and independently architected flagship System Design courses used by engineers worldwide — including Grokking the System Design Interview.</p>
-          <div class="stack"><span>Instructional Design</span><span>System Design</span></div>
-          <a class="proj-link" href="https://www.educative.io/courses/grokking-the-system-design-interview" target="_blank" rel="noopener">View course →</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <section id="skills">
   <div class="wrap">
-    <div class="kicker">— Skills</div>
+    <div class="section-head">
+      <div class="kicker">— Stack</div>
+      <h2>Tools &amp; industries.</h2>
+    </div>
     <div class="skills-cols">
       <div class="skill-cat">
         <h4>Automation</h4>
@@ -446,13 +560,26 @@
         <div class="tags"><span>Selenium</span><span>Twilio / Vapi</span><span>Webhooks</span></div>
       </div>
     </div>
+    <div class="industries">
+      <h4>Industries I Serve</h4>
+      <div class="chip-row">
+        <span>SaaS &amp; Technology</span>
+        <span>E-commerce &amp; Retail</span>
+        <span>Marketing &amp; Agencies</span>
+        <span>Financial Services</span>
+        <span>Healthcare</span>
+        <span>Education &amp; EdTech</span>
+        <span>Real Estate</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="contact">
   <div class="wrap">
     <div class="kicker">— Contact</div>
-    <h2 class="contact-big">I'd love to hear about what you're building — reach out anytime.</h2>
+    <h2 class="contact-big">Get a free automation audit.</h2>
+    <p class="contact-sub">Tell me about the process eating your team's time and I'll send back a free walkthrough of how I'd automate it — no strings attached. If automation isn't the right answer, I'll say so instead.</p>
     <div class="contact-details">
       <div class="contact-text">
         <a href="mailto:yasirshahji1116@outlook.com">yasirshahji1116@outlook.com</a>
