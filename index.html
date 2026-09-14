@@ -96,15 +96,14 @@
   }
 
   /* HERO */
-  .hero{background:var(--ink);color:var(--cream);padding:100px 0 76px;border-bottom:none;}
-  .hero-byline{display:flex;align-items:center;gap:14px;margin-bottom:36px;}
-  .hero-byline img{width:56px;height:56px;border-radius:14px;object-fit:cover;object-position:center 15%;border:1px solid rgba(243,234,217,.2);filter:grayscale(1) contrast(1.08) brightness(1.05);flex:none;}
-  .hero-byline .who{display:flex;flex-direction:column;gap:2px;}
-  .hero-byline .who .n{font-weight:600;font-size:0.95rem;color:var(--cream);}
-  .hero-byline .who .l{font-size:0.8rem;color:var(--cream-dim);}
+  .hero{background:var(--ink);color:var(--cream);padding:64px 0 76px;border-bottom:none;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 
-  .hero h1{font-size:clamp(2.3rem,5.4vw,3.9rem);line-height:1.08;max-width:17ch;margin-bottom:28px;}
-  .hero h1 em{color:var(--accent);}
+  .hero-shot{
+    display:block;width:100%;border-radius:14px;margin-bottom:34px;
+    border:1px solid rgba(243,234,217,.14);box-shadow:0 24px 60px -28px rgba(0,0,0,.6);
+  }
+
   .hero-tagline{font-size:0.86rem;color:var(--cream-dim);max-width:600px;margin-bottom:26px;line-height:1.7;letter-spacing:.005em;}
   .hero-tagline b{color:var(--cream);font-weight:600;}
   .hero p.lead{color:var(--cream-dim);font-size:1.05rem;max-width:560px;margin-bottom:36px;}
@@ -279,15 +278,8 @@
 
 <section class="hero" id="top">
   <div class="wrap">
-    <div class="hero-byline">
-      <img src="assets/profile-crop.jpg" alt="M. Yasir Shah">
-      <div class="who">
-        <span class="n">M. Yasir Shah</span>
-        <span class="l">Islamabad, Pakistan</span>
-      </div>
-    </div>
-
-    <h1>AI systems that turn <em>busywork</em> into shipped work.</h1>
+    <h1 class="sr-only">M. Yasir Shah — AI systems that turn busywork into shipped work.</h1>
+    <img class="hero-shot" src="assets/profile-highlight.jpg" alt="Let's automate your most repetitive work — M. Yasir Shah">
 
     <p class="hero-tagline"><b>AI Products Architect</b> | Building Scalable Content Systems | 7x Author of System Design Courses @ Educative</p>
 
@@ -301,7 +293,7 @@
     <div class="trust-strip">
       <div class="t-item"><strong>Free process walkthrough</strong>I'll show you how I'd automate it before you commit to anything.</div>
       <div class="t-item"><strong>Fix guarantee</strong>If it doesn't perform as agreed, I fix it — no charge.</div>
-      <div class="t-item"><strong>Rising Talent, Upwork</strong>Vetted across SaaS, finance, healthcare, and EdTech.</div>
+      <div class="t-item"><strong>Beyond automation</strong>I ship it as a real web or mobile app your whole team can use.</div>
     </div>
   </div>
 </section>
@@ -372,7 +364,7 @@
       <div class="cap-row featured">
         <div class="cap-head"><span class="cap-num">05</span><h3>Optimization &amp; Productization</h3></div>
         <div class="cap-body">
-          <p>Automating the process is half the job. I take it further — trimming token usage and routing to the right model so agents run faster and cheaper, then, when it's worth it, wrapping the whole thing in a real application with a UI instead of leaving it as a backend trigger only you can run. I cut one production prompt at Educative from ~11K to ~1K tokens (~90% cheaper, more reliable), and turned an internal automation into a full Next.js app my team uses daily.</p>
+          <p>Automating the process is half the job. I take it further — trimming token usage and routing to the right model so agents run faster and cheaper, then converting the whole thing into a real web or mobile application, so it's easy for anyone on your team to use, not just a backend trigger only you can run. I cut one production prompt at Educative from ~11K to ~1K tokens (~90% cheaper, more reliable), and turned an internal automation into a full Next.js app my team uses daily.</p>
           <div class="tags"><span>Prompt Optimization</span><span>Model Routing</span><span>Caching</span><span>Next.js</span><span>TypeScript</span></div>
         </div>
       </div>
@@ -624,7 +616,7 @@
     <div class="contact-marks">
       <span><b>Free walkthrough</b> before you commit</span>
       <span><b>Fix guarantee</b> on delivered work</span>
-      <span><b>Rising Talent</b> on Upwork</span>
+      <span><b>Beyond automation</b> — shipped as a real app</span>
     </div>
     <div class="contact-details">
       <div class="contact-text">
