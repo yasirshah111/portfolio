@@ -313,6 +313,7 @@
       <div class="about-body reveal">
         <p>I'm an AI Product Architect and Technical Content Lead at Educative. I build AI-driven pipelines and agents that generate, personalize, and ship technical learning at scale, and I architect flagship System Design courses end-to-end — grounded in technical rigor and instructional design.</p>
         <p>The core of that work is an AI content-generation system I built in n8n, since evolved into a proper internal product. It produces single lessons, multi-lesson sets, and full multi-chapter learning paths, publishing straight to the platform — in active use today, and it became the reference implementation engineering used to build the productized version. Around it: two Agentic Course Designers, 11 interactive learning widgets, and a personalization workflow. Collectively this has generated and updated thousands of blogs and guides, recreated courses of 280+ lessons, and cut a core generation prompt from ~11K to ~1K tokens.</p>
+        <p>Some of these pipelines run 10 to ~100 specialized agents at once, each stage checkpointed and routed across multiple LLM providers — OpenAI, Gemini, Claude, xAI, DeepSeek — so the cheapest model that clears the quality bar handles each step, and content streams to the browser in real time instead of sitting behind a spinner. That architecture is what let a single pipeline update ~500 existing blogs in a day for SEO, and ship 100+ fully-formatted blogs live in a day — work that would take a team weeks by hand.</p>
         <p>Outside of Educative, I take on select freelance automation projects — the same systems thinking, applied to whatever process is eating your team's time. I map the process first, then automate, so nothing gets built that doesn't need to exist.</p>
         <ul class="howwork">
           <li>Map the process first, then automate — no wasted effort</li>
@@ -321,9 +322,10 @@
           <li>Regular progress updates, fast turnaround on revisions</li>
         </ul>
         <div class="stat-row">
+          <div class="stat"><span class="num">~100</span><span class="lbl">agents orchestrated in a single production system</span></div>
+          <div class="stat"><span class="num">100+</span><span class="lbl">blogs shipped live in a single day</span></div>
+          <div class="stat"><span class="num">~500</span><span class="lbl">existing blogs updated in a day for SEO</span></div>
           <div class="stat"><span class="num">7</span><span class="lbl">System Design courses authored</span></div>
-          <div class="stat"><span class="num">~90%</span><span class="lbl">cheaper, more reliable content generation</span></div>
-          <div class="stat"><span class="num">280+</span><span class="lbl">lesson course rebuilt end-to-end</span></div>
         </div>
       </div>
     </div>
@@ -334,8 +336,8 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">What I Build</div>
-      <h2>Five ways I get manual work off your plate.</h2>
-      <p>From routing a lead to running a full AI agent — and making sure it's fast, cheap, and usable once it's live.</p>
+      <h2>Six ways I get manual work off your plate.</h2>
+      <p>From routing a lead to orchestrating ~100 agents in production — and making sure it's fast, cheap, reliable, and usable once it's live.</p>
     </div>
     <div class="cap-list">
       <div class="cap-row">
@@ -346,9 +348,9 @@
         </div>
       </div>
       <div class="cap-row">
-        <div class="cap-head"><span class="cap-num">02</span><h3>AI Agents &amp; MCP</h3></div>
+        <div class="cap-head"><span class="cap-num">02</span><h3>Multi-Agent Orchestration &amp; MCP</h3></div>
         <div class="cap-body">
-          <p>Agents that research, triage, draft, and follow up — wired into your CRM and internal tools. Custom MCP servers connecting Claude directly to the systems you already run on.</p>
+          <p>Agents that research, triage, draft, and follow up — wired into your CRM and internal tools. I've run this at real scale: pipelines of 10–20 coordinated agents for daily content production, and a production system of ~100 agents behind Fenzo. Custom MCP servers connect Claude directly to the systems you already run on.</p>
           <div class="tags"><span>LangChain</span><span>LangGraph</span><span>MCP</span><span>Claude / OpenAI</span></div>
         </div>
       </div>
@@ -366,11 +368,18 @@
           <div class="tags"><span>Error Handling</span><span>Testing</span><span>Observability</span></div>
         </div>
       </div>
-      <div class="cap-row featured">
-        <div class="cap-head"><span class="cap-num">05</span><h3>Optimization &amp; Productization</h3></div>
+      <div class="cap-row">
+        <div class="cap-head"><span class="cap-num">05</span><h3>Cost, Latency &amp; Reliability Engineering</h3></div>
         <div class="cap-body">
-          <p>Automating the process is half the job. I take it further — trimming token usage and routing to the right model so agents run faster and cheaper, then converting the whole thing into a real web or mobile application, so it's easy for anyone on your team to use, not just a backend trigger only you can run. I cut one production prompt at Educative from ~11K to ~1K tokens (~90% cheaper, more reliable), and turned an internal automation into a full Next.js app my team uses daily.</p>
-          <div class="tags"><span>Prompt Optimization</span><span>Model Routing</span><span>Caching</span><span>Next.js</span><span>TypeScript</span></div>
+          <p>I treat model choice as an engineering decision, not a default. Bulk drafting runs on cheaper models; premium models are reserved for research grounding and final review. I cache reusable sub-results, validate every output against a schema so malformed responses don't trigger expensive retries, and benchmark providers per task — OpenAI, Gemini, Claude, xAI, DeepSeek — so the cheapest model that clears the quality bar wins. Independent stages run in parallel and stream token-by-token to the browser, and every stage checkpoints to disk, so a failure retries from the exact broken step instead of the whole job. I cut one production prompt at Educative from ~11K to ~1K tokens — about 90% cheaper, and more reliable.</p>
+          <div class="tags"><span>Model Routing</span><span>Prompt Caching</span><span>Schema Validation</span><span>SSE Streaming</span><span>Checkpointing</span></div>
+        </div>
+      </div>
+      <div class="cap-row featured">
+        <div class="cap-head"><span class="cap-num">06</span><h3>From Automation to Application</h3></div>
+        <div class="cap-body">
+          <p>Automating the process is half the job. When it's worth it, I wrap the whole pipeline in a real web or mobile application — a proper UI, an admin panel to tune prompts without a deploy — instead of leaving it as a backend trigger only one person can run. That's how an internal automation became a full Next.js app my team uses daily, and how Fenzo's ~100-agent pipeline became a live platform serving any number of concurrent users.</p>
+          <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Admin Tooling</span><span>Product UX</span></div>
         </div>
       </div>
     </div>
@@ -389,6 +398,64 @@
 
       <div class="proj reveal">
         <div class="proj-visual">
+          <div class="shot light">
+            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">fenzo.ai</span></div>
+            <img class="zoomable" src="assets/fenzo.png" data-full="assets/fenzo.png" data-cap="Fenzo — an AI-native learning platform, co-architected from an n8n prototype into a ~100-agent production system." alt="Fenzo homepage" loading="lazy">
+          </div>
+          <div class="shot-cap"><p>An AI-native learning platform — co-architected from an n8n prototype into a ~100-agent production system.</p><span class="zoom">Enlarge ↗</span></div>
+        </div>
+        <div class="proj-body">
+          <span class="proj-idx">~100 agents · live in production</span>
+          <h3>Fenzo</h3>
+          <div class="case">
+            <p><b class="lbl">Problem</b>Fenzo needed to generate genuinely interactive courses, personalized guides, blogs, and flash cards for any topic — without a human content team, and without AI costs spiraling at scale.</p>
+            <p><b class="lbl">Approach</b>Co-architected it end-to-end: prototyped the full multi-agent flow in n8n to validate it fast, then rebuilt it in code as a production system of ~100 specialized agents, continuously benchmarked and routed across OpenAI, Gemini, Claude, xAI, and DeepSeek, generating hundreds of dynamic interactive widgets instead of plain text.</p>
+            <p class="result"><b class="lbl">Result</b>A live platform that turns a single topic into a finished course, guide, blog, or flash-card set in a couple of minutes — for any number of concurrent users, on any topic, technical or not.</p>
+          </div>
+          <div class="tags"><span>n8n</span><span>Multi-Agent Orchestration</span><span>OpenAI / Gemini / Claude / xAI / DeepSeek</span><span>Cost &amp; Latency Optimization</span></div>
+          <a class="proj-link" href="https://fenzo.ai/about" target="_blank" rel="noopener">Visit fenzo.ai →</a>
+        </div>
+      </div>
+
+      <div class="proj reveal">
+        <div class="proj-visual">
+          <div class="shot light">
+            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">persona-blogs.app</span></div>
+            <img class="zoomable" src="assets/persona-blogs-app.png" data-full="assets/persona-blogs-app.png" data-cap="Persona Blogs — the productized version of the persona blog automation, built as a full Next.js application." alt="Persona Blogs Next.js content platform interface" loading="lazy">
+          </div>
+          <div class="shot-cap"><p>Internally called Persona Blogs — the automation, productized into a real app.</p><span class="zoom">Enlarge ↗</span></div>
+        </div>
+        <div class="proj-body">
+          <span class="proj-idx">Full-stack platform</span>
+          <h3>AI-Powered Technical Content Platform</h3>
+          <div class="case">
+            <p><b class="lbl">Problem</b>Needed a standalone tool to generate and preview rich technical content — code, images, charts — before publishing.</p>
+            <p><b class="lbl">Approach</b>Full-stack build on Next.js 14 + LangChain across Claude (Bedrock) and GPT-4o, with direct CMS publishing via API.</p>
+            <p class="result"><b class="lbl">Result</b>A production tool the team uses today.</p>
+          </div>
+          <div class="tags"><span>Next.js 14</span><span>TypeScript</span><span>Tailwind</span><span>Chart.js</span></div>
+        </div>
+      </div>
+
+      <div class="proj reveal">
+        <div class="proj-visual">
+          <div class="shot light">
+            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">educative.io/courses</span></div>
+            <img class="zoomable" src="assets/educative-course.jpg" data-full="assets/educative-course.jpg" data-cap="Grokking Modern System Design Interview — one of seven courses authored or co-authored." alt="Grokking Modern System Design Interview course page on Educative" loading="lazy">
+          </div>
+          <div class="shot-cap"><p>Grokking Modern System Design Interview — one of seven courses authored.</p><span class="zoom">Enlarge ↗</span></div>
+        </div>
+        <div class="proj-body">
+          <span class="proj-idx">7× author</span>
+          <h3>System Design Courses @ Educative</h3>
+          <p class="plain">Co-authored and independently architected flagship System Design courses used by engineers worldwide — including Grokking the System Design Interview.</p>
+          <div class="tags"><span>Instructional Design</span><span>System Design</span></div>
+          <a class="proj-link" href="https://www.educative.io/courses/grokking-the-system-design-interview" target="_blank" rel="noopener">View course →</a>
+        </div>
+      </div>
+
+      <div class="proj reveal">
+        <div class="proj-visual">
           <div class="shot dark">
             <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">core-engine.n8n</span></div>
             <img class="zoomable" src="assets/core-engine-crop.png" data-full="assets/core-engine.png" data-cap="AI Content-Generation System — one of four labeled workflow groups (course data intake, mobile card generation, auto-upload, outline-only variant) in the full n8n canvas." alt="Cropped view of the AI content-generation system workflow in n8n, showing the mobile card generator node group" loading="lazy">
@@ -401,7 +468,7 @@
           <div class="case">
             <p><b class="lbl">Problem</b>Publishing single lessons, multi-lesson sets, and full multi-chapter paths meant building every page by hand.</p>
             <p><b class="lbl">Approach</b>Architected an end-to-end n8n pipeline connecting the CMS, prompt chains, and multiple LLMs to generate and publish content directly.</p>
-            <p class="result"><b class="lbl">Result</b>In active use generating real content today — became the reference our engineering team used to build the productized version.</p>
+            <p class="result"><b class="lbl">Result</b>In active use generating real content today, including a single-day run that updated ~500 existing blogs for SEO — and it became the reference our engineering team used to build the productized version.</p>
           </div>
           <div class="tags"><span>n8n</span><span>LangChain</span><span>Claude / Bedrock</span><span>REST APIs</span></div>
         </div>
@@ -433,12 +500,12 @@
           <div class="shot-cap"><p>A slice of the pipeline — research, drafting, diagram generation, SEO review, and proofreading agents, chained together.</p><span class="zoom">Full canvas ↗</span></div>
         </div>
         <div class="proj-body">
-          <span class="proj-idx">Autonomous pipeline</span>
+          <span class="proj-idx">Autonomous pipeline · 10–20 agents</span>
           <h3>Multi-Agent Content Engine &amp; CMS Pipeline</h3>
           <div class="case">
             <p><b class="lbl">Problem</b>Persona-driven, expert-voice articles took days of research, writing, and SEO review per piece.</p>
-            <p><b class="lbl">Approach</b>Triggered by a form: live web research, persona-voiced writing, auto-generated D2 diagrams &amp; Chart.js visuals, then an AI editorial/SEO reviewer before publishing via API.</p>
-            <p class="result"><b class="lbl">Result</b>Zero manual handoffs from brief to published article.</p>
+            <p><b class="lbl">Approach</b>Triggered by a form: live web research, persona-voiced writing, auto-generated D2 diagrams &amp; Chart.js visuals, then an AI editorial/SEO reviewer before publishing via API — 10–20 coordinated agents per run.</p>
+            <p class="result"><b class="lbl">Result</b>Zero manual handoffs from brief to published article — powers 5–7 articles a day per team, with some runs going 24/7 once topics are queued.</p>
           </div>
           <div class="tags"><span>n8n</span><span>Claude Opus/Sonnet</span><span>OpenAI</span></div>
         </div>
@@ -461,60 +528,6 @@
             <p class="result"><b class="lbl">Result</b>Cut content production time by over 90%.</p>
           </div>
           <div class="tags"><span>n8n</span><span>LangChain</span><span>Python</span><span>JavaScript</span></div>
-        </div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="shot light">
-            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">persona-blogs.app</span></div>
-            <img class="zoomable" src="assets/persona-blogs-app.png" data-full="assets/persona-blogs-app.png" data-cap="Persona Blogs — the productized version of the persona blog automation, built as a full Next.js application." alt="Persona Blogs Next.js content platform interface" loading="lazy">
-          </div>
-          <div class="shot-cap"><p>Internally called Persona Blogs — the automation, productized into a real app.</p><span class="zoom">Enlarge ↗</span></div>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">Full-stack platform</span>
-          <h3>AI-Powered Technical Content Platform</h3>
-          <div class="case">
-            <p><b class="lbl">Problem</b>Needed a standalone tool to generate and preview rich technical content — code, images, charts — before publishing.</p>
-            <p><b class="lbl">Approach</b>Full-stack build on Next.js 14 + LangChain across Claude (Bedrock) and GPT-4o, with direct CMS publishing via API.</p>
-            <p class="result"><b class="lbl">Result</b>A production tool the team uses today.</p>
-          </div>
-          <div class="tags"><span>Next.js 14</span><span>TypeScript</span><span>Tailwind</span><span>Chart.js</span></div>
-        </div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="shot light">
-            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">fenzo.ai</span></div>
-            <img class="zoomable" src="assets/fenzo.png" data-full="assets/fenzo.png" data-cap="Fenzo — an AI-native learning platform." alt="Fenzo homepage" loading="lazy">
-          </div>
-          <div class="shot-cap"><p>An AI-native learning platform, architected from the ground up.</p><span class="zoom">Enlarge ↗</span></div>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">Core team member</span>
-          <h3>Fenzo</h3>
-          <p class="plain">Core team member who helped architect Fenzo, an AI-native learning platform, from the ground up.</p>
-          <div class="tags"><span>Product Architecture</span><span>AI Systems</span></div>
-          <a class="proj-link" href="https://fenzo.ai/about" target="_blank" rel="noopener">Visit fenzo.ai →</a>
-        </div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="shot light">
-            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">educative.io/courses</span></div>
-            <img class="zoomable" src="assets/educative-course.jpg" data-full="assets/educative-course.jpg" data-cap="Grokking Modern System Design Interview — one of seven courses authored or co-authored." alt="Grokking Modern System Design Interview course page on Educative" loading="lazy">
-          </div>
-          <div class="shot-cap"><p>Grokking Modern System Design Interview — one of seven courses authored.</p><span class="zoom">Enlarge ↗</span></div>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">7× author</span>
-          <h3>System Design Courses @ Educative</h3>
-          <p class="plain">Co-authored and independently architected flagship System Design courses used by engineers worldwide — including Grokking the System Design Interview.</p>
-          <div class="tags"><span>Instructional Design</span><span>System Design</span></div>
-          <a class="proj-link" href="https://www.educative.io/courses/grokking-the-system-design-interview" target="_blank" rel="noopener">View course →</a>
         </div>
       </div>
 
@@ -588,7 +601,11 @@
       </div>
       <div class="stack-row">
         <div class="cat">AI &amp; Agents</div>
-        <div class="items">LangChain, LangGraph, Claude / AWS Bedrock, OpenAI API, RAG, MCP</div>
+        <div class="items">LangChain, LangGraph, Claude / AWS Bedrock, OpenAI API, Google Gemini, xAI (Grok), DeepSeek, RAG, MCP</div>
+      </div>
+      <div class="stack-row">
+        <div class="cat">Production Engineering</div>
+        <div class="items">Multi-Provider Model Routing, Prompt Caching, JSON Schema Validation, SSE Streaming, Per-Stage Checkpointing</div>
       </div>
       <div class="stack-row">
         <div class="cat">Code</div>
