@@ -127,15 +127,18 @@
   .about-body strong{color:var(--ink);font-weight:600;}
   .howwork-chips{margin-top:22px;}
 
-  .stat-row{display:flex;flex-wrap:wrap;gap:36px 48px;margin-top:36px;padding-top:28px;border-top:1px solid var(--line);}
-  .stat-row .stat{display:flex;flex-direction:column;}
-  .stat-row .num{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3vw,2.3rem);color:var(--accent);line-height:1;margin-bottom:6px;}
-  .stat-row .lbl{font-size:0.82rem;color:var(--ink-dim);max-width:16ch;}
+  .stat-row{
+    display:flex;flex-wrap:nowrap;gap:28px;margin-top:36px;padding-top:28px;padding-bottom:4px;
+    border-top:1px solid var(--line);overflow-x:auto;-webkit-overflow-scrolling:touch;
+  }
+  .stat-row .stat{display:flex;flex-direction:column;flex:0 0 auto;min-width:108px;}
+  .stat-row .num{font-family:'Fraunces',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:var(--accent);line-height:1;margin-bottom:6px;white-space:nowrap;}
+  .stat-row .lbl{font-size:0.78rem;color:var(--ink-dim);max-width:13ch;}
 
   /* CAPABILITIES ("What I Build") */
-  .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  @media (max-width:900px){ .cap-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:600px){ .cap-grid{grid-template-columns:1fr;} }
+  .car-viewport .cap-card{flex:0 0 calc((100% - 48px)/3);}
+  @media (max-width:980px){ .car-viewport .cap-card{flex:0 0 calc((100% - 24px)/2);} }
+  @media (max-width:640px){ .car-viewport .cap-card{flex:0 0 82%;} }
   .cap-card{border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;gap:10px;background:var(--paper);}
   .cap-card .cap-num{font-family:'Fraunces',serif;color:var(--accent);font-size:0.88rem;font-weight:500;}
   .cap-card h3{font-size:1.05rem;line-height:1.3;}
@@ -409,44 +412,50 @@
     <div class="section-head">
       <div class="kicker">What I Build</div>
       <h2>Six ways I get manual work off your plate.</h2>
-      <p>From routing a lead to orchestrating ~100 agents in production — and making sure it's fast, cheap, reliable, and usable once it's live.</p>
+      <p>From routing a lead to orchestrating ~100 agents in production. Scroll or use the arrows to see all six.</p>
     </div>
-    <div class="cap-grid">
-      <div class="cap-card">
-        <span class="cap-num">01</span>
-        <h3>Workflow Automation</h3>
-        <p>Lead routing, CRM updates, invoice processing, approvals, and reports that send themselves.</p>
-        <div class="tags"><span>n8n</span><span>Make</span><span>Zapier</span><span>Flowise</span><span>Dify</span></div>
+    <div class="car-outer">
+      <div class="car-viewport" id="buildViewport">
+        <div class="cap-card reveal">
+          <span class="cap-num">01</span>
+          <h3>Workflow Automation</h3>
+          <p>Lead routing, CRM updates, invoice processing, approvals, and reports that send themselves.</p>
+          <div class="tags"><span>n8n</span><span>Make</span><span>Zapier</span><span>Flowise</span><span>Dify</span></div>
+        </div>
+        <div class="cap-card reveal">
+          <span class="cap-num">02</span>
+          <h3>Multi-Agent Orchestration &amp; MCP</h3>
+          <p>Agents that research, triage, draft, and follow up — from small crews to the ~100-agent system behind Fenzo. MCP connects Claude to your tools directly.</p>
+          <div class="tags"><span>LangChain</span><span>LangGraph</span><span>MCP</span></div>
+        </div>
+        <div class="cap-card reveal">
+          <span class="cap-num">03</span>
+          <h3>RAG &amp; Knowledge Systems</h3>
+          <p>Internal assistants that answer from your own documents, with sources attached and retrieval you can trust.</p>
+          <div class="tags"><span>RAG</span><span>Vector Search</span><span>FastAPI</span></div>
+        </div>
+        <div class="cap-card reveal">
+          <span class="cap-num">04</span>
+          <h3>Fixing Broken AI Builds</h3>
+          <p>Half-finished agents and flashy no-code prototypes with no error handling underneath, made production-safe.</p>
+          <div class="tags"><span>Error Handling</span><span>Testing</span><span>Observability</span></div>
+        </div>
+        <div class="cap-card reveal">
+          <span class="cap-num">05</span>
+          <h3>Cost, Latency &amp; Reliability Engineering</h3>
+          <p>Model routing, prompt caching, schema validation, and per-stage checkpointing — the difference between a demo and a system that runs 24/7. Cut one production prompt ~90% cheaper.</p>
+          <div class="tags"><span>Model Routing</span><span>Caching</span><span>Checkpointing</span></div>
+        </div>
+        <div class="cap-card featured reveal">
+          <span class="cap-num">06</span>
+          <h3>From Automation to Application</h3>
+          <p>When it's worth it, the pipeline becomes a real web or mobile app — a proper UI, not a backend trigger only you can run.</p>
+          <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Product UX</span></div>
+        </div>
       </div>
-      <div class="cap-card">
-        <span class="cap-num">02</span>
-        <h3>Multi-Agent Orchestration &amp; MCP</h3>
-        <p>Agents that research, triage, draft, and follow up — from small crews to the ~100-agent system behind Fenzo. MCP connects Claude to your tools directly.</p>
-        <div class="tags"><span>LangChain</span><span>LangGraph</span><span>MCP</span></div>
-      </div>
-      <div class="cap-card">
-        <span class="cap-num">03</span>
-        <h3>RAG &amp; Knowledge Systems</h3>
-        <p>Internal assistants that answer from your own documents, with sources attached and retrieval you can trust.</p>
-        <div class="tags"><span>RAG</span><span>Vector Search</span><span>FastAPI</span></div>
-      </div>
-      <div class="cap-card">
-        <span class="cap-num">04</span>
-        <h3>Fixing Broken AI Builds</h3>
-        <p>Half-finished agents and flashy no-code prototypes with no error handling underneath, made production-safe.</p>
-        <div class="tags"><span>Error Handling</span><span>Testing</span><span>Observability</span></div>
-      </div>
-      <div class="cap-card">
-        <span class="cap-num">05</span>
-        <h3>Cost, Latency &amp; Reliability Engineering</h3>
-        <p>Model routing, prompt caching, schema validation, and per-stage checkpointing — the difference between a demo and a system that runs 24/7. Cut one production prompt ~90% cheaper.</p>
-        <div class="tags"><span>Model Routing</span><span>Caching</span><span>Checkpointing</span></div>
-      </div>
-      <div class="cap-card featured">
-        <span class="cap-num">06</span>
-        <h3>From Automation to Application</h3>
-        <p>When it's worth it, the pipeline becomes a real web or mobile app — a proper UI, not a backend trigger only you can run.</p>
-        <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Product UX</span></div>
+      <div class="car-controls">
+        <button class="car-btn" id="buildPrev" aria-label="Previous capability">‹</button>
+        <button class="car-btn" id="buildNext" aria-label="Next capability">›</button>
       </div>
     </div>
   </div>
@@ -906,34 +915,34 @@
     if (e.key === 'Escape') { closeLightbox(); closeCaseModal(); }
   });
 
-  // Project carousel: horizontal scroll, auto-advance, pause on interaction
-  const carViewport = document.getElementById('carViewport');
-  const carPrev = document.getElementById('carPrev');
-  const carNext = document.getElementById('carNext');
-  let carTimer = null;
+  // Generic horizontal carousel: auto-advance, pause on interaction, prev/next
+  function initCarousel(viewport, prevBtn, nextBtn, intervalMs){
+    if (!viewport) return;
+    let timer = null;
+    function step(){
+      const card = viewport.firstElementChild;
+      if (!card) return 320;
+      const style = getComputedStyle(viewport);
+      const gap = parseFloat(style.columnGap || style.gap || '24') || 24;
+      return card.getBoundingClientRect().width + gap;
+    }
+    function advance(){
+      const atEnd = viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 4;
+      if (atEnd) viewport.scrollTo({ left: 0, behavior: 'smooth' });
+      else viewport.scrollBy({ left: step(), behavior: 'smooth' });
+    }
+    function start(){ stop(); timer = setInterval(advance, intervalMs); }
+    function stop(){ if (timer) clearInterval(timer); timer = null; }
 
-  function carStep(){
-    const card = carViewport.querySelector('.car-card');
-    if (!card) return 320;
-    const style = getComputedStyle(carViewport);
-    const gap = parseFloat(style.columnGap || style.gap || '24') || 24;
-    return card.getBoundingClientRect().width + gap;
+    start();
+    ['mouseenter', 'touchstart', 'focusin'].forEach(evt => viewport.addEventListener(evt, stop, { passive: true }));
+    ['mouseleave', 'touchend'].forEach(evt => viewport.addEventListener(evt, start, { passive: true }));
+    if (prevBtn) prevBtn.addEventListener('click', () => { stop(); viewport.scrollBy({ left: -step(), behavior: 'smooth' }); start(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { stop(); advance(); start(); });
   }
-  function carAdvance(){
-    const atEnd = carViewport.scrollLeft + carViewport.clientWidth >= carViewport.scrollWidth - 4;
-    if (atEnd) carViewport.scrollTo({ left: 0, behavior: 'smooth' });
-    else carViewport.scrollBy({ left: carStep(), behavior: 'smooth' });
-  }
-  function startCarAuto(){ stopCarAuto(); carTimer = setInterval(carAdvance, 4500); }
-  function stopCarAuto(){ if (carTimer) clearInterval(carTimer); carTimer = null; }
 
-  if (carViewport) {
-    startCarAuto();
-    ['mouseenter', 'touchstart', 'focusin'].forEach(evt => carViewport.addEventListener(evt, stopCarAuto, { passive: true }));
-    ['mouseleave', 'touchend'].forEach(evt => carViewport.addEventListener(evt, startCarAuto, { passive: true }));
-    carPrev.addEventListener('click', () => { stopCarAuto(); carViewport.scrollBy({ left: -carStep(), behavior: 'smooth' }); startCarAuto(); });
-    carNext.addEventListener('click', () => { stopCarAuto(); carAdvance(); startCarAuto(); });
-  }
+  initCarousel(document.getElementById('carViewport'), document.getElementById('carPrev'), document.getElementById('carNext'), 4500);
+  initCarousel(document.getElementById('buildViewport'), document.getElementById('buildPrev'), document.getElementById('buildNext'), 4000);
 </script>
 </body>
 </html>
