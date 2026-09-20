@@ -105,6 +105,12 @@
   }
   @media (max-width:560px){ .hero-shot{width:85%;} }
 
+  .hero-name{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+    font-size:clamp(1.7rem,3.4vw,2.3rem);color:var(--cream);margin-bottom:14px;letter-spacing:-0.01em;
+  }
+  .hero-name .dot{color:var(--accent);font-style:normal;}
+
   .hero-tagline{
     display:flex;flex-wrap:wrap;align-items:center;row-gap:6px;column-gap:12px;
     font-size:1.02rem;font-weight:500;color:var(--cream);max-width:640px;margin-bottom:22px;line-height:1.5;letter-spacing:.005em;
@@ -159,13 +165,7 @@
   .xp-main .co{color:var(--accent);font-weight:600;font-size:0.9rem;}
   .xp-main ul{padding-left:18px;color:var(--ink-dim);font-size:0.94rem;display:flex;flex-direction:column;gap:8px;margin-top:12px;max-width:680px;}
 
-  /* PROJECTS */
-  .proj{display:grid;grid-template-columns:1fr 1fr;gap:44px;padding:52px 0;border-top:1px solid var(--line);align-items:center;}
-  .proj:last-child{border-bottom:1px solid var(--line);}
-  @media (max-width:860px){ .proj{grid-template-columns:1fr;gap:26px;} }
-  .proj:nth-child(even) .proj-visual{order:2;}
-  @media (max-width:860px){ .proj:nth-child(even) .proj-visual{order:0;} }
-
+  /* PROJECT VISUALS & CASE COPY (used inside the Selected Work carousel cards) */
   .shot{border-radius:8px;overflow:hidden;}
   .shot.dark{background:#0e0e10;border:1px solid #000;}
   .shot.light{background:#fff;border:1px solid var(--line);}
@@ -177,23 +177,19 @@
   .shot.light .shot-bar{color:var(--ink);}
   .shot-bar .path{margin-left:8px;font-size:0.7rem;opacity:.55;}
   .shot img{width:100%;height:auto;display:block;cursor:zoom-in;}
-  .shot-cap{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:12px;}
-  .shot-cap p{font-size:0.83rem;color:var(--ink-dim);margin:0;}
-  .shot-cap .zoom{font-size:0.78rem;font-weight:600;color:var(--accent);white-space:nowrap;flex:none;}
 
   .stat-block{background:var(--paper-2);border-radius:8px;padding:44px 30px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:230px;}
   .stat-block .num{font-family:'Fraunces',serif;font-size:clamp(3rem,6vw,4.2rem);color:var(--accent);line-height:1;}
   .stat-block .lbl{font-size:0.92rem;color:var(--ink-dim);margin-top:12px;max-width:32ch;}
 
   .proj-idx{font-size:0.8rem;color:var(--accent);margin-bottom:10px;display:block;font-weight:600;letter-spacing:.02em;}
-  .proj-body h3{font-size:1.5rem;margin-bottom:16px;}
   .case{display:flex;flex-direction:column;gap:9px;margin-bottom:18px;}
   .case p{font-size:0.94rem;color:var(--ink-dim);max-width:520px;margin:0;}
   .case p b.lbl{font-size:0.7rem;text-transform:uppercase;font-weight:700;color:var(--ink);letter-spacing:.04em;margin-right:8px;}
   .case p.result{color:var(--ink);font-weight:500;}
   .case p.result b.lbl{color:var(--accent);}
-  .proj-body > p.plain{color:var(--ink-dim);font-size:0.95rem;margin-bottom:18px;max-width:520px;}
-  .proj-body .tags{margin-bottom:18px;}
+  .case-full p.plain{color:var(--ink-dim);font-size:0.95rem;margin-bottom:18px;max-width:520px;}
+  .case-full .tags{margin-bottom:18px;}
   .proj-link{font-size:0.9rem;font-weight:600;color:var(--ink);border-bottom:1.5px solid var(--accent);padding-bottom:2px;display:inline-flex;}
   .proj-link:hover{color:var(--accent);}
 
@@ -270,9 +266,7 @@
     font-size:clamp(1.8rem,4.4vw,2.7rem);line-height:1.18;
     margin-bottom:16px;max-width:18ch;
   }
-  .contact-sub{color:var(--cream-dim);max-width:540px;margin-bottom:16px;font-size:0.98rem;}
-  .contact-marks{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:0.82rem;color:var(--cream-dim);margin-bottom:40px;}
-  .contact-marks span b{color:var(--cream);}
+  .contact-sub{color:var(--cream-dim);max-width:540px;margin-bottom:40px;font-size:0.98rem;}
   .contact-details{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:28px;}
   .contact-text{display:flex;flex-direction:column;gap:10px;font-size:1rem;color:var(--cream-dim);}
   .contact-text a{font-weight:500;color:var(--cream);}
@@ -353,16 +347,16 @@
     </nav>
     <div class="nav-actions">
       <a href="#contact" class="btn btn-ghost-light">Free Audit</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">Menu</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
     </div>
   </div>
 </header>
 
 <section class="hero" id="top">
   <div class="wrap">
-    <h1 class="sr-only">M. Yasir Shah — AI systems that turn busywork into shipped work.</h1>
-    <img class="hero-shot" src="assets/profile-highlight.jpg" alt="Let's automate your most repetitive work — M. Yasir Shah">
+    <img class="hero-shot" src="assets/profile-highlight.jpg" alt="M. Yasir Shah, AI Product Architect">
 
+    <h1 class="hero-name">M. Yasir Shah<span class="dot">.</span><span class="sr-only"> — AI systems that turn busywork into shipped work.</span></h1>
     <p class="hero-tagline"><b>AI Products Architect</b><span class="sep">●</span>Building Scalable Content Systems<span class="sep">●</span>7× Author of System Design Courses @ Educative</p>
 
     <p class="lead">I design AI agents and automations that take manual, repetitive work off your plate — the same caliber of systems I run at Educative to generate technical content at the scale of thousands of lessons and guides.</p>
@@ -389,7 +383,7 @@
       </div>
       <div class="about-body reveal">
         <p>I'm an AI Product Architect and Technical Content Lead at Educative. I build AI pipelines and multi-agent systems — from a single lesson to a ~100-agent production platform — that generate, personalize, and ship technical learning at scale, alongside architecting flagship System Design courses end-to-end.</p>
-        <p>These pipelines route across multiple LLM providers, checkpoint every stage, and stream results live — the engineering behind a single-day run that updated ~500 blogs for SEO. Outside Educative, I take on select automation projects with the same approach: map the process first, then build only what's actually needed.</p>
+        <p>These pipelines route across multiple LLM providers, checkpoint every stage, and stream results live — the same engineering behind the numbers below. Outside Educative, I take on select automation projects with the same approach: map the process first, then build only what's actually needed.</p>
         <div class="chip-row howwork-chips">
           <span>Process mapped first</span>
           <span>Clear communication</span>
@@ -797,11 +791,6 @@
     <div class="kicker" style="color:var(--cream-dim);">Contact</div>
     <h2 class="contact-big">Get a free automation audit.</h2>
     <p class="contact-sub">Tell me about the process eating your team's time and I'll send back a free walkthrough of how I'd automate it — no strings attached. If automation isn't the right answer, I'll say so instead.</p>
-    <div class="contact-marks">
-      <span><b>Free walkthrough</b> before you commit</span>
-      <span><b>Fix guarantee</b> on delivered work</span>
-      <span><b>Beyond automation</b> — shipped as a real app</span>
-    </div>
     <div class="contact-details">
       <div class="contact-text">
         <a href="mailto:yasirshahji1116@outlook.com">yasirshahji1116@outlook.com</a>
@@ -833,14 +822,14 @@
   <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.03 4C7.6 4 4 7.6 4 12.03c0 1.44.38 2.83 1.09 4.06L4 20l4.02-1.05a8.9 8.9 0 0 0 4 1.02h.01c4.43 0 8.03-3.6 8.03-8.03 0-2.15-.84-4.16-2.46-5.62zM12.03 18.4h-.01a7.4 7.4 0 0 1-3.77-1.03l-.27-.16-2.8.73.75-2.73-.18-.28a7.36 7.36 0 0 1-1.13-3.9c0-4.07 3.31-7.38 7.4-7.38 1.98 0 3.84.77 5.24 2.17a7.35 7.35 0 0 1 2.17 5.23c0 4.07-3.32 7.35-7.4 7.35zm4.05-5.5c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.1-.66-.59-1.11-1.31-1.24-1.53-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.78.76-.78 1.85 0 1.09.8 2.14.91 2.29.11.15 1.57 2.4 3.8 3.36.53.23.95.37 1.27.47.53.17 1.02.15 1.4.09.43-.06 1.3-.53 1.48-1.04.18-.51.18-.94.13-1.03-.05-.09-.2-.15-.42-.26z"/></svg>
 </a>
 
-<div class="lightbox" id="lightbox" aria-hidden="true">
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image preview">
   <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
   <img id="lightboxImg" src="" alt="">
   <p class="lightbox-cap" id="lightboxCap"></p>
 </div>
 
 <div class="case-modal" id="caseModal" hidden aria-hidden="true">
-  <div class="case-modal-inner">
+  <div class="case-modal-inner" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
     <button class="case-modal-close" id="caseModalClose" aria-label="Close">&times;</button>
     <span class="proj-idx" id="caseModalIdx"></span>
     <h3 id="caseModalTitle"></h3>
@@ -853,13 +842,32 @@
 
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
-  menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }));
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Shared modal focus handling: remember trigger, focus into dialog, trap Tab, restore on close.
+  let lastFocused = null;
+  function getFocusable(container){
+    return Array.from(container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
+  }
+  function trapFocus(container, e){
+    const focusables = getFocusable(container);
+    if (!focusables.length) return;
+    const first = focusables[0], last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
 
   // Lightbox
   const lightbox = document.getElementById('lightbox');
@@ -868,6 +876,7 @@
   const lightboxClose = document.getElementById('lightboxClose');
 
   function openLightbox(img){
+    lastFocused = document.activeElement;
     const full = img.dataset.full || img.src;
     lightboxImg.src = full;
     lightboxImg.alt = img.alt || '';
@@ -875,11 +884,14 @@
     lightboxCap.innerHTML = cap ? (cap + ' <a href="' + full + '" target="_blank" rel="noopener">Open full-resolution ↗</a>') : '<a href="' + full + '" target="_blank" rel="noopener">Open full-resolution ↗</a>';
     lightbox.classList.add('open');
     lightbox.setAttribute('aria-hidden', 'false');
+    lightboxClose.focus();
   }
   function closeLightbox(){
+    if (!lightbox.classList.contains('open')) return;
     lightbox.classList.remove('open');
     lightbox.setAttribute('aria-hidden', 'true');
     lightboxImg.src = '';
+    if (lastFocused) lastFocused.focus();
   }
   document.querySelectorAll('.zoomable').forEach(img => {
     img.addEventListener('click', () => openLightbox(img));
@@ -889,21 +901,26 @@
 
   // Case-study modal
   const caseModal = document.getElementById('caseModal');
+  const caseModalInner = caseModal.querySelector('.case-modal-inner');
   const caseModalClose = document.getElementById('caseModalClose');
   const caseModalIdx = document.getElementById('caseModalIdx');
   const caseModalTitle = document.getElementById('caseModalTitle');
   const caseModalBody = document.getElementById('caseModalBody');
 
   function openCaseModal(card){
+    lastFocused = document.activeElement;
     caseModalIdx.textContent = card.querySelector('.proj-idx')?.textContent || '';
     caseModalTitle.textContent = card.querySelector('h3')?.textContent || '';
     caseModalBody.innerHTML = card.querySelector('.case-full').innerHTML;
     caseModal.hidden = false;
     caseModal.setAttribute('aria-hidden', 'false');
+    caseModalClose.focus();
   }
   function closeCaseModal(){
+    if (caseModal.hidden) return;
     caseModal.hidden = true;
     caseModal.setAttribute('aria-hidden', 'true');
+    if (lastFocused) lastFocused.focus();
   }
   document.querySelectorAll('.car-more').forEach(btn => {
     btn.addEventListener('click', () => openCaseModal(btn.closest('.car-card')));
@@ -913,6 +930,10 @@
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') { closeLightbox(); closeCaseModal(); }
+    if (e.key === 'Tab') {
+      if (lightbox.classList.contains('open')) trapFocus(lightbox, e);
+      else if (!caseModal.hidden) trapFocus(caseModalInner, e);
+    }
   });
 
   // Generic horizontal carousel: auto-advance, pause on interaction, prev/next
