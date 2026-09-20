@@ -125,9 +125,7 @@
   .about-lead .accent{color:var(--accent);font-style:normal;font-weight:500;}
   .about-body p{color:var(--ink-dim);margin-bottom:18px;font-size:0.98rem;}
   .about-body strong{color:var(--ink);font-weight:600;}
-  .howwork{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px;}
-  .howwork li{font-size:0.92rem;color:var(--ink-dim);display:flex;gap:10px;}
-  .howwork li::before{content:"→";color:var(--accent);font-weight:700;flex:none;}
+  .howwork-chips{margin-top:22px;}
 
   .stat-row{display:flex;flex-wrap:wrap;gap:36px 48px;margin-top:36px;padding-top:28px;border-top:1px solid var(--line);}
   .stat-row .stat{display:flex;flex-direction:column;}
@@ -135,14 +133,15 @@
   .stat-row .lbl{font-size:0.82rem;color:var(--ink-dim);max-width:16ch;}
 
   /* CAPABILITIES ("What I Build") */
-  .cap-list{border-top:1px solid var(--line);}
-  .cap-row{display:grid;grid-template-columns:280px 1fr;gap:32px;padding:34px 0;border-bottom:1px solid var(--line);}
-  @media (max-width:760px){ .cap-row{grid-template-columns:1fr;gap:14px;} }
-  .cap-head{display:flex;align-items:baseline;gap:14px;}
-  .cap-head .cap-num{font-family:'Fraunces',serif;color:var(--accent);font-size:1.05rem;font-weight:500;}
-  .cap-head h3{font-size:1.2rem;}
-  .cap-body p{color:var(--ink-dim);font-size:0.95rem;max-width:560px;margin-bottom:14px;}
-  .cap-row.featured{background:linear-gradient(90deg, var(--paper-2), transparent 70%);margin:0 -20px;padding-left:20px;padding-right:20px;border-radius:4px;}
+  .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media (max-width:900px){ .cap-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .cap-grid{grid-template-columns:1fr;} }
+  .cap-card{border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;gap:10px;background:var(--paper);}
+  .cap-card .cap-num{font-family:'Fraunces',serif;color:var(--accent);font-size:0.88rem;font-weight:500;}
+  .cap-card h3{font-size:1.05rem;line-height:1.3;}
+  .cap-card p{color:var(--ink-dim);font-size:0.88rem;margin:0;}
+  .cap-card .tags{margin-top:auto;padding-top:6px;}
+  .cap-card.featured{border-color:var(--accent);background:linear-gradient(160deg, var(--paper-2), var(--paper));}
 
   .tags{display:flex;flex-wrap:wrap;gap:8px;}
   .tags span{font-size:0.76rem;color:var(--ink-dim);background:var(--paper-2);padding:6px 12px;border-radius:999px;}
@@ -295,18 +294,21 @@
   .reveal.in{opacity:1;transform:translateY(0);}
 
   /* CATALOGUE */
+  #catalogue{background:linear-gradient(180deg, var(--paper-2), var(--paper) 60%);}
   .catalogue-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
   @media (max-width:760px){ .catalogue-grid{grid-template-columns:1fr;} }
   .cat-card{
-    display:flex;flex-direction:column;gap:14px;border:1px solid var(--line);border-radius:10px;
-    padding:30px;background:var(--paper);color:inherit;text-decoration:none;
+    display:flex;flex-direction:column;gap:14px;border:1px solid var(--line);border-radius:12px;
+    padding:30px;background:var(--paper);color:inherit;text-decoration:none;position:relative;overflow:hidden;
     transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
   }
-  a.cat-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 16px 32px -22px rgba(20,15,8,.3);}
-  .cat-card.soon{opacity:.72;}
+  .cat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--accent),var(--accent-deep));}
+  a.cat-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 20px 40px -22px rgba(20,15,8,.35);}
+  .cat-card.soon{opacity:.72;border-style:dashed;background:transparent;}
+  .cat-card.soon::before{background:var(--line);}
   .cat-card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
-  .cat-tag{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);}
-  .cat-price{font-weight:700;font-size:0.95rem;}
+  .cat-tag{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--accent-deep);}
+  .cat-price{font-weight:700;font-size:0.85rem;background:var(--accent);color:#fff;padding:6px 14px;border-radius:999px;}
   .cat-card h3{font-size:1.22rem;}
   .cat-card p{color:var(--ink-dim);font-size:0.93rem;}
   .cat-card-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;font-size:0.85rem;color:var(--ink-dim);flex-wrap:wrap;}
@@ -383,16 +385,14 @@
         I build <span class="accent">scalable content systems</span> on one side, and architect <span class="accent">flagship courses</span> on the other — then wire the two together.
       </div>
       <div class="about-body reveal">
-        <p>I'm an AI Product Architect and Technical Content Lead at Educative. I build AI-driven pipelines and agents that generate, personalize, and ship technical learning at scale, and I architect flagship System Design courses end-to-end — grounded in technical rigor and instructional design.</p>
-        <p>The core of that work is an AI content-generation system I built in n8n, since evolved into a proper internal product. It produces single lessons, multi-lesson sets, and full multi-chapter learning paths, publishing straight to the platform — in active use today, and it became the reference implementation engineering used to build the productized version. Around it: two Agentic Course Designers, 11 interactive learning widgets, and a personalization workflow. Collectively this has generated and updated thousands of blogs and guides, recreated courses of 280+ lessons, and cut a core generation prompt from ~11K to ~1K tokens.</p>
-        <p>Some of these pipelines run 10 to ~100 specialized agents at once, each stage checkpointed and routed across multiple LLM providers — OpenAI, Gemini, Claude, xAI, DeepSeek — so the cheapest model that clears the quality bar handles each step, and content streams to the browser in real time instead of sitting behind a spinner. That architecture is what let a single pipeline update ~500 existing blogs in a day for SEO, and ship 100+ fully-formatted blogs live in a day — work that would take a team weeks by hand.</p>
-        <p>Outside of Educative, I take on select freelance automation projects — the same systems thinking, applied to whatever process is eating your team's time. I map the process first, then automate, so nothing gets built that doesn't need to exist.</p>
-        <ul class="howwork">
-          <li>Map the process first, then automate — no wasted effort</li>
-          <li>Clear communication, no surprises</li>
-          <li>Clean, well-documented workflows you actually own</li>
-          <li>Regular progress updates, fast turnaround on revisions</li>
-        </ul>
+        <p>I'm an AI Product Architect and Technical Content Lead at Educative. I build AI pipelines and multi-agent systems — from a single lesson to a ~100-agent production platform — that generate, personalize, and ship technical learning at scale, alongside architecting flagship System Design courses end-to-end.</p>
+        <p>These pipelines route across multiple LLM providers, checkpoint every stage, and stream results live — the engineering behind a single-day run that updated ~500 blogs for SEO. Outside Educative, I take on select automation projects with the same approach: map the process first, then build only what's actually needed.</p>
+        <div class="chip-row howwork-chips">
+          <span>Process mapped first</span>
+          <span>Clear communication</span>
+          <span>Workflows you own</span>
+          <span>Fast revisions</span>
+        </div>
         <div class="stat-row">
           <div class="stat"><span class="num">~100</span><span class="lbl">agents orchestrated in a single production system</span></div>
           <div class="stat"><span class="num">100+</span><span class="lbl">blogs shipped live in a single day</span></div>
@@ -411,48 +411,42 @@
       <h2>Six ways I get manual work off your plate.</h2>
       <p>From routing a lead to orchestrating ~100 agents in production — and making sure it's fast, cheap, reliable, and usable once it's live.</p>
     </div>
-    <div class="cap-list">
-      <div class="cap-row">
-        <div class="cap-head"><span class="cap-num">01</span><h3>Workflow Automation</h3></div>
-        <div class="cap-body">
-          <p>Lead qualification &amp; routing, CRM updates, invoice and document processing, approvals, scheduled syncs, and reporting that sends itself.</p>
-          <div class="tags"><span>n8n</span><span>Make</span><span>Zapier</span><span>GoHighLevel</span><span>Flowise</span><span>Dify</span></div>
-        </div>
+    <div class="cap-grid">
+      <div class="cap-card">
+        <span class="cap-num">01</span>
+        <h3>Workflow Automation</h3>
+        <p>Lead routing, CRM updates, invoice processing, approvals, and reports that send themselves.</p>
+        <div class="tags"><span>n8n</span><span>Make</span><span>Zapier</span><span>Flowise</span><span>Dify</span></div>
       </div>
-      <div class="cap-row">
-        <div class="cap-head"><span class="cap-num">02</span><h3>Multi-Agent Orchestration &amp; MCP</h3></div>
-        <div class="cap-body">
-          <p>Agents that research, triage, draft, and follow up — wired into your CRM and internal tools. I've run this at real scale: pipelines of 10–20 coordinated agents for daily content production, and a production system of ~100 agents behind Fenzo. Custom MCP servers connect Claude directly to the systems you already run on.</p>
-          <div class="tags"><span>LangChain</span><span>LangGraph</span><span>MCP</span><span>Claude / OpenAI</span></div>
-        </div>
+      <div class="cap-card">
+        <span class="cap-num">02</span>
+        <h3>Multi-Agent Orchestration &amp; MCP</h3>
+        <p>Agents that research, triage, draft, and follow up — from small crews to the ~100-agent system behind Fenzo. MCP connects Claude to your tools directly.</p>
+        <div class="tags"><span>LangChain</span><span>LangGraph</span><span>MCP</span></div>
       </div>
-      <div class="cap-row">
-        <div class="cap-head"><span class="cap-num">03</span><h3>RAG &amp; Knowledge Systems</h3></div>
-        <div class="cap-body">
-          <p>Internal assistants that answer from your own documents, with sources attached and retrieval you can actually trust.</p>
-          <div class="tags"><span>RAG</span><span>Vector Search</span><span>Python</span><span>FastAPI</span></div>
-        </div>
+      <div class="cap-card">
+        <span class="cap-num">03</span>
+        <h3>RAG &amp; Knowledge Systems</h3>
+        <p>Internal assistants that answer from your own documents, with sources attached and retrieval you can trust.</p>
+        <div class="tags"><span>RAG</span><span>Vector Search</span><span>FastAPI</span></div>
       </div>
-      <div class="cap-row">
-        <div class="cap-head"><span class="cap-num">04</span><h3>Fixing Broken AI Builds</h3></div>
-        <div class="cap-body">
-          <p>Half-finished agents, and Lovable or Replit prototypes that demo well and have no error handling underneath. I make them production-safe.</p>
-          <div class="tags"><span>Error Handling</span><span>Testing</span><span>Observability</span></div>
-        </div>
+      <div class="cap-card">
+        <span class="cap-num">04</span>
+        <h3>Fixing Broken AI Builds</h3>
+        <p>Half-finished agents and flashy no-code prototypes with no error handling underneath, made production-safe.</p>
+        <div class="tags"><span>Error Handling</span><span>Testing</span><span>Observability</span></div>
       </div>
-      <div class="cap-row">
-        <div class="cap-head"><span class="cap-num">05</span><h3>Cost, Latency &amp; Reliability Engineering</h3></div>
-        <div class="cap-body">
-          <p>I treat model choice as an engineering decision, not a default. Bulk drafting runs on cheaper models; premium models are reserved for research grounding and final review. I cache reusable sub-results, validate every output against a schema so malformed responses don't trigger expensive retries, and benchmark providers per task — OpenAI, Gemini, Claude, xAI, DeepSeek — so the cheapest model that clears the quality bar wins. Independent stages run in parallel and stream token-by-token to the browser, and every stage checkpoints to disk, so a failure retries from the exact broken step instead of the whole job. I cut one production prompt at Educative from ~11K to ~1K tokens — about 90% cheaper, and more reliable.</p>
-          <div class="tags"><span>Model Routing</span><span>Prompt Caching</span><span>Schema Validation</span><span>SSE Streaming</span><span>Checkpointing</span></div>
-        </div>
+      <div class="cap-card">
+        <span class="cap-num">05</span>
+        <h3>Cost, Latency &amp; Reliability Engineering</h3>
+        <p>Model routing, prompt caching, schema validation, and per-stage checkpointing — the difference between a demo and a system that runs 24/7. Cut one production prompt ~90% cheaper.</p>
+        <div class="tags"><span>Model Routing</span><span>Caching</span><span>Checkpointing</span></div>
       </div>
-      <div class="cap-row featured">
-        <div class="cap-head"><span class="cap-num">06</span><h3>From Automation to Application</h3></div>
-        <div class="cap-body">
-          <p>Automating the process is half the job. When it's worth it, I wrap the whole pipeline in a real web or mobile application — a proper UI, an admin panel to tune prompts without a deploy — instead of leaving it as a backend trigger only one person can run. That's how an internal automation became a full Next.js app my team uses daily, and how Fenzo's ~100-agent pipeline became a live platform serving any number of concurrent users.</p>
-          <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Admin Tooling</span><span>Product UX</span></div>
-        </div>
+      <div class="cap-card featured">
+        <span class="cap-num">06</span>
+        <h3>From Automation to Application</h3>
+        <p>When it's worth it, the pipeline becomes a real web or mobile app — a proper UI, not a backend trigger only you can run.</p>
+        <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Product UX</span></div>
       </div>
     </div>
   </div>
@@ -647,9 +641,9 @@
 <section id="catalogue">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Ready-Made Packages</div>
-      <h2>Scoped engagements you can commission directly.</h2>
-      <p>Pick a package, see exactly what's included at each tier, and get a fixed scope before we start.</p>
+      <div class="kicker">Packaged Services</div>
+      <h2>Fixed-scope engagements, clearly priced.</h2>
+      <p>Choose a package, see exactly what's included at each tier, and get a defined scope before we start.</p>
     </div>
     <div class="catalogue-grid">
       <a class="cat-card" href="catalogue/technical-content-course-architecture.html">
