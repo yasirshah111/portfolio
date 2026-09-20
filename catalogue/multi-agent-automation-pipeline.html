@@ -44,6 +44,12 @@
   .section-head h2{font-size:clamp(1.4rem,2.6vw,1.8rem);margin-bottom:8px;}
   .section-head p{color:var(--ink-dim);font-size:0.95rem;max-width:560px;}
 
+  .tier-table-outer{position:relative;}
+  .tier-table-outer::after{
+    content:"";position:absolute;top:1px;right:1px;bottom:1px;width:32px;
+    background:linear-gradient(to right, transparent, var(--paper));
+    pointer-events:none;border-radius:0 9px 9px 0;
+  }
   .tier-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;}
   table.tier-table{width:100%;border-collapse:collapse;min-width:560px;font-size:0.92rem;}
   table.tier-table th,table.tier-table td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line);}
@@ -110,6 +116,7 @@
       <h2>Three tiers, from a scoped pipeline to full source handover.</h2>
       <p>Every tier ships tested and documented. Source code ownership is available on Advanced.</p>
     </div>
+    <div class="tier-table-outer">
     <div class="tier-table-wrap">
       <table class="tier-table">
         <thead>
@@ -159,6 +166,7 @@
           </tr>
         </tbody>
       </table>
+    </div>
     </div>
 
     <div class="addon-card">
