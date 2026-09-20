@@ -195,6 +195,58 @@
   .proj-link{font-size:0.9rem;font-weight:600;color:var(--ink);border-bottom:1.5px solid var(--accent);padding-bottom:2px;display:inline-flex;}
   .proj-link:hover{color:var(--accent);}
 
+  /* PROJECT CAROUSEL */
+  .car-outer{position:relative;}
+  .car-viewport{
+    display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;
+    padding-bottom:14px;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;scrollbar-color:var(--line) transparent;
+  }
+  .car-viewport::-webkit-scrollbar{height:6px;}
+  .car-viewport::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px;}
+  .car-card{
+    flex:0 0 calc((100% - 48px)/3);scroll-snap-align:start;
+    display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;
+    overflow:hidden;background:var(--paper);
+  }
+  @media (max-width:980px){ .car-card{flex:0 0 calc((100% - 24px)/2);} }
+  @media (max-width:640px){ .car-card{flex:0 0 88%;} }
+  .car-visual{background:#0e0e10;}
+  .car-visual .shot{border-radius:0;border-width:0;}
+  .car-visual .shot img{aspect-ratio:16/10;object-fit:cover;}
+  .car-visual .stat-block{border-radius:0;min-height:180px;padding:30px 26px;}
+  .car-visual .stat-block .num{font-size:clamp(2.4rem,4vw,3.2rem);}
+  .car-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1;}
+  .car-body h3{font-size:1.12rem;margin:0;}
+  .car-teaser{font-size:0.88rem;color:var(--ink-dim);margin:0;}
+  .car-body .tags{margin:2px 0 0;}
+  .car-more{
+    align-self:flex-start;background:none;border:none;padding:0;margin-top:auto;
+    font-weight:600;font-size:0.86rem;color:var(--ink);border-bottom:1.5px solid var(--accent);
+    cursor:pointer;font-family:inherit;
+  }
+  .car-more:hover{color:var(--accent);}
+  .car-controls{display:flex;justify-content:flex-end;gap:10px;margin-top:18px;}
+  .car-btn{
+    width:42px;height:42px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;
+    cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;color:var(--ink);
+    line-height:1;
+  }
+  .car-btn:hover{background:var(--ink);color:var(--paper);}
+
+  /* CASE-STUDY MODAL */
+  .case-modal{position:fixed;inset:0;background:rgba(12,9,6,.92);z-index:310;align-items:center;justify-content:center;padding:24px;}
+  .case-modal:not([hidden]){display:flex;}
+  .case-modal-inner{
+    background:var(--paper);color:var(--ink);max-width:640px;width:100%;max-height:86vh;overflow-y:auto;
+    border-radius:10px;padding:38px;position:relative;
+  }
+  .case-modal-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.7rem;cursor:pointer;color:var(--ink-dim);line-height:1;padding:6px;}
+  .case-modal-close:hover{color:var(--accent);}
+  .case-modal-inner h3{font-size:1.5rem;margin:6px 0 18px;}
+  .case-modal-inner .case{margin-bottom:20px;}
+  .case-modal-inner .case p{max-width:none;}
+
   /* STACK / INDUSTRIES */
   .stack-list{border-top:1px solid var(--line);}
   .stack-row{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line);}
@@ -242,6 +294,25 @@
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
   .reveal.in{opacity:1;transform:translateY(0);}
 
+  /* CATALOGUE */
+  .catalogue-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  @media (max-width:760px){ .catalogue-grid{grid-template-columns:1fr;} }
+  .cat-card{
+    display:flex;flex-direction:column;gap:14px;border:1px solid var(--line);border-radius:10px;
+    padding:30px;background:var(--paper);color:inherit;text-decoration:none;
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  a.cat-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 16px 32px -22px rgba(20,15,8,.3);}
+  .cat-card.soon{opacity:.72;}
+  .cat-card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
+  .cat-tag{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);}
+  .cat-price{font-weight:700;font-size:0.95rem;}
+  .cat-card h3{font-size:1.22rem;}
+  .cat-card p{color:var(--ink-dim);font-size:0.93rem;}
+  .cat-card-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;font-size:0.85rem;color:var(--ink-dim);flex-wrap:wrap;}
+  .cat-arrow{font-weight:600;color:var(--ink);border-bottom:1.5px solid var(--accent);}
+  a.cat-card:hover .cat-arrow{color:var(--accent);}
+
   /* LIGHTBOX */
   .lightbox{position:fixed;inset:0;background:rgba(12,9,6,.95);z-index:300;display:none;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;}
   .lightbox.open{display:flex;}
@@ -270,6 +341,7 @@
       <a href="#about">About</a>
       <a href="#build">What I Build</a>
       <a href="#projects">Work</a>
+      <a href="#catalogue">Packages</a>
       <a href="#experience">Experience</a>
       <a href="#stack">Stack</a>
       <a href="#contact">Contact</a>
@@ -391,146 +463,212 @@
     <div class="section-head">
       <div class="kicker">Selected Work</div>
       <h2>A few systems I've designed and shipped.</h2>
-      <p>Real workflow canvases and product screenshots. Click any image to see it larger.</p>
+      <p>Scroll or use the arrows — click any card to read the full case study.</p>
     </div>
 
-    <div class="proj-list" id="projList">
+    <div class="car-outer">
+      <div class="car-viewport" id="carViewport">
 
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="shot light">
-            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">fenzo.ai</span></div>
-            <img class="zoomable" src="assets/fenzo.png" data-full="assets/fenzo.png" data-cap="Fenzo — an AI-native learning platform, co-architected from an n8n prototype into a ~100-agent production system." alt="Fenzo homepage" loading="lazy">
+        <div class="car-card reveal">
+          <div class="car-visual">
+            <div class="shot light">
+              <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">fenzo.ai</span></div>
+              <img class="zoomable" src="assets/fenzo.png" data-full="assets/fenzo.png" data-cap="Fenzo — an AI-native learning platform, co-architected from an n8n prototype into a ~100-agent production system." alt="Fenzo homepage" loading="lazy">
+            </div>
           </div>
-          <div class="shot-cap"><p>An AI-native learning platform — co-architected from an n8n prototype into a ~100-agent production system.</p><span class="zoom">Enlarge ↗</span></div>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">~100 agents · live in production</span>
-          <h3>Fenzo</h3>
-          <div class="case">
-            <p><b class="lbl">Problem</b>Fenzo needed to generate genuinely interactive courses, personalized guides, blogs, and flash cards for any topic — without a human content team, and without AI costs spiraling at scale.</p>
-            <p><b class="lbl">Approach</b>Co-architected it end-to-end: prototyped the full multi-agent flow in n8n to validate it fast, then rebuilt it in code as a production system of ~100 specialized agents, continuously benchmarked and routed across OpenAI, Gemini, Claude, xAI, and DeepSeek, generating hundreds of dynamic interactive widgets instead of plain text.</p>
-            <p class="result"><b class="lbl">Result</b>A live platform that turns a single topic into a finished course, guide, blog, or flash-card set in a couple of minutes — for any number of concurrent users, on any topic, technical or not.</p>
+          <div class="car-body">
+            <span class="proj-idx">~100 agents · live in production</span>
+            <h3>Fenzo</h3>
+            <p class="car-teaser">A live platform that turns a topic into a finished course, guide, blog, or flash-card set in minutes.</p>
+            <div class="tags"><span>n8n</span><span>Multi-Agent Orchestration</span><span>Multi-LLM Routing</span></div>
+            <button class="car-more" type="button">View case study →</button>
           </div>
-          <div class="tags"><span>n8n</span><span>Multi-Agent Orchestration</span><span>OpenAI / Gemini / Claude / xAI / DeepSeek</span><span>Cost &amp; Latency Optimization</span></div>
-          <a class="proj-link" href="https://fenzo.ai/about" target="_blank" rel="noopener">Visit fenzo.ai →</a>
+          <div class="case-full" hidden>
+            <div class="case">
+              <p><b class="lbl">Problem</b>Fenzo needed to generate genuinely interactive courses, personalized guides, blogs, and flash cards for any topic — without a human content team, and without AI costs spiraling at scale.</p>
+              <p><b class="lbl">Approach</b>Co-architected it end-to-end: prototyped the full multi-agent flow in n8n to validate it fast, then rebuilt it in code as a production system of ~100 specialized agents, continuously benchmarked and routed across OpenAI, Gemini, Claude, xAI, and DeepSeek, generating hundreds of dynamic interactive widgets instead of plain text.</p>
+              <p class="result"><b class="lbl">Result</b>A live platform that turns a single topic into a finished course, guide, blog, or flash-card set in a couple of minutes — for any number of concurrent users, on any topic, technical or not.</p>
+            </div>
+            <div class="tags"><span>n8n</span><span>Multi-Agent Orchestration</span><span>OpenAI / Gemini / Claude / xAI / DeepSeek</span><span>Cost &amp; Latency Optimization</span></div>
+            <a class="proj-link" href="https://fenzo.ai/about" target="_blank" rel="noopener">Visit fenzo.ai →</a>
+          </div>
         </div>
+
+        <div class="car-card reveal">
+          <div class="car-visual">
+            <div class="shot light">
+              <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">persona-blogs.app</span></div>
+              <img class="zoomable" src="assets/persona-blogs-app.png" data-full="assets/persona-blogs-app.png" data-cap="Persona Blogs — the productized version of the persona blog automation, built as a full Next.js application." alt="Persona Blogs Next.js content platform interface" loading="lazy">
+            </div>
+          </div>
+          <div class="car-body">
+            <span class="proj-idx">Full-stack platform</span>
+            <h3>AI-Powered Technical Content Platform</h3>
+            <p class="car-teaser">A production tool the team uses today — generates code, images, and charts, then publishes straight to the CMS.</p>
+            <div class="tags"><span>Next.js 14</span><span>TypeScript</span><span>Tailwind</span></div>
+            <button class="car-more" type="button">View case study →</button>
+          </div>
+          <div class="case-full" hidden>
+            <div class="case">
+              <p><b class="lbl">Problem</b>Needed a standalone tool to generate and preview rich technical content — code, images, charts — before publishing.</p>
+              <p><b class="lbl">Approach</b>Full-stack build on Next.js 14 + LangChain across Claude (Bedrock) and GPT-4o, with direct CMS publishing via API.</p>
+              <p class="result"><b class="lbl">Result</b>A production tool the team uses today.</p>
+            </div>
+            <div class="tags"><span>Next.js 14</span><span>TypeScript</span><span>Tailwind</span><span>Chart.js</span></div>
+          </div>
+        </div>
+
+        <div class="car-card reveal">
+          <div class="car-visual">
+            <div class="shot light">
+              <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">educative.io/courses</span></div>
+              <img class="zoomable" src="assets/educative-course.jpg" data-full="assets/educative-course.jpg" data-cap="Grokking Modern System Design Interview — one of seven courses authored or co-authored." alt="Grokking Modern System Design Interview course page on Educative" loading="lazy">
+            </div>
+          </div>
+          <div class="car-body">
+            <span class="proj-idx">7× author</span>
+            <h3>System Design Courses @ Educative</h3>
+            <p class="car-teaser">Co-authored and independently architected flagship courses used by engineers worldwide.</p>
+            <div class="tags"><span>Instructional Design</span><span>System Design</span></div>
+            <button class="car-more" type="button">View case study →</button>
+          </div>
+          <div class="case-full" hidden>
+            <p class="plain">Co-authored and independently architected flagship System Design courses used by engineers worldwide — including Grokking the System Design Interview.</p>
+            <div class="tags"><span>Instructional Design</span><span>System Design</span></div>
+            <a class="proj-link" href="https://www.educative.io/courses/grokking-the-system-design-interview" target="_blank" rel="noopener">View course →</a>
+          </div>
+        </div>
+
+        <div class="car-card reveal">
+          <div class="car-visual">
+            <div class="shot dark">
+              <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">core-engine.n8n</span></div>
+              <img class="zoomable" src="assets/core-engine-crop.png" data-full="assets/core-engine.png" data-cap="AI Content-Generation System — one of four labeled workflow groups (course data intake, mobile card generation, auto-upload, outline-only variant) in the full n8n canvas." alt="Cropped view of the AI content-generation system workflow in n8n, showing the mobile card generator node group" loading="lazy">
+            </div>
+          </div>
+          <div class="car-body">
+            <span class="proj-idx">Flagship project</span>
+            <h3>AI Content-Generation System (n8n)</h3>
+            <p class="car-teaser">In active use today, including a single-day run that updated ~500 existing blogs for SEO.</p>
+            <div class="tags"><span>n8n</span><span>LangChain</span><span>Claude / Bedrock</span></div>
+            <button class="car-more" type="button">View case study →</button>
+          </div>
+          <div class="case-full" hidden>
+            <div class="case">
+              <p><b class="lbl">Problem</b>Publishing single lessons, multi-lesson sets, and full multi-chapter paths meant building every page by hand.</p>
+              <p><b class="lbl">Approach</b>Architected an end-to-end n8n pipeline connecting the CMS, prompt chains, and multiple LLMs to generate and publish content directly.</p>
+              <p class="result"><b class="lbl">Result</b>In active use generating real content today, including a single-day run that updated ~500 existing blogs for SEO — and it became the reference our engineering team used to build the productized version.</p>
+            </div>
+            <div class="tags"><span>n8n</span><span>LangChain</span><span>Claude / Bedrock</span><span>REST APIs</span></div>
+          </div>
+        </div>
+
+        <div class="car-card reveal">
+          <div class="car-visual">
+            <div class="stat-block">
+              <span class="num">70%</span>
+              <span class="lbl">less production time — mobile-first microlearning, automatically.</span>
+            </div>
+          </div>
+          <div class="car-body">
+            <span class="proj-idx">−70% production time</span>
+            <h3>Agentic Content Pipeline</h3>
+            <p class="car-teaser">Dense technical courses reformatted into mobile-first microlearning, automatically.</p>
+            <div class="tags"><span>n8n</span><span>LangChain</span><span>Claude</span></div>
+            <button class="car-more" type="button">View case study →</button>
+          </div>
+          <div class="case-full" hidden>
+            <div class="case">
+              <p><b class="lbl">Problem</b>Dense, desktop-first technical courses don't translate to bite-sized mobile learning on their own.</p>
+              <p><b class="lbl">Approach</b>A multi-agent workflow that reformats content, generates interactive elements, and republishes it, mobile-first.</p>
+              <p class="result"><b class="lbl">Result</b>Cut production time by over 70%.</p>
+            </div>
+            <div class="tags"><span>n8n</span><span>LangChain</span><span>Claude</span><span>Multi-LLM</span></div>
+          </div>
+        </div>
+
+        <div class="car-card reveal">
+          <div class="car-visual">
+            <div class="shot dark">
+              <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">persona-blogs.n8n</span></div>
+              <img class="zoomable" src="assets/persona-blogs-pipeline-crop.png" data-full="assets/persona-blogs-pipeline.png" data-cap="Multi-Agent Content Engine — a cropped region showing several of the pipeline's coordinated agent groups: outlining, drafting, diagrams, code, tables, SEO review, and proofreading." alt="Cropped view of the multi-agent persona blog pipeline in n8n, showing labeled agent groups for outlining, drafting, and SEO review" loading="lazy">
+            </div>
+          </div>
+          <div class="car-body">
+            <span class="proj-idx">Autonomous · 10–20 agents</span>
+            <h3>Multi-Agent Content Engine &amp; CMS Pipeline</h3>
+            <p class="car-teaser">Powers 5–7 published articles a day per team, some runs going 24/7 once topics are queued.</p>
+            <div class="tags"><span>n8n</span><span>Claude</span><span>OpenAI</span></div>
+            <button class="car-more" type="button">View case study →</button>
+          </div>
+          <div class="case-full" hidden>
+            <div class="case">
+              <p><b class="lbl">Problem</b>Persona-driven, expert-voice articles took days of research, writing, and SEO review per piece.</p>
+              <p><b class="lbl">Approach</b>Triggered by a form: live web research, persona-voiced writing, auto-generated D2 diagrams &amp; Chart.js visuals, then an AI editorial/SEO reviewer before publishing via API — 10–20 coordinated agents per run.</p>
+              <p class="result"><b class="lbl">Result</b>Zero manual handoffs from brief to published article — powers 5–7 articles a day per team, with some runs going 24/7 once topics are queued.</p>
+            </div>
+            <div class="tags"><span>n8n</span><span>Claude Opus/Sonnet</span><span>OpenAI</span></div>
+          </div>
+        </div>
+
+        <div class="car-card reveal">
+          <div class="car-visual">
+            <div class="shot dark">
+              <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">course-designer.n8n</span></div>
+              <img class="zoomable" src="assets/course-designer-crop.png" data-full="assets/course-designer.png" data-cap="Agentic Course Designer — the planning-to-publishing chain: gate agent, research merge, study planner, outline generator, text generator, and formatting agents." alt="Cropped view of the agentic course designer workflow in n8n, showing the planner-to-publisher agent chain" loading="lazy">
+            </div>
+          </div>
+          <div class="car-body">
+            <span class="proj-idx">−90% production time</span>
+            <h3>Agentic Course Designer</h3>
+            <p class="car-teaser">Cut full-course production time by over 90%, from planning to publishing.</p>
+            <div class="tags"><span>n8n</span><span>LangChain</span><span>Python</span></div>
+            <button class="car-more" type="button">View case study →</button>
+          </div>
+          <div class="case-full" hidden>
+            <div class="case">
+              <p><b class="lbl">Problem</b>Designing a full course from scratch — technical or not — took weeks of planning and writing.</p>
+              <p><b class="lbl">Approach</b>A modular multi-agent system (planner, writer agents, assembler) integrated into the internal CMS via custom Python/JS.</p>
+              <p class="result"><b class="lbl">Result</b>Cut content production time by over 90%.</p>
+            </div>
+            <div class="tags"><span>n8n</span><span>LangChain</span><span>Python</span><span>JavaScript</span></div>
+          </div>
+        </div>
+
       </div>
-
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="shot light">
-            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">persona-blogs.app</span></div>
-            <img class="zoomable" src="assets/persona-blogs-app.png" data-full="assets/persona-blogs-app.png" data-cap="Persona Blogs — the productized version of the persona blog automation, built as a full Next.js application." alt="Persona Blogs Next.js content platform interface" loading="lazy">
-          </div>
-          <div class="shot-cap"><p>Internally called Persona Blogs — the automation, productized into a real app.</p><span class="zoom">Enlarge ↗</span></div>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">Full-stack platform</span>
-          <h3>AI-Powered Technical Content Platform</h3>
-          <div class="case">
-            <p><b class="lbl">Problem</b>Needed a standalone tool to generate and preview rich technical content — code, images, charts — before publishing.</p>
-            <p><b class="lbl">Approach</b>Full-stack build on Next.js 14 + LangChain across Claude (Bedrock) and GPT-4o, with direct CMS publishing via API.</p>
-            <p class="result"><b class="lbl">Result</b>A production tool the team uses today.</p>
-          </div>
-          <div class="tags"><span>Next.js 14</span><span>TypeScript</span><span>Tailwind</span><span>Chart.js</span></div>
-        </div>
+      <div class="car-controls">
+        <button class="car-btn" id="carPrev" aria-label="Previous project">‹</button>
+        <button class="car-btn" id="carNext" aria-label="Next project">›</button>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="shot light">
-            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">educative.io/courses</span></div>
-            <img class="zoomable" src="assets/educative-course.jpg" data-full="assets/educative-course.jpg" data-cap="Grokking Modern System Design Interview — one of seven courses authored or co-authored." alt="Grokking Modern System Design Interview course page on Educative" loading="lazy">
-          </div>
-          <div class="shot-cap"><p>Grokking Modern System Design Interview — one of seven courses authored.</p><span class="zoom">Enlarge ↗</span></div>
+<section id="catalogue">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Ready-Made Packages</div>
+      <h2>Scoped engagements you can commission directly.</h2>
+      <p>Pick a package, see exactly what's included at each tier, and get a fixed scope before we start.</p>
+    </div>
+    <div class="catalogue-grid">
+      <a class="cat-card" href="catalogue/technical-content-course-architecture.html">
+        <div class="cat-card-top">
+          <span class="cat-tag">Content &amp; Curriculum</span>
+          <span class="cat-price">From $100</span>
         </div>
-        <div class="proj-body">
-          <span class="proj-idx">7× author</span>
-          <h3>System Design Courses @ Educative</h3>
-          <p class="plain">Co-authored and independently architected flagship System Design courses used by engineers worldwide — including Grokking the System Design Interview.</p>
-          <div class="tags"><span>Instructional Design</span><span>System Design</span></div>
-          <a class="proj-link" href="https://www.educative.io/courses/grokking-the-system-design-interview" target="_blank" rel="noopener">View course →</a>
+        <h3>Technical Content &amp; Course Architecture</h3>
+        <p>A single deep-dive article, a multi-part series, or a fully architected course curriculum — written at a senior engineer level, with real-world architecture patterns and a clear structure that keeps readers engaged.</p>
+        <div class="cat-card-bottom">
+          <span>4 tiers · article to full curriculum</span>
+          <span class="cat-arrow">See tiers &amp; pricing →</span>
         </div>
+      </a>
+      <div class="cat-card soon">
+        <div class="cat-card-top"><span class="cat-tag">Coming soon</span></div>
+        <h3>More packages on the way</h3>
+        <p>Automation builds, AI agent packages, and platform work — scoped and priced the same way. Reach out directly in the meantime to scope something custom.</p>
       </div>
-
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="shot dark">
-            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">core-engine.n8n</span></div>
-            <img class="zoomable" src="assets/core-engine-crop.png" data-full="assets/core-engine.png" data-cap="AI Content-Generation System — one of four labeled workflow groups (course data intake, mobile card generation, auto-upload, outline-only variant) in the full n8n canvas." alt="Cropped view of the AI content-generation system workflow in n8n, showing the mobile card generator node group" loading="lazy">
-          </div>
-          <div class="shot-cap"><p>One of four workflow groups in the full canvas — course intake, card generation, auto-publish, and an outline-only variant.</p><span class="zoom">Full canvas ↗</span></div>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">Flagship project</span>
-          <h3>AI Content-Generation System (n8n)</h3>
-          <div class="case">
-            <p><b class="lbl">Problem</b>Publishing single lessons, multi-lesson sets, and full multi-chapter paths meant building every page by hand.</p>
-            <p><b class="lbl">Approach</b>Architected an end-to-end n8n pipeline connecting the CMS, prompt chains, and multiple LLMs to generate and publish content directly.</p>
-            <p class="result"><b class="lbl">Result</b>In active use generating real content today, including a single-day run that updated ~500 existing blogs for SEO — and it became the reference our engineering team used to build the productized version.</p>
-          </div>
-          <div class="tags"><span>n8n</span><span>LangChain</span><span>Claude / Bedrock</span><span>REST APIs</span></div>
-        </div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-visual stat-block">
-          <span class="num">70%</span>
-          <span class="lbl">less production time — dense technical courses reformatted into mobile-first microlearning, automatically.</span>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">−70% production time</span>
-          <h3>Agentic Content Pipeline</h3>
-          <div class="case">
-            <p><b class="lbl">Problem</b>Dense, desktop-first technical courses don't translate to bite-sized mobile learning on their own.</p>
-            <p><b class="lbl">Approach</b>A multi-agent workflow that reformats content, generates interactive elements, and republishes it, mobile-first.</p>
-            <p class="result"><b class="lbl">Result</b>Cut production time by over 70%.</p>
-          </div>
-          <div class="tags"><span>n8n</span><span>LangChain</span><span>Claude</span><span>Multi-LLM</span></div>
-        </div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="shot dark">
-            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">persona-blogs.n8n</span></div>
-            <img class="zoomable" src="assets/persona-blogs-pipeline-crop.png" data-full="assets/persona-blogs-pipeline.png" data-cap="Multi-Agent Content Engine — a cropped region showing several of the pipeline's coordinated agent groups: outlining, drafting, diagrams, code, tables, SEO review, and proofreading." alt="Cropped view of the multi-agent persona blog pipeline in n8n, showing labeled agent groups for outlining, drafting, and SEO review" loading="lazy">
-          </div>
-          <div class="shot-cap"><p>A slice of the pipeline — research, drafting, diagram generation, SEO review, and proofreading agents, chained together.</p><span class="zoom">Full canvas ↗</span></div>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">Autonomous pipeline · 10–20 agents</span>
-          <h3>Multi-Agent Content Engine &amp; CMS Pipeline</h3>
-          <div class="case">
-            <p><b class="lbl">Problem</b>Persona-driven, expert-voice articles took days of research, writing, and SEO review per piece.</p>
-            <p><b class="lbl">Approach</b>Triggered by a form: live web research, persona-voiced writing, auto-generated D2 diagrams &amp; Chart.js visuals, then an AI editorial/SEO reviewer before publishing via API — 10–20 coordinated agents per run.</p>
-            <p class="result"><b class="lbl">Result</b>Zero manual handoffs from brief to published article — powers 5–7 articles a day per team, with some runs going 24/7 once topics are queued.</p>
-          </div>
-          <div class="tags"><span>n8n</span><span>Claude Opus/Sonnet</span><span>OpenAI</span></div>
-        </div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-visual">
-          <div class="shot dark">
-            <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">course-designer.n8n</span></div>
-            <img class="zoomable" src="assets/course-designer-crop.png" data-full="assets/course-designer.png" data-cap="Agentic Course Designer — the planning-to-publishing chain: gate agent, research merge, study planner, outline generator, text generator, and formatting agents." alt="Cropped view of the agentic course designer workflow in n8n, showing the planner-to-publisher agent chain" loading="lazy">
-          </div>
-          <div class="shot-cap"><p>The planner-to-publisher chain: research merge, study planner, outline and text generator agents, then formatting.</p><span class="zoom">Full canvas ↗</span></div>
-        </div>
-        <div class="proj-body">
-          <span class="proj-idx">−90% production time</span>
-          <h3>Agentic Course Designer</h3>
-          <div class="case">
-            <p><b class="lbl">Problem</b>Designing a full course from scratch — technical or not — took weeks of planning and writing.</p>
-            <p><b class="lbl">Approach</b>A modular multi-agent system (planner, writer agents, assembler) integrated into the internal CMS via custom Python/JS.</p>
-            <p class="result"><b class="lbl">Result</b>Cut content production time by over 90%.</p>
-          </div>
-          <div class="tags"><span>n8n</span><span>LangChain</span><span>Python</span><span>JavaScript</span></div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -686,6 +824,15 @@
   <p class="lightbox-cap" id="lightboxCap"></p>
 </div>
 
+<div class="case-modal" id="caseModal" hidden aria-hidden="true">
+  <div class="case-modal-inner">
+    <button class="case-modal-close" id="caseModalClose" aria-label="Close">&times;</button>
+    <span class="proj-idx" id="caseModalIdx"></span>
+    <h3 id="caseModalTitle"></h3>
+    <div id="caseModalBody"></div>
+  </div>
+</div>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -724,7 +871,63 @@
   });
   lightboxClose.addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+  // Case-study modal
+  const caseModal = document.getElementById('caseModal');
+  const caseModalClose = document.getElementById('caseModalClose');
+  const caseModalIdx = document.getElementById('caseModalIdx');
+  const caseModalTitle = document.getElementById('caseModalTitle');
+  const caseModalBody = document.getElementById('caseModalBody');
+
+  function openCaseModal(card){
+    caseModalIdx.textContent = card.querySelector('.proj-idx')?.textContent || '';
+    caseModalTitle.textContent = card.querySelector('h3')?.textContent || '';
+    caseModalBody.innerHTML = card.querySelector('.case-full').innerHTML;
+    caseModal.hidden = false;
+    caseModal.setAttribute('aria-hidden', 'false');
+  }
+  function closeCaseModal(){
+    caseModal.hidden = true;
+    caseModal.setAttribute('aria-hidden', 'true');
+  }
+  document.querySelectorAll('.car-more').forEach(btn => {
+    btn.addEventListener('click', () => openCaseModal(btn.closest('.car-card')));
+  });
+  caseModalClose.addEventListener('click', closeCaseModal);
+  caseModal.addEventListener('click', (e) => { if (e.target === caseModal) closeCaseModal(); });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { closeLightbox(); closeCaseModal(); }
+  });
+
+  // Project carousel: horizontal scroll, auto-advance, pause on interaction
+  const carViewport = document.getElementById('carViewport');
+  const carPrev = document.getElementById('carPrev');
+  const carNext = document.getElementById('carNext');
+  let carTimer = null;
+
+  function carStep(){
+    const card = carViewport.querySelector('.car-card');
+    if (!card) return 320;
+    const style = getComputedStyle(carViewport);
+    const gap = parseFloat(style.columnGap || style.gap || '24') || 24;
+    return card.getBoundingClientRect().width + gap;
+  }
+  function carAdvance(){
+    const atEnd = carViewport.scrollLeft + carViewport.clientWidth >= carViewport.scrollWidth - 4;
+    if (atEnd) carViewport.scrollTo({ left: 0, behavior: 'smooth' });
+    else carViewport.scrollBy({ left: carStep(), behavior: 'smooth' });
+  }
+  function startCarAuto(){ stopCarAuto(); carTimer = setInterval(carAdvance, 4500); }
+  function stopCarAuto(){ if (carTimer) clearInterval(carTimer); carTimer = null; }
+
+  if (carViewport) {
+    startCarAuto();
+    ['mouseenter', 'touchstart', 'focusin'].forEach(evt => carViewport.addEventListener(evt, stopCarAuto, { passive: true }));
+    ['mouseleave', 'touchend'].forEach(evt => carViewport.addEventListener(evt, startCarAuto, { passive: true }));
+    carPrev.addEventListener('click', () => { stopCarAuto(); carViewport.scrollBy({ left: -carStep(), behavior: 'smooth' }); startCarAuto(); });
+    carNext.addEventListener('click', () => { stopCarAuto(); carAdvance(); startCarAuto(); });
+  }
 </script>
 </body>
 </html>

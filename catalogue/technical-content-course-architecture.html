@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical Content &amp; Course Architecture — M. Yasir Shah</title>
+<meta name="description" content="Get a deep-dive article, a multi-part series, or a fully architected course curriculum, written at a senior engineer level. Tiers, pricing, and process.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%2318140f%22/><text x=%2250%22 y=%2268%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%23c1531f%22 font-family=%22Georgia,serif%22>Y</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f1e6; --paper-2:#ece3ce; --line:#ddd0b0; --ink:#18140f; --ink-dim:#6b6152;
+    --cream:#f3ead9; --cream-dim:#b3a68d; --accent:#c1531f; --accent-deep:#8a3813; --max:920px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-0.01em;}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(246,241,230,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:var(--max);}
+  .back-link{font-size:0.88rem;font-weight:500;color:var(--ink-dim);text-decoration:none;display:flex;align-items:center;gap:6px;}
+  .back-link:hover{color:var(--ink);}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;font-weight:600;font-size:0.86rem;border:1.5px solid var(--ink);border-radius:3px;text-decoration:none;transition:background .15s ease,color .15s ease;}
+  .btn-solid{background:var(--ink);color:var(--paper);}
+  .btn-solid:hover{background:var(--accent);border-color:var(--accent);}
+
+  .hero{padding:56px 0 44px;border-bottom:1px solid var(--line);}
+  .kicker{font-size:0.78rem;font-weight:700;letter-spacing:0.08em;color:var(--ink-dim);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+  .kicker::before{content:"";width:16px;height:1px;background:var(--accent);display:inline-block;}
+  h1{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;max-width:20ch;margin-bottom:20px;}
+  .lead{color:var(--ink-dim);font-size:1.05rem;max-width:640px;margin-bottom:16px;}
+  .ideal-for{font-size:0.9rem;color:var(--ink-dim);}
+  .ideal-for b{color:var(--ink);}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{margin-bottom:32px;}
+  .section-head h2{font-size:clamp(1.4rem,2.6vw,1.8rem);margin-bottom:8px;}
+  .section-head p{color:var(--ink-dim);font-size:0.95rem;max-width:560px;}
+
+  .tier-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;}
+  table.tier-table{width:100%;border-collapse:collapse;min-width:680px;font-size:0.92rem;}
+  table.tier-table th,table.tier-table td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line);}
+  table.tier-table th{font-family:'Fraunces',serif;font-weight:500;background:var(--paper-2);white-space:nowrap;}
+  table.tier-table th.tier-name{font-size:1rem;}
+  table.tier-table th .price{display:block;color:var(--accent);font-size:1.3rem;font-weight:600;margin-top:4px;font-family:'Fraunces',serif;}
+  table.tier-table td:first-child{color:var(--ink-dim);font-weight:600;font-size:0.85rem;white-space:nowrap;}
+  table.tier-table tr:last-child td{border-bottom:none;}
+  table.tier-table td.yes{color:var(--accent);font-weight:700;text-align:center;}
+  table.tier-table td.no{color:var(--cream-dim);text-align:center;}
+  table.tier-table td.custom{color:var(--ink);}
+  th.highlight, td.highlight{background:var(--paper-2);}
+
+  .process-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);}
+  .process-row{display:grid;grid-template-columns:44px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--line);}
+  .process-num{font-family:'Fraunces',serif;color:var(--accent);font-size:1.3rem;line-height:1;}
+  .process-row h3{font-size:1.05rem;margin-bottom:6px;}
+  .process-row p{color:var(--ink-dim);font-size:0.93rem;max-width:560px;}
+
+  .cta-band{background:var(--ink);color:var(--cream);border-bottom:none;}
+  .cta-band h2{color:var(--cream);font-size:clamp(1.5rem,3vw,2rem);margin-bottom:14px;max-width:20ch;}
+  .cta-band p{color:var(--cream-dim);max-width:520px;margin-bottom:26px;font-size:0.98rem;}
+  .cta-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn-ghost-dark{background:transparent;color:var(--cream);border-color:rgba(243,234,217,.35);}
+  .btn-ghost-dark:hover{background:rgba(243,234,217,.1);border-color:var(--cream);}
+
+  footer{background:var(--ink);color:var(--cream-dim);}
+  footer .wrap{padding:26px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:0.82rem;max-width:var(--max);}
+  footer a:hover{color:var(--cream);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="back-link" href="../index.html">← Back to portfolio</a>
+    <a href="../index.html#contact" class="btn btn-solid">Get a Quote</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Content &amp; Curriculum Package</div>
+    <h1>Technical Content &amp; Course Architecture: Articles, Series, Full Curriculum</h1>
+    <p class="lead">Get a single deep-dive article, a multi-part article series, or a fully architected course curriculum — written by someone who has co-authored 7 System Design courses on Educative and independently architected 4 of them end-to-end.</p>
+    <p class="lead">Whether you need one polished technical article for your engineering blog, a structured series covering a topic in depth, or a complete course blueprint with module breakdowns, learning objectives, and content outlines, I handle the full lifecycle from technical vision to final deliverable. Content is written at a senior-engineer level, with real-world architecture patterns, practical examples, and a clear structure that keeps readers engaged.</p>
+    <p class="ideal-for"><b>Ideal for:</b> EdTech platforms, developer documentation teams, engineering blogs, and companies building learning products.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">What's Included</div>
+      <h2>Four tiers, from a single article to a full curriculum.</h2>
+      <p>Word-count tiers cover articles and series. Course Architecture is scoped per curriculum — get a custom quote based on module count and depth.</p>
+    </div>
+    <div class="tier-table-wrap">
+      <table class="tier-table">
+        <thead>
+          <tr>
+            <th class="tier-name">Service Tiers</th>
+            <th class="tier-name">Starter<span class="price">$100</span></th>
+            <th class="tier-name highlight">Standard<span class="price">$500</span></th>
+            <th class="tier-name">Advanced<span class="price">$1,500</span></th>
+            <th class="tier-name">Course Architecture<span class="price">Custom</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Delivery Time</td>
+            <td>3 days</td>
+            <td class="highlight">7 days</td>
+            <td>21 days</td>
+            <td class="custom">Scoped per curriculum</td>
+          </tr>
+          <tr>
+            <td>Revisions</td>
+            <td>1</td>
+            <td class="highlight">2</td>
+            <td>3</td>
+            <td class="custom">Included in review cycle</td>
+          </tr>
+          <tr>
+            <td>Scope</td>
+            <td>1,500 words</td>
+            <td class="highlight">8,000 words</td>
+            <td>20,000 words</td>
+            <td class="custom">Full curriculum: modules, lesson outlines &amp; learning objectives</td>
+          </tr>
+          <tr>
+            <td>Technical Illustrations</td>
+            <td>3</td>
+            <td class="highlight">15</td>
+            <td>50</td>
+            <td class="custom">Diagram set per module</td>
+          </tr>
+          <tr>
+            <td>Consultation</td>
+            <td class="no">—</td>
+            <td class="yes highlight">✓</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>Proofreading &amp; Editing</td>
+            <td class="yes">✓</td>
+            <td class="yes highlight">✓</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>Additional Research</td>
+            <td class="yes">✓</td>
+            <td class="yes highlight">✓</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>References &amp; Citations</td>
+            <td class="no">—</td>
+            <td class="yes highlight">✓</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>Formatted Style Guide</td>
+            <td class="yes">✓</td>
+            <td class="yes highlight">✓</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>Instructional Design Review</td>
+            <td class="no">—</td>
+            <td class="no highlight">—</td>
+            <td class="no">—</td>
+            <td class="yes">✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">How It Works</div>
+      <h2>From requirements to a finished, polished deliverable.</h2>
+    </div>
+    <div class="process-list">
+      <div class="process-row">
+        <span class="process-num">01</span>
+        <div>
+          <h3>Share your requirements</h3>
+          <p>Tell me the topic, format — single article, series, or full curriculum — target audience, and anything that must be covered.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <span class="process-num">02</span>
+        <div>
+          <h3>Content architecture</h3>
+          <p>I architect the content based on your requirements — a single outline, a complete curriculum, a learning path tailored to your audience, or a structured review pass on existing content.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <span class="process-num">03</span>
+        <div>
+          <h3>Writing and review</h3>
+          <p>I write the content — with interactive elements where useful — following universal editorial guidelines plus any of your own. It's then run through a specialized quality pass to catch gaps and tighten structure.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <span class="process-num">04</span>
+        <div>
+          <h3>Review and revise</h3>
+          <p>You review the delivered work and request revisions within your tier's allowance. I refine until it's ready to publish.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--cream-dim);">Get Started</div>
+    <h2>Have a topic, series, or course in mind?</h2>
+    <p>Tell me the scope and I'll confirm the right tier — or send a custom quote for course architecture.</p>
+    <div class="cta-actions">
+      <a href="mailto:yasirshahji1116@outlook.com?subject=Technical%20Content%20%26%20Course%20Architecture%20-%20Project%20Inquiry" class="btn btn-solid">Email Me</a>
+      <a href="https://wa.me/923440066123" target="_blank" rel="noopener" class="btn btn-ghost-dark">WhatsApp</a>
+      <a href="../index.html#projects" class="btn btn-ghost-dark">See Related Work</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> M. Yasir Shah</span>
+    <a class="back-link" href="../index.html" style="color:inherit;">← Back to portfolio</a>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
