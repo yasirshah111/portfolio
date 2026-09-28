@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Mobile &amp; Web App Development — M. Yasir Shah</title>
+<meta name="description" content="Full production mobile and web apps built end-to-end on Expo (React Native), Supabase, and TypeScript — auth, payments, real-time features, and admin panels. Scope, process, and proof of work.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%2318140f%22/><text x=%2250%22 y=%2268%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%23c1531f%22 font-family=%22Georgia,serif%22>Y</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f1e6; --paper-2:#ece3ce; --line:#ddd0b0; --ink:#18140f; --ink-dim:#6b6152;
+    --cream:#f3ead9; --cream-dim:#b3a68d; --accent:#c1531f; --accent-deep:#8a3813; --max:920px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-0.01em;}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(246,241,230,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:var(--max);}
+  .back-link{font-size:0.88rem;font-weight:500;color:var(--ink-dim);text-decoration:none;display:flex;align-items:center;gap:6px;}
+  .back-link:hover{color:var(--ink);}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;font-weight:600;font-size:0.86rem;border:1.5px solid var(--ink);border-radius:3px;text-decoration:none;transition:background .15s ease,color .15s ease;}
+  .btn-solid{background:var(--ink);color:var(--paper);}
+  .btn-solid:hover{background:var(--accent);border-color:var(--accent);}
+
+  .hero{padding:56px 0 44px;border-bottom:1px solid var(--line);}
+  .kicker{font-size:0.78rem;font-weight:700;letter-spacing:0.08em;color:var(--ink-dim);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+  .kicker::before{content:"";width:16px;height:1px;background:var(--accent);display:inline-block;}
+  h1{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;max-width:22ch;margin-bottom:20px;}
+  .lead{color:var(--ink-dim);font-size:1.05rem;max-width:640px;margin-bottom:16px;}
+  .ideal-for{font-size:0.9rem;color:var(--ink-dim);}
+  .ideal-for b{color:var(--ink);}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{margin-bottom:32px;}
+  .section-head h2{font-size:clamp(1.4rem,2.6vw,1.8rem);margin-bottom:8px;}
+  .section-head p{color:var(--ink-dim);font-size:0.95rem;max-width:560px;}
+
+  /* Proof-of-work phone gallery (mirrors the portfolio's Glowen case study) */
+  .gallery-track{display:flex;gap:14px;overflow-x:auto;padding:4px 4px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+  .gallery-track .gal-item{flex:0 0 auto;width:150px;scroll-snap-align:start;}
+  .gallery-track .gal-frame{border-radius:20px;overflow:hidden;background:#000;border:4px solid var(--ink);box-shadow:0 12px 26px -14px rgba(0,0,0,.4);}
+  .gallery-track .gal-frame img{width:100%;aspect-ratio:9/20;object-fit:cover;display:block;}
+  .gallery-track .gal-cap{display:block;font-size:0.72rem;color:var(--ink-dim);margin-top:8px;text-align:center;}
+  .gallery-link{font-size:0.9rem;font-weight:600;color:var(--ink);border-bottom:1.5px solid var(--accent);padding-bottom:2px;display:inline-flex;margin-top:6px;}
+  .gallery-link:hover{color:var(--accent);}
+
+  /* Scope checklist (no fixed tiers — every app is scoped individually) */
+  .scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+  @media (max-width:640px){ .scope-grid{grid-template-columns:1fr;} }
+  .scope-item{background:var(--paper);padding:22px 24px;}
+  .scope-item h4{font-size:0.98rem;margin-bottom:6px;}
+  .scope-item p{color:var(--ink-dim);font-size:0.88rem;margin:0;}
+  .quote-note{
+    margin-top:22px;padding:18px 22px;border:1px dashed var(--line);border-radius:10px;
+    background:var(--paper-2);font-size:0.9rem;color:var(--ink-dim);
+  }
+  .quote-note b{color:var(--ink);}
+
+  .process-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);}
+  .process-row{display:grid;grid-template-columns:44px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--line);}
+  .process-num{font-family:'Fraunces',serif;color:var(--accent);font-size:1.3rem;line-height:1;}
+  .process-row h3{font-size:1.05rem;margin-bottom:6px;}
+  .process-row p{color:var(--ink-dim);font-size:0.93rem;max-width:560px;}
+
+  .cta-band{background:var(--ink);color:var(--cream);border-bottom:none;}
+  .cta-band h2{color:var(--cream);font-size:clamp(1.5rem,3vw,2rem);margin-bottom:14px;max-width:20ch;}
+  .cta-band p{color:var(--cream-dim);max-width:520px;margin-bottom:26px;font-size:0.98rem;}
+  .cta-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn-ghost-dark{background:transparent;color:var(--cream);border-color:rgba(243,234,217,.35);}
+  .btn-ghost-dark:hover{background:rgba(243,234,217,.1);border-color:var(--cream);}
+
+  footer{background:var(--ink);color:var(--cream-dim);}
+  footer .wrap{padding:26px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:0.82rem;max-width:var(--max);}
+  footer a:hover{color:var(--cream);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="back-link" href="../index.html">← Back to portfolio</a>
+    <a href="../index.html#contact" class="btn btn-solid">Get a Quote</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Mobile &amp; Web App Package</div>
+    <h1>Custom Mobile &amp; Web App Development</h1>
+    <p class="lead">Get a full production app — not a prototype. I design and build mobile and web applications end-to-end on Expo (React Native), Supabase, and TypeScript: real authentication, real payments, real-time features, and an admin panel your team can actually run.</p>
+    <p class="lead">Most recently, I built Glowen, a bilingual (Arabic/English) two-sided marketplace for the Kuwaiti beauty and salon industry — solo, from database schema to a production build — serving customers, salon owners, and platform admins from a single codebase.</p>
+    <p class="ideal-for"><b>Ideal for:</b> founders and businesses that need a real mobile or web product — not just a landing page — with accounts, payments, and a backend that holds up in production.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Proof of Work</div>
+      <h2>Glowen — a live, two-sided booking marketplace.</h2>
+      <p>Customer discovery and booking, a salon-owner dashboard, and role-based auth — bilingual, full RTL, built solo.</p>
+    </div>
+    <div class="gallery-track">
+      <div class="gal-item"><div class="gal-frame"><img src="../assets/glowen-05.jpg" alt="Glowen home feed with promotional offers" loading="lazy"></div><span class="gal-cap">Home feed &amp; offers</span></div>
+      <div class="gal-item"><div class="gal-frame"><img src="../assets/glowen-09.jpg" alt="Booking flow with service and stylist selection" loading="lazy"></div><span class="gal-cap">Booking flow</span></div>
+      <div class="gal-item"><div class="gal-frame"><img src="../assets/glowen-11.jpg" alt="Checkout screen with wallet credit and payment breakdown" loading="lazy"></div><span class="gal-cap">Checkout &amp; wallet</span></div>
+      <div class="gal-item"><div class="gal-frame"><img src="../assets/glowen-15.jpg" alt="Profile screen with membership card and wallet balance" loading="lazy"></div><span class="gal-cap">Membership &amp; loyalty</span></div>
+      <div class="gal-item"><div class="gal-frame"><img src="../assets/glowen-16.jpg" alt="Salon owner dashboard with earnings and rating" loading="lazy"></div><span class="gal-cap">Owner dashboard</span></div>
+      <div class="gal-item"><div class="gal-frame"><img src="../assets/glowen-01.jpg" alt="Arabic RTL login screen" loading="lazy"></div><span class="gal-cap">Arabic RTL login</span></div>
+    </div>
+    <a class="gallery-link" href="../index.html#projects">See the full Glowen case study on the portfolio →</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">What Shapes the Scope</div>
+      <h2>Every app is different — pricing follows scope, not a fixed menu.</h2>
+      <p>These are the factors that shape a proposal. Tell me which apply and I'll come back with a fixed-scope quote.</p>
+    </div>
+    <div class="scope-grid">
+      <div class="scope-item"><h4>Platforms</h4><p>iOS, Android, and/or web from a single Expo (React Native) codebase.</p></div>
+      <div class="scope-item"><h4>Authentication</h4><p>Email/password, phone OTP, social login (Apple/Google), guest mode, role-based accounts.</p></div>
+      <div class="scope-item"><h4>Payments</h4><p>Card checkout via regional or global payment gateways, wallet/credit systems, revenue splitting.</p></div>
+      <div class="scope-item"><h4>Real-time features</h4><p>Chat, live status updates, and push notifications with deep-link routing.</p></div>
+      <div class="scope-item"><h4>Admin &amp; operations</h4><p>Dashboards, approvals, content management, reporting, and broadcast tools.</p></div>
+      <div class="scope-item"><h4>Backend</h4><p>Postgres schema design, Row-Level Security, Edge Functions, and scheduled jobs (Supabase).</p></div>
+      <div class="scope-item"><h4>Localization</h4><p>Multi-language support with full right-to-left (RTL) layout where needed.</p></div>
+      <div class="scope-item"><h4>Launch</h4><p>Managed build pipeline (Expo EAS), over-the-air updates, and app store submission support.</p></div>
+    </div>
+    <div class="quote-note"><b>No fixed tiers here on purpose</b> — a booking marketplace and a single-purpose utility app need very different amounts of work. Share your scope and you'll get a clear, fixed-price proposal before anything is built.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">How It Works</div>
+      <h2>From product vision to a live app.</h2>
+    </div>
+    <div class="process-list">
+      <div class="process-row">
+        <span class="process-num">01</span>
+        <div>
+          <h3>Share your product vision</h3>
+          <p>The problem, the users, and the core flows you need — even a rough idea is enough to start scoping.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <span class="process-num">02</span>
+        <div>
+          <h3>Technical scoping &amp; architecture</h3>
+          <p>I map the data model, integrations, and screens, then send back a fixed-scope proposal with a clear price and timeline before any code is written.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <span class="process-num">03</span>
+        <div>
+          <h3>Build in sprints</h3>
+          <p>Regular working builds via Expo EAS, so you're testing on a real device throughout — not just seeing it for the first time at the end.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <span class="process-num">04</span>
+        <div>
+          <h3>Launch &amp; handover</h3>
+          <p>App store submission support, documentation, and — where it's part of the scope — full source code, so your team owns it going forward.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--cream-dim);">Get Started</div>
+    <h2>Have a product you want to build?</h2>
+    <p>Tell me the problem you're solving and who it's for — I'll come back with a clear, fixed-scope proposal.</p>
+    <div class="cta-actions">
+      <a href="mailto:yasirshahji1116@outlook.com?subject=Custom%20Mobile%20%26%20Web%20App%20-%20Project%20Inquiry" class="btn btn-solid">Email Me</a>
+      <a href="https://wa.me/923440066123" target="_blank" rel="noopener" class="btn btn-ghost-dark">WhatsApp</a>
+      <a href="../index.html#projects" class="btn btn-ghost-dark">See Related Work</a>
+      <a href="technical-content-course-architecture.html" class="btn btn-ghost-dark">See the Content Package →</a>
+      <a href="multi-agent-automation-pipeline.html" class="btn btn-ghost-dark">See the Automation Package →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> M. Yasir Shah</span>
+    <a class="back-link" href="../index.html" style="color:inherit;">← Back to portfolio</a>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -249,6 +249,24 @@
   .case-modal-inner .case{margin-bottom:20px;}
   .case-modal-inner .case p{max-width:none;}
 
+  /* GLOWEN: feature grid + phone-frame screenshot gallery */
+  .glowen-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;}
+  @media (max-width:480px){ .glowen-features{grid-template-columns:1fr;} }
+  .glowen-features h4{font-size:0.86rem;font-weight:700;color:var(--accent-deep);margin-bottom:4px;}
+  .glowen-features p{font-size:0.84rem;color:var(--ink-dim);margin:0;}
+  .glowen-gallery{margin-bottom:22px;}
+  .glowen-gallery .gal-track{
+    display:flex;gap:14px;overflow-x:auto;padding:4px 4px 12px;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  }
+  .glowen-gallery .gal-item{flex:0 0 auto;width:150px;scroll-snap-align:start;}
+  .glowen-gallery .gal-frame{
+    border-radius:20px;overflow:hidden;background:#000;border:4px solid var(--ink);
+    box-shadow:0 12px 26px -14px rgba(0,0,0,.5);
+  }
+  .glowen-gallery .gal-frame img{width:100%;aspect-ratio:9/20;object-fit:cover;display:block;cursor:zoom-in;}
+  .glowen-gallery .gal-cap{display:block;font-size:0.72rem;color:var(--ink-dim);margin-top:8px;text-align:center;}
+
   /* STACK / INDUSTRIES */
   .stack-list{border-top:1px solid var(--line);}
   .stack-row{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line);}
@@ -317,7 +335,7 @@
   a.cat-card:hover .cat-arrow{color:var(--accent);}
 
   /* LIGHTBOX */
-  .lightbox{position:fixed;inset:0;background:rgba(12,9,6,.95);z-index:300;display:none;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;}
+  .lightbox{position:fixed;inset:0;background:rgba(12,9,6,.95);z-index:320;display:none;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;}
   .lightbox.open{display:flex;}
   .lightbox img{max-width:92vw;max-height:72vh;object-fit:contain;border-radius:4px;}
   .lightbox-cap{color:var(--cream-dim);font-size:0.85rem;margin-top:18px;max-width:640px;text-align:center;}
@@ -409,8 +427,8 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">What I Build</div>
-      <h2>Six ways I get manual work off your plate.</h2>
-      <p>From routing a lead to orchestrating ~100 agents in production. Scroll or use the arrows to see all six.</p>
+      <h2>Seven ways I get manual work off your plate.</h2>
+      <p>From routing a lead to orchestrating ~100 agents in production — and shipping full apps, not just pipelines. Scroll or use the arrows to see all seven.</p>
     </div>
     <div class="car-outer">
       <div class="car-viewport" id="buildViewport">
@@ -449,6 +467,12 @@
           <h3>From Automation to Application</h3>
           <p>When it's worth it, the pipeline becomes a real web or mobile app — a proper UI, not a backend trigger only you can run.</p>
           <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Product UX</span></div>
+        </div>
+        <div class="cap-card reveal">
+          <span class="cap-num">07</span>
+          <h3>Mobile &amp; Web App Development</h3>
+          <p>Full production apps, not just automations — shipped a bilingual, two-sided marketplace app (Glowen) solo: auth, real-time chat, payments, and an admin panel.</p>
+          <div class="tags"><span>Expo / React Native</span><span>Supabase</span><span>TypeScript</span></div>
         </div>
       </div>
       <div class="car-controls">
@@ -492,6 +516,58 @@
             </div>
             <div class="tags"><span>n8n</span><span>Multi-Agent Orchestration</span><span>OpenAI / Gemini / Claude / xAI / DeepSeek</span><span>Cost &amp; Latency Optimization</span></div>
             <a class="proj-link" href="https://fenzo.ai/about" target="_blank" rel="noopener">Visit fenzo.ai →</a>
+          </div>
+        </div>
+
+        <div class="car-card reveal">
+          <div class="car-visual">
+            <div class="shot light">
+              <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">glowen.app</span></div>
+              <img class="zoomable" src="assets/glowen-05.jpg" data-full="assets/glowen-05.jpg" data-cap="Glowen — home feed with offers, categories, and salon discovery." alt="Glowen home feed with promotional offers and service categories" loading="lazy" style="aspect-ratio:9/16;object-fit:cover;object-position:top;">
+            </div>
+          </div>
+          <div class="car-body">
+            <span class="proj-idx">Full-stack mobile marketplace · Kuwait</span>
+            <h3>Glowen — Beauty &amp; Salon Booking Platform</h3>
+            <p class="car-teaser">A two-sided marketplace app for customers, salon owners, and admins — built solo, bilingual EN/AR, with real payments.</p>
+            <div class="tags"><span>Expo / React Native</span><span>Supabase</span><span>TypeScript</span></div>
+            <button class="car-more" type="button">View case study →</button>
+          </div>
+          <div class="case-full" hidden>
+            <div class="case">
+              <p><b class="lbl">Problem</b>A beauty-and-salon marketplace for the Kuwaiti market needed to serve customers, salon owners, and platform admins in one bilingual (Arabic/English, full RTL) app — with real bookings, real payments, and real-time features, not a prototype.</p>
+              <p><b class="lbl">Approach</b>Built solo, end-to-end, on Expo (React Native) + TypeScript + Supabase: role-based routing for three user types from a single codebase, a multi-step booking flow (service → stylist → date → promo code → wallet credit → Tap Payments checkout), automatic 90/10 payment splitting via Supabase Edge Functions, real-time chat, push notifications, and a full salon-owner dashboard with earnings, offers, and paid featured placements.</p>
+              <p class="result"><b class="lbl">Result</b>A live, production two-sided marketplace — email/phone/social auth, wallet &amp; loyalty tiers, referrals, and a full admin panel for approvals, payouts, and broadcasts.</p>
+            </div>
+            <div class="glowen-features">
+              <div><h4>Customer App</h4><p>Discovery &amp; search, multi-step booking, wallet &amp; membership tiers, referrals, real-time chat, push notifications.</p></div>
+              <div><h4>Salon Owner App</h4><p>Multi-salon dashboard, services/stylists/gallery management, offers &amp; paid featured placements, billing &amp; payouts.</p></div>
+              <div><h4>Admin Panel</h4><p>Salon approvals, user management, promo codes, membership plans, payouts, mass broadcasts, revenue reports.</p></div>
+              <div><h4>Backend &amp; Infra</h4><p>Supabase (Postgres, RLS, Realtime, Auth, Storage), Edge Functions, Tap Payments, Twilio Verify, Expo EAS.</p></div>
+            </div>
+            <div class="glowen-gallery">
+              <div class="gal-track">
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-01.jpg" data-full="assets/glowen-01.jpg" data-cap="Glowen — Arabic RTL login screen." alt="Arabic RTL login screen" loading="lazy"></div><span class="gal-cap">Arabic RTL login</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-02.jpg" data-full="assets/glowen-02.jpg" data-cap="Glowen — sign-up with Customer / Salon Owner role selection." alt="Sign-up screen with role selection" loading="lazy"></div><span class="gal-cap">Role-based sign-up</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-04.jpg" data-full="assets/glowen-04.jpg" data-cap="Glowen — dual-role accounts, live switching between customer and salon owner." alt="Role picker for dual-role accounts" loading="lazy"></div><span class="gal-cap">Dual-role switching</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-05.jpg" data-full="assets/glowen-05.jpg" data-cap="Glowen — home feed with offers, categories, and salon discovery." alt="Home feed with promotional offers" loading="lazy"></div><span class="gal-cap">Home feed &amp; offers</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-06.jpg" data-full="assets/glowen-06.jpg" data-cap="Glowen — salons you follow and featured listings." alt="Salons you follow and featured listings" loading="lazy"></div><span class="gal-cap">Followed &amp; featured salons</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-07.jpg" data-full="assets/glowen-07.jpg" data-cap="Glowen — Discover screen, search and filter salons by category." alt="Discover screen with salon search and filters" loading="lazy"></div><span class="gal-cap">Discover &amp; search</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-08.jpg" data-full="assets/glowen-08.jpg" data-cap="Glowen — map view with live salon pins and directions." alt="Map view with salon location pins" loading="lazy"></div><span class="gal-cap">Map view</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-09.jpg" data-full="assets/glowen-09.jpg" data-cap="Glowen — booking flow: service, stylist, and date selection." alt="Booking flow with service and stylist selection" loading="lazy"></div><span class="gal-cap">Service &amp; stylist picker</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-10.jpg" data-full="assets/glowen-10.jpg" data-cap="Glowen — time slots, promo code, and running total." alt="Time slot selection with promo code and total" loading="lazy"></div><span class="gal-cap">Time slots &amp; promo</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-11.jpg" data-full="assets/glowen-11.jpg" data-cap="Glowen — checkout with wallet credit and Tap Payments." alt="Checkout screen with wallet credit and payment fee breakdown" loading="lazy"></div><span class="gal-cap">Checkout &amp; wallet</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-12.jpg" data-full="assets/glowen-12.jpg" data-cap="Glowen — booking confirmation with cancellation policy." alt="Confirm booking screen with cancellation policy" loading="lazy"></div><span class="gal-cap">Confirm booking</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-13.jpg" data-full="assets/glowen-13.jpg" data-cap="Glowen — booking confirmed success screen." alt="Booking confirmed success screen" loading="lazy"></div><span class="gal-cap">Booking confirmed</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-14.jpg" data-full="assets/glowen-14.jpg" data-cap="Glowen — booking history: upcoming, completed, cancelled." alt="My Bookings screen with status tabs" loading="lazy"></div><span class="gal-cap">Booking history</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-15.jpg" data-full="assets/glowen-15.jpg" data-cap="Glowen — profile with membership tier, points, and wallet balance." alt="Profile screen with membership card and wallet balance" loading="lazy"></div><span class="gal-cap">Membership &amp; wallet</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-16.jpg" data-full="assets/glowen-16.jpg" data-cap="Glowen — salon owner dashboard: earnings and rating at a glance." alt="Salon owner dashboard with earnings and rating" loading="lazy"></div><span class="gal-cap">Owner dashboard</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-17.jpg" data-full="assets/glowen-17.jpg" data-cap="Glowen — salon owner management tools and recent bookings." alt="Salon owner management grid and recent bookings" loading="lazy"></div><span class="gal-cap">Owner management tools</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-18.jpg" data-full="assets/glowen-18.jpg" data-cap="Glowen — service catalog management for salon owners." alt="Services list management screen" loading="lazy"></div><span class="gal-cap">Service catalog</span></div>
+                <div class="gal-item"><div class="gal-frame"><img class="zoomable" src="assets/glowen-19.jpg" data-full="assets/glowen-19.jpg" data-cap="Glowen — stylist profile editor." alt="Edit stylist profile screen" loading="lazy"></div><span class="gal-cap">Stylist editor</span></div>
+              </div>
+            </div>
+            <div class="tags"><span>Expo / React Native</span><span>Supabase</span><span>TypeScript</span><span>Tap Payments</span><span>Twilio Verify</span><span>i18n / RTL</span></div>
           </div>
         </div>
 
@@ -677,10 +753,22 @@
           <span class="cat-arrow">See tiers &amp; pricing →</span>
         </div>
       </a>
+      <a class="cat-card" href="catalogue/mobile-app-development.html">
+        <div class="cat-card-top">
+          <span class="cat-tag">Mobile &amp; Web</span>
+          <span class="cat-price">Custom Quote</span>
+        </div>
+        <h3>Custom Mobile &amp; Web App Development</h3>
+        <p>A full production app, built end-to-end — Expo/React Native, Supabase, and TypeScript. Auth, payments, real-time features, and an admin panel, not just a prototype.</p>
+        <div class="cat-card-bottom">
+          <span>Scoped per project · Glowen case study</span>
+          <span class="cat-arrow">See scope &amp; process →</span>
+        </div>
+      </a>
       <div class="cat-card soon">
         <div class="cat-card-top"><span class="cat-tag">Coming soon</span></div>
         <h3>More packages on the way</h3>
-        <p>Platform builds and AI agent packages, scoped and priced the same way. Reach out directly in the meantime to scope something custom.</p>
+        <p>More AI agent packages, scoped and priced the same way. Reach out directly in the meantime to scope something custom.</p>
       </div>
     </div>
   </div>
@@ -757,6 +845,10 @@
       <div class="stack-row">
         <div class="cat">Production Engineering</div>
         <div class="items">Multi-Provider Model Routing, Prompt Caching, JSON Schema Validation, SSE Streaming, Per-Stage Checkpointing</div>
+      </div>
+      <div class="stack-row">
+        <div class="cat">Mobile &amp; Web</div>
+        <div class="items">Expo / React Native, Supabase, TypeScript, Expo EAS, Tap Payments, Push Notifications (FCM)</div>
       </div>
       <div class="stack-row">
         <div class="cat">Code</div>
@@ -902,6 +994,13 @@
   });
   lightboxClose.addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+  // Images injected into the case-study modal (e.g. Glowen's screenshot gallery) are fresh
+  // DOM nodes from innerHTML, so they need their own delegated zoom handler.
+  document.getElementById('caseModalBody').addEventListener('click', (e) => {
+    const img = e.target.closest('.zoomable');
+    if (img) openLightbox(img);
+  });
 
   // Case-study modal
   const caseModal = document.getElementById('caseModal');
