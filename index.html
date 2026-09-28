@@ -217,6 +217,8 @@
   .car-visual .shot{border-radius:0;border-width:0;}
   .car-visual .shot img{aspect-ratio:16/10;object-fit:cover;}
   .car-visual .stat-block{border-radius:0;min-height:180px;padding:30px 26px;}
+  .glowen-mini{display:flex;aspect-ratio:16/10;overflow:hidden;gap:2px;background:#000;}
+  .glowen-mini img{flex:1 1 0;width:0;height:100%;object-fit:cover;object-position:top;cursor:zoom-in;}
   .car-visual .stat-block .num{font-size:clamp(2.4rem,4vw,3.2rem);}
   .car-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1;}
   .car-body h3{font-size:1.12rem;margin:0;}
@@ -378,10 +380,10 @@
   <div class="wrap">
     <img class="hero-shot" src="assets/profile-highlight.jpg" alt="M. Yasir Shah, AI Product Architect">
 
-    <h1 class="hero-name">M. Yasir Shah<span class="dot">.</span><span class="sr-only"> — AI systems that turn busywork into shipped work.</span></h1>
-    <p class="hero-tagline"><b>AI Products Architect</b><span class="sep">●</span>Building Scalable Content Systems<span class="sep">●</span>7× Author of System Design Courses @ Educative</p>
+    <h1 class="hero-name">M. Yasir Shah<span class="dot">.</span><span class="sr-only"> — AI systems and full-stack apps that turn busywork into shipped work.</span></h1>
+    <p class="hero-tagline"><b>AI Products Architect &amp; Full-Stack Developer</b><span class="sep">●</span>Building Scalable Content Systems<span class="sep">●</span>7× Author of System Design Courses @ Educative</p>
 
-    <p class="lead">I design AI agents and automations that take manual, repetitive work off your plate — the same caliber of systems I run at Educative to generate technical content at the scale of thousands of lessons and guides.</p>
+    <p class="lead">I design AI agents, automations, and full web &amp; mobile apps that take manual work off your plate and ship as real products — the same caliber of systems I run at Educative to generate technical content at the scale of thousands of lessons and guides.</p>
 
     <div class="hero-actions">
       <a href="#contact" class="btn btn-solid">Get a Free Automation Audit</a>
@@ -525,7 +527,12 @@
           <div class="car-visual">
             <div class="shot light">
               <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">glowen.app</span></div>
-              <img class="zoomable" src="assets/glowen-05.jpg" data-full="assets/glowen-05.jpg" data-cap="Glowen — home feed with offers, categories, and salon discovery." alt="Glowen home feed with promotional offers and service categories" loading="lazy" style="aspect-ratio:9/16;object-fit:cover;object-position:top;">
+              <div class="glowen-mini">
+                <img class="zoomable" src="assets/glowen-05.jpg" data-full="assets/glowen-05.jpg" data-cap="Glowen — home feed with offers, categories, and salon discovery." alt="Glowen home feed with promotional offers" loading="lazy">
+                <img class="zoomable" src="assets/glowen-09.jpg" data-full="assets/glowen-09.jpg" data-cap="Glowen — booking flow with service and stylist selection." alt="Glowen booking flow" loading="lazy">
+                <img class="zoomable" src="assets/glowen-11.jpg" data-full="assets/glowen-11.jpg" data-cap="Glowen — checkout with wallet credit and Tap Payments." alt="Glowen checkout screen" loading="lazy">
+                <img class="zoomable" src="assets/glowen-16.jpg" data-full="assets/glowen-16.jpg" data-cap="Glowen — salon owner dashboard with earnings and rating." alt="Glowen salon owner dashboard" loading="lazy">
+              </div>
             </div>
           </div>
           <div class="car-body">
