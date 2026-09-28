@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Custom Mobile &amp; Web App Development — M. Yasir Shah</title>
-<meta name="description" content="Full production mobile and web apps built end-to-end on Expo (React Native), Supabase, and TypeScript — auth, payments, real-time features, and admin panels. Scope, process, and proof of work.">
+<title>AI-Powered Web Platform Development — M. Yasir Shah</title>
+<meta name="description" content="Full AI-native web platforms built end-to-end on Next.js, LangChain, and multi-provider LLM APIs — real products, not chatbots bolted onto a landing page. Scope, process, and proof of work.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%2318140f%22/><text x=%2250%22 y=%2268%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%23c1531f%22 font-family=%22Georgia,serif%22>Y</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,16 +44,19 @@
   .section-head h2{font-size:clamp(1.4rem,2.6vw,1.8rem);margin-bottom:8px;}
   .section-head p{color:var(--ink-dim);font-size:0.95rem;max-width:560px;}
 
-  /* Proof-of-work phone gallery (mirrors the portfolio's Glowen case study) */
-  .gallery-track{display:flex;gap:14px;overflow-x:auto;padding:4px 4px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
-  .gallery-track .gal-item{flex:0 0 auto;width:150px;scroll-snap-align:start;}
-  .gallery-track .gal-frame{border-radius:20px;overflow:hidden;background:#000;border:4px solid var(--ink);box-shadow:0 12px 26px -14px rgba(0,0,0,.4);}
-  .gallery-track .gal-frame img{width:100%;aspect-ratio:9/20;object-fit:cover;display:block;}
-  .gallery-track .gal-cap{display:block;font-size:0.72rem;color:var(--ink-dim);margin-top:8px;text-align:center;}
-  .gallery-link{font-size:0.9rem;font-weight:600;color:var(--ink);border-bottom:1.5px solid var(--accent);padding-bottom:2px;display:inline-flex;margin-top:6px;}
+  /* Proof-of-work: browser-window style screenshots (landscape web platforms) */
+  .proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media (max-width:640px){ .proof-grid{grid-template-columns:1fr;} }
+  .proof-item .shot{border-radius:8px;overflow:hidden;background:#fff;border:1px solid var(--line);}
+  .proof-item .shot-bar{display:flex;align-items:center;gap:6px;padding:10px 13px;border-bottom:1px solid var(--line);}
+  .proof-item .shot-bar span.d{width:8px;height:8px;border-radius:50%;background:var(--ink-dim);opacity:.3;}
+  .proof-item .shot-bar .path{margin-left:8px;font-size:0.7rem;color:var(--ink-dim);}
+  .proof-item img{width:100%;display:block;}
+  .proof-item .proof-cap{font-size:0.82rem;color:var(--ink-dim);margin-top:10px;}
+  .gallery-link{font-size:0.9rem;font-weight:600;color:var(--ink);border-bottom:1.5px solid var(--accent);padding-bottom:2px;display:inline-flex;margin-top:20px;}
   .gallery-link:hover{color:var(--accent);}
 
-  /* Scope checklist (no fixed tiers — every app is scoped individually) */
+  /* Scope checklist (no fixed tiers — every platform is scoped individually) */
   .scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
   @media (max-width:640px){ .scope-grid{grid-template-columns:1fr;} }
   .scope-item{background:var(--paper);padding:22px 24px;}
@@ -94,11 +97,11 @@
 
 <section class="hero">
   <div class="wrap">
-    <div class="kicker">Mobile &amp; Web App Package</div>
-    <h1>Custom Mobile &amp; Web App Development</h1>
-    <p class="lead">Get a full production app — not a prototype. I design and build mobile and web applications end-to-end on Expo (React Native), Supabase, and TypeScript: real authentication, real payments, real-time features, and an admin panel your team can actually run.</p>
-    <p class="lead">Most recently, I built Glowen, a bilingual (Arabic/English) two-sided marketplace for the Kuwaiti beauty and salon industry — solo, from database schema to a production build — serving customers, salon owners, and platform admins from a single codebase.</p>
-    <p class="ideal-for"><b>Ideal for:</b> founders and businesses that need a real mobile or web product — not just a landing page — with accounts, payments, and a backend that holds up in production.</p>
+    <div class="kicker">AI Web Platform Package</div>
+    <h1>AI-Powered Web Platform Development</h1>
+    <p class="lead">Get a real AI-native web platform — not a chatbot bolted onto a landing page. I build the full stack: a Next.js/React frontend, an AI layer orchestrated with LangChain across multiple LLM providers, and the API integrations that make it an actual product people use.</p>
+    <p class="lead">This is the same engineering behind Fenzo, an AI learning platform running ~100 orchestrated agents, and an internal AI content platform used daily by a technical content team — both LangChain-orchestrated web products, not internal scripts.</p>
+    <p class="ideal-for"><b>Ideal for:</b> teams that need an AI feature to become a real product surface — logged-in users, a real UI, and a backend that can grow past a demo.</p>
   </div>
 </section>
 
@@ -106,18 +109,26 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">Proof of Work</div>
-      <h2>Glowen — a live, two-sided booking marketplace.</h2>
-      <p>Customer discovery and booking, a salon-owner dashboard, and role-based auth — bilingual, full RTL, built solo.</p>
+      <h2>Two AI web platforms, live and in daily use.</h2>
+      <p>Full-stack builds — frontend, LangChain orchestration, and API integrations — not internal automations.</p>
     </div>
-    <div class="gallery-track">
-      <div class="gal-item"><div class="gal-frame"><img src="../assets/glowen-05.jpg" alt="Glowen home feed with promotional offers" loading="lazy"></div><span class="gal-cap">Home feed &amp; offers</span></div>
-      <div class="gal-item"><div class="gal-frame"><img src="../assets/glowen-09.jpg" alt="Booking flow with service and stylist selection" loading="lazy"></div><span class="gal-cap">Booking flow</span></div>
-      <div class="gal-item"><div class="gal-frame"><img src="../assets/glowen-11.jpg" alt="Checkout screen with wallet credit and payment breakdown" loading="lazy"></div><span class="gal-cap">Checkout &amp; wallet</span></div>
-      <div class="gal-item"><div class="gal-frame"><img src="../assets/glowen-15.jpg" alt="Profile screen with membership card and wallet balance" loading="lazy"></div><span class="gal-cap">Membership &amp; loyalty</span></div>
-      <div class="gal-item"><div class="gal-frame"><img src="../assets/glowen-16.jpg" alt="Salon owner dashboard with earnings and rating" loading="lazy"></div><span class="gal-cap">Owner dashboard</span></div>
-      <div class="gal-item"><div class="gal-frame"><img src="../assets/glowen-01.jpg" alt="Arabic RTL login screen" loading="lazy"></div><span class="gal-cap">Arabic RTL login</span></div>
+    <div class="proof-grid">
+      <div class="proof-item">
+        <div class="shot">
+          <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">fenzo.ai</span></div>
+          <img src="../assets/fenzo.png" alt="Fenzo AI learning platform homepage" loading="lazy">
+        </div>
+        <p class="proof-cap">Fenzo — generates courses, guides, blogs, and flash cards on any topic via ~100 orchestrated agents.</p>
+      </div>
+      <div class="proof-item">
+        <div class="shot">
+          <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="path">persona-blogs.app</span></div>
+          <img src="../assets/persona-blogs-app.png" alt="AI-powered technical content platform interface" loading="lazy">
+        </div>
+        <p class="proof-cap">AI content platform — generates technical articles with code, images, and charts, then publishes via API.</p>
+      </div>
     </div>
-    <a class="gallery-link" href="../index.html#projects">See the full Glowen case study on the portfolio →</a>
+    <a class="gallery-link" href="../index.html#projects">See both full case studies on the portfolio →</a>
   </div>
 </section>
 
@@ -125,20 +136,20 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">What Shapes the Scope</div>
-      <h2>Every app is different — pricing follows scope, not a fixed menu.</h2>
+      <h2>Every platform is different — pricing follows scope, not a fixed menu.</h2>
       <p>These are the factors that shape a proposal. Tell me which apply and I'll come back with a fixed-scope quote.</p>
     </div>
     <div class="scope-grid">
-      <div class="scope-item"><h4>Platforms</h4><p>iOS, Android, and/or web from a single Expo (React Native) codebase.</p></div>
-      <div class="scope-item"><h4>Authentication</h4><p>Email/password, phone OTP, social login (Apple/Google), guest mode, role-based accounts.</p></div>
-      <div class="scope-item"><h4>Payments</h4><p>Card checkout via regional or global payment gateways, wallet/credit systems, revenue splitting.</p></div>
-      <div class="scope-item"><h4>Real-time features</h4><p>Chat, live status updates, and push notifications with deep-link routing.</p></div>
-      <div class="scope-item"><h4>Admin &amp; operations</h4><p>Dashboards, approvals, content management, reporting, and broadcast tools.</p></div>
-      <div class="scope-item"><h4>Backend</h4><p>Postgres schema design, Row-Level Security, Edge Functions, and scheduled jobs (Supabase).</p></div>
-      <div class="scope-item"><h4>Localization</h4><p>Multi-language support with full right-to-left (RTL) layout where needed.</p></div>
-      <div class="scope-item"><h4>Launch</h4><p>Managed build pipeline (Expo EAS), over-the-air updates, and app store submission support.</p></div>
+      <div class="scope-item"><h4>Frontend</h4><p>Next.js/React, TypeScript, and Tailwind — a real UI, not just an API endpoint.</p></div>
+      <div class="scope-item"><h4>AI orchestration</h4><p>LangChain / LangGraph, multi-provider routing across OpenAI, Claude, Gemini, and others.</p></div>
+      <div class="scope-item"><h4>API integrations</h4><p>CMS publishing, third-party APIs, webhooks, and auth (Google/OAuth) wired into the platform.</p></div>
+      <div class="scope-item"><h4>Real-time UX</h4><p>Streaming AI responses, live generation progress, and interactive output — code, charts, images.</p></div>
+      <div class="scope-item"><h4>Multi-agent backend</h4><p>From a handful of coordinated agents to production systems running at ~100-agent scale.</p></div>
+      <div class="scope-item"><h4>Cost &amp; reliability</h4><p>Model routing, caching, and per-stage checkpointing so it holds up past the demo.</p></div>
+      <div class="scope-item"><h4>Admin &amp; content tooling</h4><p>Dashboards and internal tools so your team can operate the platform without a deploy.</p></div>
+      <div class="scope-item"><h4>Deployment</h4><p>Production hosting (Vercel/AWS), environment setup, and handover documentation.</p></div>
     </div>
-    <div class="quote-note"><b>No fixed tiers here on purpose</b> — a booking marketplace and a single-purpose utility app need very different amounts of work. Share your scope and you'll get a clear, fixed-price proposal before anything is built.</div>
+    <div class="quote-note"><b>No fixed tiers here on purpose</b> — an AI content platform and a full agent-orchestrated marketplace need very different amounts of work. Share your scope and you'll get a clear, fixed-price proposal before anything is built.</div>
   </div>
 </section>
 
@@ -146,35 +157,35 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">How It Works</div>
-      <h2>From product vision to a live app.</h2>
+      <h2>From product vision to a live platform.</h2>
     </div>
     <div class="process-list">
       <div class="process-row">
         <span class="process-num">01</span>
         <div>
           <h3>Share your product vision</h3>
-          <p>The problem, the users, and the core flows you need — even a rough idea is enough to start scoping.</p>
+          <p>What the AI needs to do, who it's for, and what "done" looks like as a real product, not a proof of concept.</p>
         </div>
       </div>
       <div class="process-row">
         <span class="process-num">02</span>
         <div>
           <h3>Technical scoping &amp; architecture</h3>
-          <p>I map the data model, integrations, and screens, then send back a fixed-scope proposal with a clear price and timeline before any code is written.</p>
+          <p>I map the data flow, model routing, and API contracts, then send back a fixed-scope proposal with a clear price and timeline before any code is written.</p>
         </div>
       </div>
       <div class="process-row">
         <span class="process-num">03</span>
         <div>
-          <h3>Build in sprints</h3>
-          <p>Regular working builds via Expo EAS, so you're testing on a real device throughout — not just seeing it for the first time at the end.</p>
+          <h3>Build in sprints, with live demos</h3>
+          <p>Working builds you can click through regularly — including the AI behavior, not just the UI shell.</p>
         </div>
       </div>
       <div class="process-row">
         <span class="process-num">04</span>
         <div>
           <h3>Launch &amp; handover</h3>
-          <p>App store submission support, documentation, and — where it's part of the scope — full source code, so your team owns it going forward.</p>
+          <p>Production deployment, cost/latency tuning, documentation, and — where it's part of the scope — full source code, so your team owns it going forward.</p>
         </div>
       </div>
     </div>
@@ -184,15 +195,15 @@
 <section class="cta-band">
   <div class="wrap">
     <div class="kicker" style="color:var(--cream-dim);">Get Started</div>
-    <h2>Have a product you want to build?</h2>
-    <p>Tell me the problem you're solving and who it's for — I'll come back with a clear, fixed-scope proposal.</p>
+    <h2>Have an AI feature that needs to become a real product?</h2>
+    <p>Tell me what you're building and who it's for — I'll come back with a clear, fixed-scope proposal.</p>
     <div class="cta-actions">
-      <a href="mailto:yasirshahji1116@outlook.com?subject=Custom%20Mobile%20%26%20Web%20App%20-%20Project%20Inquiry" class="btn btn-solid">Email Me</a>
+      <a href="mailto:yasirshahji1116@outlook.com?subject=AI-Powered%20Web%20Platform%20-%20Project%20Inquiry" class="btn btn-solid">Email Me</a>
       <a href="https://wa.me/923440066123" target="_blank" rel="noopener" class="btn btn-ghost-dark">WhatsApp</a>
       <a href="../index.html#projects" class="btn btn-ghost-dark">See Related Work</a>
       <a href="technical-content-course-architecture.html" class="btn btn-ghost-dark">See the Content Package →</a>
       <a href="multi-agent-automation-pipeline.html" class="btn btn-ghost-dark">See the Automation Package →</a>
-      <a href="ai-web-platform-development.html" class="btn btn-ghost-dark">See the AI Web Platform Package →</a>
+      <a href="mobile-app-development.html" class="btn btn-ghost-dark">See the Mobile App Package →</a>
     </div>
   </div>
 </section>
